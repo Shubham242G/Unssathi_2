@@ -1,23 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use BrowserRouter
+import Navbar from './navbar/Navbar';
+import Home from './components/home/Home';
+import ConjugalRightsPage from './components/services/ConjugalRightsPage';
+import ContestedDivorce from './components/services/ContestedDivorce';
+import MaintenanceAlimonyPage from './components/services/MaintenanceAlimonyPage';
+import DowryCasesPage from './components/services/DowryCasesPage';
+import ChildCustodyPage from './components/services/ChildCustody';
+import CrueltyPage from './components/services/Cruelty';
+import JudicialSeparationPage from './components/services/JudicialSeperation';
+import ChildVisitationPage from './components/services/ChildVisitationPage';
+import AnnulmentOfMarriagePage from './components/services/AnnulmentOfMarriage';
+import MutualDivorcePage from './components/services/MutualDivorcePage';
+import AboutUs from './components/home/AboutUs';
+import DivorceServicesPage from './components/WhyUnsaathi.js/WhyUnsaathi';
+import HowUnsaathiWorksPage from './components/HowUnsaathi/HowUnsaathi';
+import BlogListingPage from './components/Blogs/Blogs';
+import ContactUsPage from './contact/contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-[#f5f1ed]">
+      <Router> 
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} /> 
+          <Route path="/services/conjugalRights" element={<ConjugalRightsPage />} /> 
+          <Route path="/services/contestedDivorce" element={<ContestedDivorce />} />
+          <Route path="/services/maintananceAndAlimony" element={<MaintenanceAlimonyPage />} />
+          <Route path="/services/dowry" element={<DowryCasesPage/>} />
+          <Route path='/services/childCustody' element={<ChildCustodyPage/>}/>
+          <Route path='/services/cruelty' element={<CrueltyPage/>}/>
+          <Route path='/services/judicialSeparation' element={<JudicialSeparationPage/>}/>
+          <Route path='/services/childVisitation' element={<ChildVisitationPage/>}/>
+          <Route path='/services/annulmentOfMarriage' element={<AnnulmentOfMarriagePage/>}/>
+          <Route path='/services/mutualDivorce' element={<MutualDivorcePage/>}/>
+          <Route path='/aboutUs' element={<AboutUs/>}/>\
+          <Route path='/whyUnsaathi' element={<DivorceServicesPage/>} />
+          <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage/>} />
+          <Route path='/blogs' element={<BlogListingPage/>} />
+          <Route path='/contact' element={<ContactUsPage/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
