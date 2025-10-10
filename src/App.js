@@ -17,6 +17,8 @@ import DivorceServicesPage from './components/WhyUnsaathi.js/WhyUnsaathi';
 import HowUnsaathiWorksPage from './components/HowUnsaathi/HowUnsaathi';
 import BlogListingPage from './components/Blogs/Blogs';
 import ContactUsPage from './contact/contact';
+import BlogPostPage from './components/Blogs/BlogPostPage';
+import ChatBot from './bot/bot';
 
 function App() {
   return (
@@ -39,9 +41,11 @@ function App() {
           <Route path='/whyUnsaathi' element={<DivorceServicesPage/>} />
           <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage/>} />
           <Route path='/blogs' element={<BlogListingPage/>} />
+          <Route path="/blogs/:id" element={<BlogPostPage />} />
           <Route path='/contact' element={<ContactUsPage/>} />
         </Routes>
       </Router>
+      <ChatBot/>
     </div>
   );
 }

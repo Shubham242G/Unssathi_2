@@ -47,59 +47,101 @@ const secondaryCards = [
 
 export default function ForYou() {
   return (
-    <section className="bg-[#f6f2ef] py-8 md:py-14 w-full overflow-x-hidden">
-      <div className="max-w-5xl mx-auto px-4 md:px-0">
-        {/* Top subheading and heading */}
-        <div className="text-center">
-          <h4 className="text-[#b88b6c] font-semibold mb-2 mt-8 md:mt-0">Unsaathi For You</h4>
-          <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-[#45362e] leading-snug mb-3">
-            Unsaathi Unravels The Complexities Of Divorce With Ease, Offering Best <span className="font-extrabold">Divorce Services</span>, Emotional Guidance, And A Fresh Start.
-          </h1>
-          <div className="text-[#776e65] mb-8">
-            For us, your peace of mind comes first; that’s why we ensure a hassle-free divorce process.
+
+    <>
+      <section className="bg-[#f5efe9] py-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 text-center">
+
+            {/* Left Image (conditionally hidden on smaller screens for better layout) */}
+            <div className="hidden lg:block">
+              <img
+                src="/assets/woman-illustration.svg" /* TODO: Replace with your actual image path */
+                alt="Illustration of a person considering their options"
+                className="w-56 h-auto"
+              />
+            </div>
+
+            {/* Center Content */}
+            <div className="max-w-2xl">
+              <h2 className="font-serif text-4xl md:text-5xl font-semibold text-gray-800 leading-tight mb-5">
+                Are Unsaathi Divorce Services Right For Me?
+              </h2>
+              <p className="text-gray-600 text-lg mb-8">
+                When seeking divorce services, you might have various queries and concerns that must be resolved for a fulfilling and reliable experience.
+              </p>
+              <button className="bg-[#d4b89c] text-[#232122] font-semibold text-lg rounded-full px-10 py-3 transition hover:bg-[#c7a788] shadow-sm">
+                Find Out
+              </button>
+            </div>
+
+            {/* Right Image (conditionally hidden on smaller screens) */}
+            <div className="hidden lg:block">
+              <img
+                src="/assets/man-illustration.svg" /* TODO: Replace with your actual image path */
+                alt="Illustration of a person thinking"
+                className="w-56 h-auto"
+              />
+            </div>
+
           </div>
         </div>
+      </section>
 
-        {/* Main card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {infoCards.map((card) => (
-            <div
-              key={card.title}
-              className="bg-[#f8edeb] rounded-2xl shadow-sm flex flex-col items-center text-center px-6 py-10"
-            >
-              <img src={card.img} alt="" className="h-20 mb-5" />
-              <h3 className="font-serif font-bold text-xl md:text-2xl text-[#45362e] mb-3">{card.title}</h3>
-              <p className="text-[#776e65] md:text-base text-sm">{card.desc}</p>
+      <section className="bg-[#f6f2ef] py-8 md:py-14 w-full overflow-x-hidden">
+        <div className="max-w-5xl mx-auto px-4 md:px-0">
+          {/* Top subheading and heading */}
+          <div className="text-center">
+            <h4 className="text-[#b88b6c] font-semibold mb-2 mt-8 md:mt-0">Unsaathi For You</h4>
+            <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-[#45362e] leading-snug mb-3">
+              Unsaathi Unravels The Complexities Of Divorce With Ease, Offering Best <span className="font-extrabold">Divorce Services</span>, Emotional Guidance, And A Fresh Start.
+            </h1>
+            <div className="text-[#776e65] mb-8">
+              For us, your peace of mind comes first; that’s why we ensure a hassle-free divorce process.
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Secondary card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {secondaryCards.map((card) => (
-            <div
-              key={card.title}
-              className="bg-[#f8edeb] rounded-2xl shadow-sm flex flex-col items-center text-center px-6 py-10"
+          {/* Main card grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {infoCards.map((card) => (
+              <div
+                key={card.title}
+                className="bg-[#f8edeb] rounded-2xl shadow-sm flex flex-col items-center text-center px-6 py-10"
+              >
+                <img src={card.img} alt="" className="h-20 mb-5" />
+                <h3 className="font-serif font-bold text-xl md:text-2xl text-[#45362e] mb-3">{card.title}</h3>
+                <p className="text-[#776e65] md:text-base text-sm">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Secondary card grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {secondaryCards.map((card) => (
+              <div
+                key={card.title}
+                className="bg-[#f8edeb] rounded-2xl shadow-sm flex flex-col items-center text-center px-6 py-10"
+              >
+                <img src={card.img} alt="" className="h-20 mb-5" />
+                <h3 className="font-serif font-bold text-xl md:text-2xl text-[#45362e] mb-3">{card.title}</h3>
+                <p className="text-[#776e65] md:text-base text-sm">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to action */}
+          <div className="text-center mb-10 mt-2">
+            <h2 className="font-serif text-2xl md:text-3xl text-[#45362e] font-bold mb-5">
+              Unsaathi Walks You Through This Journey Hassle-Free With Our Divorce Services.
+            </h2>
+            <button
+              className="px-8 py-2 rounded-full bg-[#b88b6c] text-white shadow-md font-semibold text-lg hover:bg-[#a5775c] transition"
             >
-              <img src={card.img} alt="" className="h-20 mb-5" />
-              <h3 className="font-serif font-bold text-xl md:text-2xl text-[#45362e] mb-3">{card.title}</h3>
-              <p className="text-[#776e65] md:text-base text-sm">{card.desc}</p>
-            </div>
-          ))}
+              Make An Appointment
+            </button>
+          </div>
         </div>
-
-        {/* Call to action */}
-        <div className="text-center mb-10 mt-2">
-          <h2 className="font-serif text-2xl md:text-3xl text-[#45362e] font-bold mb-5">
-            Unsaathi Walks You Through This Journey Hassle-Free With Our Divorce Services.
-          </h2>
-          <button
-            className="px-8 py-2 rounded-full bg-[#b88b6c] text-white shadow-md font-semibold text-lg hover:bg-[#a5775c] transition"
-          >
-            Make An Appointment
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

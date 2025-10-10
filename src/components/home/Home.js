@@ -12,11 +12,11 @@ function Home() {
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
       <Hero />
+      <HassleFreeProcess/>
       <AboutUs/>
       <ForYou/>
       <UnsaathiSolutions/>
       <NewBeginning/>
-      <HassleFreeProcess/>
       <ConnectWithUnsaathi/>
       <Footer/>
     </div>

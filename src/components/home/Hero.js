@@ -2,24 +2,19 @@ import React from 'react';
 
 function Hero() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 lg:py-24">
+    <section className="max-w-7xl mx-auto px-6 ">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
-        <div className="space-y-8">
+        <div className="space-y-8 -mb-13">
           <h1 className="text-5xl lg:text-[64px] font-serif leading-[1.15] text-gray-900">
-            Unsaathi: Rewiring Your Life With Defined{' '}
-            <span className="font-bold">Divorce Services</span>
+            Your ally for a simpler divorce.
           </h1>
 
           <div className="space-y-4">
             <p className="text-gray-600 text-lg leading-relaxed">
-              Divorce is not the end; its a turning point. At Unsaathi, we believe in
-              giving your fresh start with our advanced{' '}
-              <span className="font-semibold text-gray-800">divorce services</span>. With our
-              expert{' '}
-              <span className="font-semibold text-gray-800">divorce lawyers</span>, and emotional support, we empower you to
-              move forward with strength. Let Unsaathi help you lift the emotional
-              stress of divorce and make way for a brighter tomorrow.
+              Divorce is a turning point. Unsaathi provides expert{' '}
+              <span className="font-semibold text-gray-800">divorce lawyer</span>. support and advanced{' '}
+              <span className="font-semibold text-gray-800">divorce services</span>, to lift your emotional stress, empowering a strong, fresh start.
             </p>
           </div>
 

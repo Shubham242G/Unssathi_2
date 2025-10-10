@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 // Each service now has a label + path
 const services = [
@@ -39,15 +40,16 @@ function Navbar() {
       ref={navRef}
       className="bg-[#f5f1ed] shadow-sm sticky top-0 z-50 transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
-              <span className="text-xs text-gray-500">Logo</span>
-            </div>
-            <div className="w-36 h-9 bg-gray-200 rounded flex items-center justify-center">
-              <span className="text-xs text-gray-500">UNSAATHI</span>
+            <div className="flex items-center gap-3">
+              <Link to='/'><img
+                src="/assets/Unsaathi-logo.svg"
+                alt="Unsaathi Logo"
+                className="w-42 h-10"
+              /></Link>
             </div>
           </div>
 
@@ -72,9 +74,8 @@ function Navbar() {
               >
                 Services
                 <svg
-                  className={`w-4 h-4 transform transition-transform duration-300 ${
-                    hoveredMenu === "Services" ? "rotate-180" : "rotate-0"
-                  }`}
+                  className={`w-4 h-4 transform transition-transform duration-300 ${hoveredMenu === "Services" ? "rotate-180" : "rotate-0"
+                    }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -92,10 +93,9 @@ function Navbar() {
               {/* Dropdown Menu */}
               <ul
                 className={`absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-lg z-50 border border-[#ece2d7] py-2 transform transition-all duration-300 origin-top 
-                  ${
-                    hoveredMenu === "Services"
-                      ? "opacity-100 scale-100 visible"
-                      : "opacity-0 scale-95 invisible"
+                  ${hoveredMenu === "Services"
+                    ? "opacity-100 scale-100 visible"
+                    : "opacity-0 scale-95 invisible"
                   }`}
               >
                 {services.map((service) => (

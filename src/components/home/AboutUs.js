@@ -18,15 +18,11 @@ function AboutUs() {
           {/* Paragraphs */}
           <div className="space-y-6 text-lg text-gray-700">
             <p>
-              Divorce can take a toll on your mental health. From the stress of <span className="font-semibold text-gray-900">legal separation</span>,
-              financial uncertainties, and navigating <span className="font-semibold text-gray-900">child custody disputes</span>, everything can
-              be overwhelming in this journey. It is essential to understand that the <span className="font-semibold text-gray-900">emotional stress of divorce</span> can
-              be aggravated by the challenges of knowing your rights, dealing with family court lawyers, and divorce lawyer fees in India.
-              Not to mention, the societal pressure makes coping with divorce a lot worse for many.
+              Navigating a divorce can be overwhelming, but our expert <span className="font-semibold text-gray-900">divorce services</span> are designed to ease your journey.
+              Our team of compassionate and affordable divorce lawyers provides comprehensive support for every aspect of your separation, from <span className="font-semibold text-gray-900"> financial settlements</span> to <span className="font-semibold text-gray-900"> child custody disputes</span>. We offer a full spectrum of divorce services, including mediation and legal guidance, ensuring your rights are protected.
             </p>
             <p>
-              At Unsaathi, we work to alleviate your stress and ease your burden. With our comprehensive <span className="font-semibold text-gray-900">divorce solutions</span>, we offer peace of mind in the most challenging life transitions. Whether you’re looking for the best divorce lawyer, an <span className="font-semibold text-gray-900">affordable divorce lawyer</span>, or a divorce settlement consultant, our team of experts is always there for you. We offer end-to-end support that ranges from separation guidance to <span className="font-semibold text-gray-900">divorce mediation services</span>. At Unsaathi, we ensure your legal and emotional
-              concerns are always met with care.
+              With a proven track record, our top-tier divorce lawyers are committed to securing a positive outcome for you. Trust our dedicated divorce services to provide the peace of mind you need.
             </p>
           </div>
         </div>
@@ -38,6 +34,14 @@ function AboutUs() {
             <span className="text-gray-500 text-lg">Image Placeholder</span>
           </div>
         </div>
+      </div>
+      <div className="bg-[#F5EFE9] text-center py-16 px-4">
+        <h2 className="font-serif text-4xl text-gray-800 mb-6">
+          Unsaathi Walks You Through This Journey Hassle-Free With Our Divorce Services.
+        </h2>
+        <button className="bg-[#E3D1BF] text-gray-700 font-semibold text-lg rounded-full px-10 py-3 transition hover:bg-[#d4b89c]">
+          Make An Appointment
+        </button>
       </div>
     </div>
   );
