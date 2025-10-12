@@ -3,17 +3,17 @@ import React from "react";
 // For illustration, replace src attributes with your SVGs or image assets
 const infoCards = [
   {
-    img: "/puzzle.svg", // Affordable Solutions icon
+    img: "/assets/approach.webp", // Affordable Solutions icon
     title: "Affordable Solutions",
     desc: "Never worry about how a divorce impacts your pocket. Our solutions are competitively priced, making divorce more accessible.",
   },
   {
-    img: "/heart.svg", // Tailored Approach icon
+    img: "assets/potential-icon-2.webp", // Tailored Approach icon
     title: "Tailored Approach",
     desc: "We personalized our services according to your specific needs, providing comprehensive and tailored services.",
   },
   {
-    img: "/road.svg", // Peace of Mind icon
+    img: "assets/different-perspective.webp", // Peace of Mind icon
     title: "Peace of Mind",
     desc: "We are committed to elevating your well-being and offering you peace of mind during your difficult times.",
   },
@@ -21,7 +21,7 @@ const infoCards = [
 
 const secondaryCards = [
   {
-    img: "/puzzle.svg", // Empathetic Guidance icon
+    img: "assets/heart-puzzle (1).webp", // Empathetic Guidance icon
     title: "Empathetic Guidance",
     desc: (
       <>
@@ -30,7 +30,7 @@ const secondaryCards = [
     ),
   },
   {
-    img: "/road.svg", // Legal Expertise icon
+    img: "assets/different-perspective.webp", // Legal Expertise icon
     title: "Legal Expertise",
     desc: (
       <>
@@ -39,7 +39,7 @@ const secondaryCards = [
     ),
   },
   {
-    img: "/heart.svg", // Simplified Process icon
+    img: "assets/approach.webp", // Simplified Process icon
     title: "Simplified Process",
     desc: "At Unsaathi, we streamline your divorce process, reducing stress and saving time.",
   },
@@ -49,44 +49,6 @@ export default function ForYou() {
   return (
 
     <>
-      <section className="bg-[#f5efe9] py-20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 text-center">
-
-            {/* Left Image (conditionally hidden on smaller screens for better layout) */}
-            <div className="hidden lg:block">
-              <img
-                src="/assets/woman-illustration.svg" /* TODO: Replace with your actual image path */
-                alt="Illustration of a person considering their options"
-                className="w-56 h-auto"
-              />
-            </div>
-
-            {/* Center Content */}
-            <div className="max-w-2xl">
-              <h2 className="font-serif text-4xl md:text-5xl font-semibold text-gray-800 leading-tight mb-5">
-                Are Unsaathi Divorce Services Right For Me?
-              </h2>
-              <p className="text-gray-600 text-lg mb-8">
-                When seeking divorce services, you might have various queries and concerns that must be resolved for a fulfilling and reliable experience.
-              </p>
-              <button className="bg-[#d4b89c] text-[#232122] font-semibold text-lg rounded-full px-10 py-3 transition hover:bg-[#c7a788] shadow-sm">
-                Find Out
-              </button>
-            </div>
-
-            {/* Right Image (conditionally hidden on smaller screens) */}
-            <div className="hidden lg:block">
-              <img
-                src="/assets/man-illustration.svg" /* TODO: Replace with your actual image path */
-                alt="Illustration of a person thinking"
-                className="w-56 h-auto"
-              />
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <section className="bg-[#f6f2ef] py-8 md:py-14 w-full overflow-x-hidden">
         <div className="max-w-5xl mx-auto px-4 md:px-0">
@@ -108,7 +70,7 @@ export default function ForYou() {
                 key={card.title}
                 className="bg-[#f8edeb] rounded-2xl shadow-sm flex flex-col items-center text-center px-6 py-10"
               >
-                <img src={card.img} alt="" className="h-20 mb-5" />
+                <img src={card.img} alt="" className="h-40 mb-5" />
                 <h3 className="font-serif font-bold text-xl md:text-2xl text-[#45362e] mb-3">{card.title}</h3>
                 <p className="text-[#776e65] md:text-base text-sm">{card.desc}</p>
               </div>

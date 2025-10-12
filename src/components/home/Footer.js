@@ -39,20 +39,26 @@ export default function Footer() {
             <li className="hover:text-[#b88b6c] cursor-pointer">Terms & Conditions</li>
           </ul>
           <div className="mt-8 flex items-center gap-3 text-[#b88b6c] text-lg">
-            <svg width={20} height={20} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path d="M2 5.5V4a2 2 0 0 1 2-2h1.5a.5.5 0 0 1 .5.5V8a.5.5 0 0 1-.5.5H4a2 2 0 0 1-2-2v-.5zM22 18.5V20a2 2 0 0 1-2 2h-1.5a.5.5 0 0 1-.5-.5v-3.5a.5.5 0 0 1 .5-.5H20a2 2 0 0 1 2 2z"/>
-            </svg>
-            998-877-6655
+
+
+             <div className="flex flex-col gap-3 mt-4 md:mt-0">
+            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl w-full mt-4">
+              {/* phone icon */}
+             <img src="/assets/Call.png" className="h-[18px] w-[20px]"/>
+              <span className="text-white text-xl font-medium">+91-9266877791</span>
+            </div>
+            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl  w-full mt-2">
+              {/* mail icon */}
+              <img src="/assets/Message.png" className="h-[18px] w-[20px]"/>
+              <span className="text-white text-xl font-medium">info@unsaathi.com</span>
+            </div>
           </div>
-          <div className="mt-2 flex items-center gap-3 text-[#b88b6c] text-lg">
-            <svg width={20} height={20} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path d="M3 6l9 6 9-6"/><rect x={3} y={6} width={18} height={12} rx={2}/>
-            </svg>
-            <span>info@unsaathi.findbacklinks.in</span>
           </div>
+
+
           {/* Social Icons */}
           <div className="mt-6 flex space-x-4">
-            <a href="#" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A104375160&keywords=unsaathi%20official&origin=RICH_QUERY_SUGGESTION&position=0&searchId=9be0b8b4-9aee-4e18-af9a-d037a94d41dd&sid=Bp7&spellCorrectionEnabled=false" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="LinkedIn">
               {/* Use your actual icons here */}
               <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 9h4v12H4zm6.563 0h3.682v1.645h.053a4.105 4.105 0 0 1 3.699-2.034c3.954 0 4.69 2.603 4.69 5.986V21h-4v-5.855c0-1.344-.028-3.074-1.873-3.074-1.876 0-2.162 1.464-2.162 2.972V21h-4z"/></svg>
             </a>

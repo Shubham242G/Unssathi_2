@@ -1,4 +1,5 @@
 import React from 'react';
+import DivorceInsightQuiz from '../../quiz/quiz';
 
 function AboutUs() {
   return (
@@ -31,18 +32,11 @@ function AboutUs() {
         <div className="flex items-center justify-center">
           <div className="w-full max-w-[500px] h-[420px] bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
             {/* Replace this with your actual image later */}
-            <span className="text-gray-500 text-lg">Image Placeholder</span>
+            <img src='/assets/About_Us_Image.jpg' className='w-full h-[420px]'/>
           </div>
         </div>
       </div>
-      <div className="bg-[#F5EFE9] text-center py-16 px-4">
-        <h2 className="font-serif text-4xl text-gray-800 mb-6">
-          Unsaathi Walks You Through This Journey Hassle-Free With Our Divorce Services.
-        </h2>
-        <button className="bg-[#E3D1BF] text-gray-700 font-semibold text-lg rounded-full px-10 py-3 transition hover:bg-[#d4b89c]">
-          Make An Appointment
-        </button>
-      </div>
+      <DivorceInsightQuiz/>
     </div>
   );
 }

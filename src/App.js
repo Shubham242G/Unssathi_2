@@ -12,7 +12,6 @@ import JudicialSeparationPage from './components/services/JudicialSeperation';
 import ChildVisitationPage from './components/services/ChildVisitationPage';
 import AnnulmentOfMarriagePage from './components/services/AnnulmentOfMarriage';
 import MutualDivorcePage from './components/services/MutualDivorcePage';
-import AboutUs from './components/home/AboutUs';
 import DivorceServicesPage from './components/WhyUnsaathi.js/WhyUnsaathi';
 import HowUnsaathiWorksPage from './components/HowUnsaathi/HowUnsaathi';
 import BlogListingPage from './components/Blogs/Blogs';
@@ -21,6 +20,7 @@ import BlogPostPage from './components/Blogs/BlogPostPage';
 import ChatBot from './bot/bot';
 import Footer from './components/home/Footer';
 import DivorceInsightQuiz from './quiz/quiz';
+import AboutUsPage from './components/AboutUs.js/AboutUs';
 
 function App() {
   return (
@@ -39,13 +39,13 @@ function App() {
           <Route path='/services/childVisitation' element={<ChildVisitationPage/>}/>
           <Route path='/services/annulmentOfMarriage' element={<AnnulmentOfMarriagePage/>}/>
           <Route path='/services/mutualDivorce' element={<MutualDivorcePage/>}/>
-          <Route path='/aboutUs' element={<AboutUs/>}/>\
           <Route path='/whyUnsaathi' element={<DivorceServicesPage/>} />
           <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage/>} />
           <Route path='/blogs' element={<BlogListingPage/>} />
           <Route path="/blogs/:id" element={<BlogPostPage />} />
           <Route path='/contact' element={<ContactUsPage/>} />
           <Route path='/quiz' element={<DivorceInsightQuiz/>} />
+          <Route path='/AboutUs' element={<AboutUsPage/>} />
         </Routes>
       </Router>
       <ChatBot/>

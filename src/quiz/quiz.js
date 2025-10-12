@@ -100,10 +100,10 @@ const DivorceInsightQuiz = () => {
   const conclusion = getConclusion();
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-8 bg-white rounded-2xl shadow-xl font-serif text-[#3d3d3d]">
+    <div className="w-full mx-auto my-20 bg-[#f5f1ed] font-serif text-[#3d3d3d]">
       {!isStarted ? (
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Find Clarity in Your Journey</h2>
+          <h2 className="text-3xl font-bold mb-4">Worried if divorce is the right decision? Take a quick quix</h2>
           <p className="text-lg text-gray-600 mb-6">This confidential 5-question quiz is designed to help you reflect on your relationship and understand which path might be right for you.</p>
           <button
             className="bg-[#c48e53] text-white font-bold px-8 py-3 rounded-full text-lg transition-transform transform hover:scale-105 shadow-lg"

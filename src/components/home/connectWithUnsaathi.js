@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ConnectWithUnsaathi() {
   return (
-    <section className="bg-[#ece2d7] w-full py-14 px-4">
+    <section className=" w-full py-14 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header row */}
         <div className="mb-8 md:flex justify-between items-start">
@@ -18,15 +18,15 @@ export default function ConnectWithUnsaathi() {
             </div>
           </div>
           <div className="flex flex-col gap-3 mt-4 md:mt-0">
-            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl">
+            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl w-full mt-4">
               {/* phone icon */}
-              <svg width={28} height={28} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path d="M2 5.5V4a2 2 0 0 1 2-2h1.5a.5.5 0 0 1 .5.5V8a.5.5 0 0 1-.5.5H4a2 2 0 0 1-2-2v-.5zM22 18.5V20a2 2 0 0 1-2 2h-1.5a.5.5 0 0 1-.5-.5v-3.5a.5.5 0 0 1 .5-.5H20a2 2 0 0 1 2 2z"/></svg>
-              <span className="text-[#232122] text-xl font-medium">998-877-6655</span>
+             <img src="/assets/Call.png" className="h-[18px] w-[20px]"/>
+              <span className="text-[#232122] text-xl font-medium">+91-9266877791</span>
             </div>
-            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl">
+            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl  w-full mt-2">
               {/* mail icon */}
-              <svg width={28} height={28} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path d="M3 6l9 6 9-6"/><rect x={3} y={6} width={18} height={12} rx={2}/></svg>
-              <span className="text-[#232122] text-xl font-medium">info@unsaathi.findbacklinks.in</span>
+              <img src="/assets/Message.png" className="h-[18px] w-[20px]"/>
+              <span className="text-[#232122] text-xl font-medium">info@unsaathi.com</span>
             </div>
           </div>
         </div>
@@ -77,12 +77,8 @@ export default function ConnectWithUnsaathi() {
               className="bg-transparent border-b border-[#232122] outline-none py-2 text-lg placeholder:text-[#a7a0a0]"
               placeholder="" />
           </div>
-          {/* Checkbox and submit */}
+          {/* submit */}
           <div className="flex flex-col gap-6 md:col-span-2 md:flex-row md:justify-between mt-2 items-center">
-            <label className="flex items-center gap-2 text-[#726964] text-sm">
-              <input type="checkbox" className="accent-[#b88b6c] w-4 h-4 rounded border-[#232122]" />
-              I confirm that I have read and accepted privacy policy.
-            </label>
             <button
               type="submit"
               className="px-8 py-2 bg-[#b88b6c] hover:bg-[#a5775c] text-white rounded-full text-lg font-semibold shadow transition"

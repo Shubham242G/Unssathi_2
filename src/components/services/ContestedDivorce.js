@@ -1,4 +1,7 @@
 import React from "react";
+import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import Lottie from "lottie-react";
+
 
 // An icon for visual flair
 const LawBookIcon = () => (
@@ -24,6 +27,14 @@ const LawBookIcon = () => (
 );
 
 export default function ContestedDivorce() {
+const whatsappNumber = '919266877791';
+
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent(
+      "Hello, I’d like to connect with a legal advisor regarding Mutual Divorce."
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+  };
   return (
     <div className="min-h-screen bg-[#f3efe9] font-serif text-[#3d3d3d]">
       
@@ -36,6 +47,10 @@ export default function ContestedDivorce() {
         <p className="text-lg text-gray-500 max-w-2xl mx-auto">
           Understand the legal framework in India for when spouses cannot agree on the terms of their separation.
         </p>
+        <div className="flex justify-center max-w-xl mx-auto mt-12">
+          <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+
+        </div>
       </section>
 
       {/* Insights Section */}
@@ -119,15 +134,26 @@ export default function ContestedDivorce() {
       </section>
 
       {/* Final Section & Call-to-Action */}
-      <section className="w-full py-24 px-4 text-center">
-        <h2 className="text-4xl font-bold mb-4">Ready to Move Forward?</h2>
-        <p className="text-[#b88b6c] text-lg mb-8">
-          A contested divorce is a difficult journey, but you don't have to go through it alone.
-        </p>
-        <button className="bg-[#b88b6c] text-white px-12 py-4 rounded-full font-semibold text-lg transition-transform transform hover:scale-105 shadow-xl">
-          Speak with a Legal Expert
-        </button>
-      </section>
+      {/* Final CTA Section */}
+      <section className="bg-[#fff8f3] py-16">
+  <div className="max-w-3xl mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+      Begin Your Fresh Start
+    </h2>
+    <p className="text-[#c48e53] mb-8">
+      A mutual divorce doesn't have to be a battle. Let our experts guide you through this streamlined process to ensure a peaceful and dignified resolution.
+    </p>
+
+    <div className="flex justify-center">
+      <button onClick={handleWhatsAppClick}
+        className="bg-[#c48e53] hover:bg-[#b57d45] text-white font-semibold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-md hover:shadow-lg"
+      >
+        <i className="fa-brands fa-whatsapp text-xl"></i>
+        Connect With Our Legal Advisors
+      </button>
+    </div>
+  </div>
+</section>
     </div>
   );
 }

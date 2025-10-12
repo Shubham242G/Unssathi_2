@@ -3,114 +3,90 @@ import React from "react";
 // Update icon paths to your actual assets or use inline SVGs
 const services = [
   {
-    icon: "/icons/attorney.svg",
+    icon: "/assets/consultation.png",
     title: "Divorce Attorney",
     description:
-      "Our expert divorce attorneys guides you through the legal complexities of divorce to ensure smoother transition.",
+      "Our expert divorce attorneys guide you through the legal complexities of divorce to ensure a smoother transition.",
   },
   {
-    icon: "/icons/couple-counsel.svg",
-    title: "Couple Counselling",
-    description:
-      "Want to give another try? Our couple counselling services fosteres amicable solutions before moving towards divorce.",
-  },
-  {
-    icon: "/icons/oneonone-counsel.svg",
+    icon: "/assets/agreement.png",
     title: "1 On 1 Counselling",
     description:
-      "With our 1 on 1 counselling, we help you cope with the divorce stress and rediscover your strength.",
+      "With our 1 on 1 counselling, we help you cope with divorce stress and rediscover your strength.",
   },
   {
-    icon: "/icons/offcourt.svg",
+    icon: "/assets/talking.png",
     title: "Off Court Settlements",
     description:
-      "Our off-court settlements, you can achieve peaceful resolutions, saving time, money and your efforts.",
+      "With our off-court settlements, you can achieve peaceful resolutions, saving time, money and effort.",
   },
   {
-    icon: "/icons/separation-coach.svg",
-    title: "Seperation Coaching",
+    icon: "/assets/woman.png",
+    title: "Separation Coaching",
     description:
-      "Empower yourself with our seperation coaching to steer clear from early challenges after divorce.",
+      "Empower yourself with our separation coaching to steer clear from early challenges after divorce.",
   },
 ];
 
+// ✅ Reusable WhatsApp redirect function
+const redirectToWhatsApp = (number) => {
+  if (!number) return alert("WhatsApp number not provided!");
+  const cleanNumber = number.toString().replace(/[^0-9]/g, ""); // keep only digits
+  const whatsappUrl = `https://wa.me/${cleanNumber}`;
+  window.open(whatsappUrl, "_blank");
+};
+
 export default function UnsaathiSolutions() {
+  const whatsappNumber = "919266877791"; // ✅ just change this number when needed
+
   return (
     <section className="w-full bg-[#ece2d7] py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h5 className="text-[#b88b6c] text-lg font-semibold mb-2">The Unsaathi Solutions</h5>
+        <h5 className="text-[#b88b6c] text-lg font-semibold mb-2">
+          The Unsaathi Solutions
+        </h5>
         <h1 className="font-serif font-bold text-3xl md:text-5xl text-[#45362e] leading-tight mb-4">
-          Your Compass Of Divorce Services Through The Uncertain Journey, Guiding You Towards A Brighter Tomorrow.
+          Guiding You Through Uncertainty
         </h1>
         <p className="text-[#7f756f] text-base md:text-lg mb-9">
-          We have an aisle of divorce-related services under roof, allowing you to avail hassle-free solutions.
+          Get hassle-free solutions under one roof with our comprehensive
+          divorce services. Everything you need is conveniently available in a
+          single law firm.
         </p>
+
         {/* Service Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-8 border-t border-[#bcb0a6] pt-2">
-          {/* First Column */}
-          <div>
-            {/* Divorce Attorney */}
-            <div className="flex gap-4 items-start py-7 border-b border-[#bcb0a6]">
-              <img src="/icons/attorney.svg" alt="" className="w-9 h-9 mt-1" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 border-t border-[#bcb0a6] pt-12">
+          {services.map((service, index) => (
+            <div key={index} className="flex gap-4 items-start">
+              <img
+                src={service.icon}
+                alt={`${service.title} icon`}
+                className="w-9 h-9 mt-1 flex-shrink-0"
+              />
               <div>
-                <div className="font-sans font-semibold text-xl text-[#232122]">Divorce Attorney</div>
-                <div className="text-[#726964] text-base mt-1">
-                  Our expert divorce attorneys guides you through the legal complexities of divorce to ensure smoother transition.
-                </div>
+                <h3 className="font-sans font-semibold text-xl text-[#232122]">
+                  {service.title}
+                </h3>
+                <p className="text-[#726964] text-base mt-1">
+                  {service.description}
+                </p>
               </div>
             </div>
-            {/* 1 On 1 Counselling */}
-            <div className="flex gap-4 items-start py-7 border-b border-[#bcb0a6]">
-              <img src="/icons/oneonone-counsel.svg" alt="" className="w-9 h-9 mt-1" />
-              <div>
-                <div className="font-sans font-semibold text-xl text-[#232122]">1 On 1 Counselling</div>
-                <div className="text-[#726964] text-base mt-1">
-                  With our 1 on 1 counselling, we help you cope with the divorce stress and rediscover your strength.
-                </div>
-              </div>
-            </div>
-            {/* Seperation Coaching */}
-            <div className="flex gap-4 items-start py-7">
-              <img src="/icons/separation-coach.svg" alt="" className="w-9 h-9 mt-1" />
-              <div>
-                <div className="font-sans font-semibold text-xl text-[#232122]">Seperation Coaching</div>
-                <div className="text-[#726964] text-base mt-1">
-                  Empower yourself with our seperation coaching to steer clear from early challenges after divorce.
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Second Column */}
-          <div className="flex flex-col justify-between h-full">
-            {/* Couple Counselling */}
-            <div className="flex gap-4 items-start py-7 border-b border-[#bcb0a6]">
-              <img src="/icons/couple-counsel.svg" alt="" className="w-9 h-9 mt-1" />
-              <div>
-                <div className="font-sans font-semibold text-xl text-[#232122]">Couple Counselling</div>
-                <div className="text-[#726964] text-base mt-1">
-                  Want to give another try? Our couple counselling services fosteres amicable solutions before moving towards divorce.
-                </div>
-              </div>
-            </div>
-            {/* Off Court Settlements */}
-            <div className="flex gap-4 items-start py-7 border-b border-[#bcb0a6]">
-              <img src="/icons/offcourt.svg" alt="" className="w-9 h-9 mt-1" />
-              <div>
-                <div className="font-sans font-semibold text-xl text-[#232122]">Off Court Settlements</div>
-                <div className="text-[#726964] text-base mt-1">
-                  Our off-court settlements, you can achieve peaceful resolutions, saving time, money and your efforts.
-                </div>
-              </div>
-            </div>
-            {/* CTA Box */}
-            <div className="rounded-2xl border border-[#bcb0a6] px-6 py-8 mt-10 bg-white flex flex-col justify-center">
-              <div className="font-sans font-semibold text-xl text-[#232122] mb-2">
-                Talk Your Heart Out! We Are Listening
-              </div>
-              <button className="bg-[#b88b6c] hover:bg-[#a5775c] text-white text-base px-7 py-3 rounded-full font-semibold mt-2 w-max mx-auto">
-                Schedule A Call
-              </button>
-            </div>
+          ))}
+        </div>
+
+        {/* CTA Box - Centered below the grid */}
+        <div className="mt-20 text-center">
+          <div className="inline-block rounded-2xl border border-[#bcb0a6] px-8 py-10 bg-white shadow-sm w-full max-w-2xl">
+            <h3 className="font-sans font-semibold text-2xl text-[#232122] mb-6">
+              Talk Your Heart Out! We Are Listening
+            </h3>
+            <button
+              onClick={() => redirectToWhatsApp(whatsappNumber)} // ✅ cleaner function call
+              className="bg-[#b88b6c] hover:bg-[#a5775c] text-white text-lg font-semibold py-4 px-8 rounded-full w-full max-w-sm mx-auto transition-transform transform hover:scale-105"
+            >
+              Schedule A Call via WhatsApp
+            </button>
           </div>
         </div>
       </div>

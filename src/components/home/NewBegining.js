@@ -45,8 +45,8 @@ export default function NewBeginning() {
         {/* Illustration */}
         <div className="hidden md:flex w-[40%] justify-end items-start">
           <img
-            src="/gavel.png" // path to your illustration
-            alt=""
+            src="assets/legal-service.webp" // path to your illustration
+            alt="legal service"
             className="w-[410px] max-w-full mt-8"
           />
         </div>

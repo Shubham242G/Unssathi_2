@@ -56,7 +56,7 @@ function Navbar() {
           {/* Navigation Links */}
           <div className="hidden lg:flex items-center space-x-8">
             <a
-              href="/aboutUs"
+              href="/AboutUs"
               onMouseEnter={() => onNavItemHover("About Us")}
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
             >
