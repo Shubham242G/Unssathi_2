@@ -22,25 +22,11 @@ const ChatBot = () => {
     },
     {
       id: 3,
-      text: "What service are you interested in?",
+      text: "How can we help you?",
       type: "select",
       key: "service",
-      options: ["Web Development", "Mobile App", "Consulting", "Other"]
+      options: ["Contested Divorce", "Muttual Divorce", "Child Custody", "Dowry Case/Domestic Violence Case","False Dowry and Domestic Violence Case","Issue not mentioned"]
     },
-    {
-      id: 4,
-      text: "What's your budget range?",
-      type: "select",
-      key: "budget",
-      options: ["Under $1000", "$1000-$5000", "$5000-$10000", "Above $10000"]
-    },
-    {
-      id: 5,
-      text: "When do you need this project completed?",
-      type: "select",
-      key: "timeline",
-      options: ["ASAP", "Within 1 month", "Within 3 months", "No rush"]
-    }
   ];
 
   const handleAnswer = (answer) => {
@@ -68,7 +54,7 @@ Timeline: ${answers.timeline || 'Not provided'}
 Please get back to me soon!`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/YOUR_PHONE_NUMBER?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/9266877791?text=${encodedMessage}`;
     
     window.open(whatsappUrl, '_blank');
   };
@@ -89,7 +75,7 @@ Please get back to me soon!`;
           <h3>Thank you for your answers!</h3>
           <p>Let's continue our conversation on WhatsApp for more details.</p>
           <button className="whatsapp-button" onClick={handleWhatsAppRedirect}>
-            💬 Continue on WhatsApp
+            💬 Talk to us
           </button>
           <button className="reset-button" onClick={resetChat}>
             🔄 Start Over
