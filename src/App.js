@@ -20,6 +20,7 @@ import ContactUsPage from './contact/contact';
 import BlogPostPage from './components/Blogs/BlogPostPage';
 import ChatBot from './bot/bot';
 import Footer from './components/home/Footer';
+import DivorceInsightQuiz from './quiz/quiz';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path='/blogs' element={<BlogListingPage/>} />
           <Route path="/blogs/:id" element={<BlogPostPage />} />
           <Route path='/contact' element={<ContactUsPage/>} />
+          <Route path='/quiz' element={<DivorceInsightQuiz/>} />
         </Routes>
       </Router>
       <ChatBot/>

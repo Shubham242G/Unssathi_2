@@ -83,7 +83,6 @@ export default function Footer() {
       </div>
       <div className="max-w-6xl mx-auto border-t border-[#373737] mt-10 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-[#8c8d91]">
         <span>Unsaathi © 2023, All Rights Reserved</span>
-        <span className="mt-1 md:mt-0">Design Credits : Art Attaokk</span>
       </div>
     </footer>
   );

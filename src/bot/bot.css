@@ -1,210 +1,209 @@
-/* ChatBot Styles */
+/* General Chatbot Styling */
 .chatbot-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
+  font-family: 'Georgia', serif; /* Matching your site's font-serif */
   z-index: 1000;
 }
 
+/* Chatbot Toggle Button */
 .chatbot-toggle {
+  background-color: #c48e53; /* Main accent color */
+  border: none;
+  color: white;
+  font-size: 2rem;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .chatbot-toggle:hover {
+  background-color: #a97d4a; /* Slightly darker hover state */
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Chatbot Window */
 .chatbot-window {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  width: 350px;
-  height: 500px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e0e0e0;
+  width: 340px;
+  max-width: 90vw;
+  background-color: #f9f6f2; /* Light background from your pages */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  border: 1px solid #e0d9d1;
 }
 
+/* Chatbot Header */
 .chatbot-header {
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background-color: #c48e53; /* Main accent color */
   color: white;
-  padding: 15px 20px;
+  padding: 12px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .chatbot-header h3 {
-  margin: 0;
-  font-size: 16px;
   font-weight: 600;
+  margin: 0;
 }
 
 .close-button {
-  background: none;
+  background: transparent;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 1;
+  transition: color 0.3s ease;
 }
 
 .close-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  color: #f9f6f2;
 }
 
+/* Main Content Area */
 .chatbot-content {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-}
-
-.question-section {
+  background-color: white;
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
+/* Question Styling */
 .question-text {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 10px;
-  line-height: 1.4;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #3d3d3d; /* Matching body text color */
 }
 
 .question-number {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  color: #c48e53; /* Accent color for sub-text */
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
+/* Text Input Styling */
 .text-input {
   width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 25px;
-  font-size: 14px;
-  outline: none;
+  padding: 12px;
+  border: 1px solid #dcd6ce;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  color: #3d3d3d;
+  box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
 
-.text-input:focus {
-  border-color: #25D366;
+.text-input::placeholder {
+  color: #aaa;
 }
 
+.text-input:focus {
+  outline: none;
+  border-color: #c48e53;
+}
+
+/* Options/Buttons Styling */
 .options {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 8px;
 }
 
 .option-button {
-  padding: 12px 20px;
-  border: 2px solid #e0e0e0;
-  background: white;
-  border-radius: 25px;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #f9f6f2; /* Light background */
+  border: 1px solid #e0d9d1;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  color: #333;
+  font-family: 'Georgia', serif;
+  color: #3d3d3d;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .option-button:hover {
-  border-color: #25D366;
-  background: #f0f8f0;
-  transform: translateY(-2px);
+  background-color: #c48e53; /* Main accent color on hover */
+  color: white;
+  border-color: #c48e53;
 }
 
+/* WhatsApp Section Styling */
 .whatsapp-section {
-  text-align: center;
-  padding: 20px 0;
-}
-
-.whatsapp-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .whatsapp-section h3 {
-  color: #25D366;
-  margin-bottom: 10px;
-  font-size: 18px;
+    margin: 0;
 }
 
 .whatsapp-section p {
-  color: #666;
-  margin-bottom: 25px;
-  font-size: 14px;
-  line-height: 1.5;
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 0 8px 0;
 }
 
+.whatsapp-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+/* Primary "Talk to us" button */
 .whatsapp-button {
-  background: linear-gradient(135deg, #25D366, #128C7E);
+  background-color: #c48e53;
   color: white;
   border: none;
-  padding: 15px 30px;
-  border-radius: 25px;
-  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 24px;
   font-weight: 600;
   cursor: pointer;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .whatsapp-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  background-color: #a97d4a;
+  transform: scale(1.05);
 }
 
+/* Secondary "Start Over" button */
 .reset-button {
   background: transparent;
-  color: #666;
-  border: 2px solid #e0e0e0;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-family: 'Georgia', serif;
+  color: #c48e53;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .reset-button:hover {
-  border-color: #25D366;
-  color: #25D366;
+  background-color: #f9f6f2;
 }
 
-/* Responsive design */
-@media (max-width: 480px) {
-  .chatbot-window {
-    width: 300px;
-    height: 450px;
-    right: -10px;
-  }
-  
-  .chatbot-container {
-    right: 10px;
-    bottom: 10px;
-  }
-}
