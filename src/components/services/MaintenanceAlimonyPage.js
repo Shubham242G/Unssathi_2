@@ -1,74 +1,113 @@
 import React from 'react';
 
+// An icon for visual consistency
+const GavelIcon = () => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    className="h-16 w-16 text-[#c48e53]" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor" 
+    strokeWidth={1.5}
+  >
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      d="M14.25 7.75l-4.5 4.5m0 0l-4.5 4.5m4.5-4.5l4.5 4.5M3.75 12a8.25 8.25 0 1116.5 0 8.25 8.25 0 01-16.5 0z" 
+    />
+  </svg>
+);
+
 const MaintenanceAlimonyPage = () => {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16">
-      {/* Top Banner Section */}
-      <section className="text-center mb-12">
-        <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-neutral-900">
-          Maintenance And Alimony - Legal Obligations For<br />
-          Financial Support Post-Separation
+    <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
+
+      {/* Hero Section */}
+      <section className="w-full py-24 px-4 bg-white text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          Maintenance & Alimony
         </h1>
-        <p className="text-lg md:text-xl mt-3 text-[#c48e53] font-medium">
-          In Most Marriages, Either Spouse (Primarily Female) Depends On The Other.
-          This Is Where The Concept Of Maintenance And Alimony Comes To The Rescue.
-        </p>
-        <p className="mt-8 max-w-3xl mx-auto text-base md:text-lg text-gray-700">
-          The terms maintenance or alimony are used interchangeably. It refers to the amount one spouse pays to another post-divorce so the spouse can sustain themselves. There are two types of Maintenance and Alimony: Interim Maintenance – This is also called temporary maintenance or maintenance of pendente lite. The interim maintenance is usually granted to the dependent spouse or child. This temporary financial support helps the individual to go through the proceedings. Section 24 of the Hindu Marriage Act, of 1955 deals with interim maintenance. Furthermore, the provision of temporary maintenance is also mentioned in Section 144 of BNSS and Section 125 of CrPc. Permanent Maintenance – This type refers to the long-term financial support provided to the dependent spouse post-divorce. The permanent maintenance and alimony ensure stability for the dependent spouse. The court analyses factors like income disparity, lifestyle during the marriage tenure, and other future needs that are considered while providing maintenance. Moreover, this could be a time payment or a recurring support; in the end, the main aim is to prevent financial hardships and promote equality among the spouses.
-        </p>
-      </section>
-
-      {/* Section 2: Laws List Block */}
-      <section className="py-10 px-3 md:px-8 bg-[#f5e7db] rounded-xl mb-12">
-        <h2 className="text-3xl font-serif font-semibold text-center mb-2">Unsaathi For You</h2>
-        <h3 className="text-2xl font-serif font-bold text-center mb-5">
-          Laws Governing The Maintenance And Alimony
-        </h3>
-        <p className="text-center text-[#c48e53] mb-8 text-lg font-medium">
-          There Are Various Laws That Govern The Provisions Related To Maintenance And Alimony
-        </p>
-        <ul className="max-w-3xl mx-auto space-y-10">
-          <li>
-            <h4 className="text-xl font-bold font-serif mb-1 leading-tight">Hindu Marriage Act, 1955</h4>
-            <p className="text-base text-neutral-800">Section 25 of the Hindu Marriage Act, 1955, refers to maintenance and alimony. The court can order the spouse to pay the dependent spouse a sum to maintain and sustain their post-divorce lifestyle.</p>
-          </li>
-          <li>
-            <h4 className="text-xl font-bold font-serif mb-1 leading-tight">Hindu Adoption And Maintenance Act, 1956</h4>
-            <p className="text-base text-neutral-800">As per Section 18(2) of the Hindu Adoption and Maintenance Act, 1956, a woman born Hindu is entitled to get maintenance by her husband throughout her lifetime. The act also provides that the wife has the right to separate the house and maintain it according to the provision of this act.</p>
-          </li>
-          <li>
-            <h4 className="text-xl font-bold font-serif mb-1 leading-tight">Muslim Women (Protection Of Rights On Divorce) Act</h4>
-            <p className="text-base text-neutral-800">Under the Muslim Women (Protection of Rights on Divorce) Act, the wife is entitled to get maintenance and alimony from her husband. The court considers all necessary factors and ensures a reasonable amount during her iddat period.</p>
-          </li>
-          <li>
-            <h4 className="text-xl font-bold font-serif mb-1 leading-tight">The Parsi Marriage And Divorce Act, 1936</h4>
-            <p className="text-base text-neutral-800">The Parsi Marriage and Divorce Act of 1936 provides the right to maintenance and alimony to Parsi women in India. Before granting maintenance and alimony, the court considers factors such as the husband’s earnings, property, and other assets.</p>
-          </li>
-          <li>
-            <h4 className="text-xl font-bold font-serif mb-1 leading-tight">Indian Divorce Act, 1869</h4>
-            <p className="text-base text-neutral-800">Section 37 of the right to maintenance and alimony for Christian women. The wife can apply for maintenance and alimony to sustain their life after divorce. However, before providing the maintenance, the court considers all necessary factors like the husband’s income, assets, etc.</p>
-          </li>
-        </ul>
-      </section>
-
-      {/* Section 3: Final Banner Block */}
-      <section className="py-14 px-3 md:px-8 bg-[#f5e7db] rounded-xl text-center">
-        <h2 className="text-3xl font-serif font-bold mb-2">
-          Legal Maintenance And Alimony - Rights, Obligations, And Enforcement
+        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
+          Financial Support After Separation
         </h2>
-        <p className="mb-8 text-lg md:text-xl font-medium text-[#c48e53]">
-          Maintenance And Alimony Help You Secure Financial Stability Post-Divorce. Understanding The Legal Provisions
-          Related To Spousal And Child Support In India Allows You To Step Into New Beginnings Without The Stress Of Finances.
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Maintenance, or alimony, is the financial support one spouse provides to the other after a divorce. It exists to ensure the dependent spouse can maintain a reasonable standard of living. It can be temporary (interim maintenance) during proceedings or long-term (permanent maintenance) after the divorce is finalized.
         </p>
-        <button className="mx-auto bg-[#d5bfa7] text-neutral-900 rounded-full px-8 py-3 font-bold text-lg hover:bg-[#c48e53] transition">
+      </section>
+
+      {/* Laws Section */}
+      <section className="w-full py-20 px-4">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold">The Legal Framework</h2>
+            <p className="text-lg text-[#c48e53] mt-2">
+              Key laws governing maintenance and alimony in India.
+            </p>
+          </div>
+          
+          {/* Flex container for the cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Hindu Marriage Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Hindu Marriage Act, 1955</h3>
+              <p className="text-gray-700 text-sm">
+                Section 25 allows the court to order one spouse to pay a lump sum or monthly payments to the other for their maintenance and support after a divorce.
+              </p>
+            </div>
+
+            {/* Hindu Adoption and Maintenance Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Hindu Adoption & Maintenance Act, 1956</h3>
+              <p className="text-gray-700 text-sm">
+                Under Section 18, a Hindu wife is entitled to be maintained by her husband throughout her lifetime, even if she lives separately under justified circumstances.
+              </p>
+            </div>
+
+            {/* Muslim Women Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Muslim Women (Protection of Rights on Divorce) Act, 1986</h3>
+              <p className="text-gray-700 text-sm">
+                A divorced Muslim woman is entitled to a reasonable and fair provision and maintenance from her former husband, to be paid during the *iddat* period.
+              </p>
+            </div>
+
+            {/* Parsi Marriage and Divorce Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Parsi Marriage & Divorce Act, 1936</h3>
+              <p className="text-gray-700 text-sm">
+                This Act empowers the court to order alimony, considering the husband's ability to pay and the wife's needs, ensuring she can live with dignity post-divorce.
+              </p>
+            </div>
+
+            {/* Indian Divorce Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Indian Divorce Act, 1869</h3>
+              <p className="text-gray-700 text-sm">
+                Applying to Christians, Section 37 allows the court to order the husband to secure a gross sum of money or annual payments for the wife's maintenance.
+              </p>
+            </div>
+            
+             {/* CrPC Section 125 */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Section 125 of CrPC</h3>
+              <p className="text-gray-700 text-sm">
+                A secular provision, this allows a wife, child, or parent who is unable to maintain themselves to claim maintenance from their husband, father, or son, respectively.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Call-to-Action Section */}
+      <section className="w-full py-24 px-4 bg-white text-center">
+        <h2 className="text-4xl font-bold mb-4">Secure Your Financial Future</h2>
+        <p className="text-[#c48e53] text-lg mb-8 max-w-2xl mx-auto">
+          Understanding your rights is the first step. Let our experts guide you through the complexities of maintenance and alimony.
+        </p>
+        <button className="bg-[#c48e53] text-white px-12 py-4 rounded-full font-semibold text-lg transition-transform transform hover:scale-105 shadow-xl">
           Talk To Legal Experts
         </button>
-        {/* For the abstract face SVG illustration, use an <img> with the SVG, or insert the SVG inline if you extract it */}
-        <div className="mt-8 flex flex-col items-center">
-          {/* Placeholder for the SVG/line art at the bottom */}
-          {/* <img src="/abstract-face.svg" alt="Abstract Face" className="h-28" /> */}
-          {/* You will need to add your abstract SVG image */}
-        </div>
       </section>
     </div>
   );

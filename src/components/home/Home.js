@@ -6,7 +6,7 @@ import UnsaathiSolutions from './Solutions';
 import NewBeginning from './NewBegining';
 import HassleFreeProcess from './HassleFreeProcess';
 import ConnectWithUnsaathi from './connectWithUnsaathi';
-import Footer from './Footer';
+
 
 function Home() {
   return (
@@ -18,7 +18,6 @@ function Home() {
       <UnsaathiSolutions/>
       <NewBeginning/>
       <ConnectWithUnsaathi/>
-      <Footer/>
     </div>
   );
 }

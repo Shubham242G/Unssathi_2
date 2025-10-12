@@ -2,138 +2,93 @@ import React from 'react';
 
 const AnnulmentOfMarriagePage = () => {
   return (
-    <div className="min-h-screen bg-[#f5e7db]">
-      {/* Laws Governing The Annulment Of Marriage Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="font-serif text-2xl md:text-3xl font-semibold text-neutral-900 mb-6">
-          Unsaathi For You
-        </h2>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-          Laws Governing The Annulment Of Marriage
+    <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
+
+      {/* Hero Section */}
+      <section className="w-full py-24 px-4 bg-white text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          Annulment of Marriage in India
         </h1>
-        <p className="text-lg md:text-xl text-[#c48e53] font-medium max-w-3xl mx-auto">
-          In India, There Are Various Different Laws That Govern The Annulment Of Marriage
-        </p>
-      </section>
-
-      {/* Hindu Marriage Act Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Hindu Marriage Act, 1955
+        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
+          Legally Declaring a Marriage Null and Void
         </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          Section 12 of the Hindu Marriage Act, 1955, contains provisions for the annulment of marriage on the grounds like non-fulfilment of essential conditions that are prohibited under Section 5, i.e. bigamy, marrying in close relations. Furthermore, impotency, misrepresentation, and mental disorder are other grounds for the annulment of marriage.
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          An annulment is a legal procedure that declares a marriage void from its inception, as if it never happened. This is fundamentally different from a divorce, which dissolves a legally valid marriage.
         </p>
       </section>
 
-      {/* Special Marriage Act Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Special Marriage Act, 1954
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          The Special Marriage Act of 1954 governs interfaith and civil marriages, which require strict compliance with its provisions. The marriages registered under this act can apply for annulment of marriage on grounds similar to that of the Hindu Marriage Act, 1955.
-        </p>
-      </section>
-
-      {/* Muslim Personal Law Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Muslim Personal Law
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          Shariat (Muslim Personal Law) recognizes the concept of annulment of marriage or "Faskh". The grounds for annulment are fraud or misrepresentation, the inability of the husband to fulfil marital obligations, and marriage violations according to Islamic Principles.
-        </p>
-      </section>
-
-      {/* Christian Marriage Act Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Christian Marriage Act,1872
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          The annulment of Christian marriage is governed by this act and section 19 of the Indian Divorce Act of 1869. The grounds for annulment of marriage include bigamy, impotence, and marriage without proper consent.
-        </p>
-      </section>
-
-      {/* Decorative Swirl - Bottom Left */}
-      <div className="max-w-5xl mx-auto px-6 py-8">
-        <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-        </svg>
-      </div>
-
-      {/* CTA Section - "Unsaathi Is Your Ally" */}
-      <section className="bg-[#f5e7db] py-16 relative">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          {/* Decorative Swirl - Top Left */}
-          <div className="absolute left-0 top-8">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-          </div>
-
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-8">
-            Unsaathi Is Your Ally In The Process Of Annulment Of Marriage
-          </h2>
-          <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300">
-            Talk To Us
-          </button>
-
-          {/* Decorative Swirl - Bottom Right */}
-          <div className="absolute right-0 bottom-8">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M180 20 Q140 80, 100 60 T20 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content Section - Comprehensive Guide */}
-      <section className="bg-[#f5e7db] py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6">
-            Annulment Of Marriage - A Comprehensive Guide To Nullifying Unions
-          </h1>
-          <p className="text-lg md:text-xl text-[#c48e53] font-medium mb-8">
-            Discover Valid Reasons For The Annulment Of The Marriage. Understand The Annulment Of Marriage Through This Step-By-Step Guide To Voiding A Marriage
-          </p>
-          <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300 mb-12">
-            Talk To Legal Experts
-          </button>
-          
-        </div>
-      </section>
-
-      {/* Legally Voiding A Marriage Section */}
-      <section className="bg-[#f5e7db] py-16 relative">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* Decorative Swirl - Top Left */}
-          <div className="absolute left-0 top-16">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-          </div>
-
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6 text-center">
-            Annulment Of Marriage - Legally Voiding A Marriage As If It Never Existed
-          </h1>
-          <p className="text-lg md:text-xl text-[#c48e53] font-medium mb-8 text-center">
-            A Marriage Annulment Is Very Different From A Divorce, Let's Know How.
-          </p>
-          <div className="text-base text-neutral-700 leading-relaxed">
-            <p>
-              An annulment of marriage is a legal declaration that a marriage was not valid in the first place. Furthermore, a marriage annulment is very different from a divorce, as an annulment of marriage refers to declaring a marriage void as if it never existed. At the same time, divorce is ending a valid marriage. There are various grounds for annulment of the marriage. Bigamy: If any one of the spouses was already married at the time of the second marriage. Consanguinity or Affinity: If the marriage between individuals is within prohibited degrees of relationships, for example, close relatives. Unsoundness of Mind: If any of the spouses was of unsound mind at the time of marriage. Force or Coercion: If the marriage was done under duress of any third party. Fraud: If one party obtained marriage through fraud of a material fact. Minor's Marriage: If the marriage was proceeding even after it being illegal, i.e. a marriage of minors. Lack of Consent: If one party did not give genuine permission for the marriage.
+      {/* Governing Laws Section */}
+      <section className="w-full py-20 px-4">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold">Laws Governing Annulment</h2>
+            <p className="text-lg text-[#c48e53] mt-2">
+              The grounds and procedures for annulment are defined by various personal laws in India.
             </p>
           </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Hindu Marriage Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Hindu Marriage Act, 1955</h3>
+              <p className="text-gray-700 text-sm">
+                Section 12 allows for annulment on grounds like impotence, unsoundness of mind, consent obtained by force or fraud, and the bride being pregnant by another person at the time of marriage.
+              </p>
+            </div>
 
-          {/* Decorative Swirl - Bottom Right */}
-          <div className="absolute right-0 bottom-16">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M180 20 Q140 80, 100 60 T20 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
+            {/* Special Marriage Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Special Marriage Act, 1954</h3>
+              <p className="text-gray-700 text-sm">
+                This secular law provides similar grounds for annulment for inter-faith and civil marriages, ensuring uniform rights for couples registered under this act.
+              </p>
+            </div>
+
+            {/* Muslim Personal Law Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Muslim Personal Law</h3>
+              <p className="text-gray-700 text-sm">
+                Under Shariat, an annulment (known as 'Faskh') can be sought if the marriage is irregular (fasid) or void (batil) due to issues like lack of proper witnesses or marriage within prohibited relationships.
+              </p>
+            </div>
+
+            {/* Indian Divorce Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Indian Divorce Act, 1869</h3>
+              <p className="text-gray-700 text-sm">
+                For Christian marriages, Section 19 lists grounds for annulment, including bigamy, one party being a "lunatic or idiot," or the parties being within prohibited degrees of relation.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Grounds for Annulment Section */}
+      <section className="w-full py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4">Common Grounds for Annulment</h2>
+            <p className="text-lg text-gray-600 mb-8">
+                A marriage may be annulled if it was invalid from the start. Common grounds across various laws include:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-gray-700">
+                <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Bigamy</span>
+                <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Force or Fraud</span>
+                <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Unsoundness of Mind</span>
+                <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Prohibited Relationship</span>
+                <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Impotence</span>
+            </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="w-full py-24 px-4 text-center">
+        <h2 className="text-4xl font-bold mb-4">Explore the Annulment Process</h2>
+        <p className="text-[#c48e53] text-lg mb-8 max-w-2xl mx-auto">
+          If you believe your marriage may be invalid, it is crucial to understand your legal options. Our experts can guide you through the complexities of annulment.
+        </p>
+        <button className="bg-[#c48e53] text-white px-12 py-4 rounded-full font-semibold text-lg transition-transform transform hover:scale-105 shadow-xl">
+          Talk To Legal Experts
+        </button>
       </section>
     </div>
   );

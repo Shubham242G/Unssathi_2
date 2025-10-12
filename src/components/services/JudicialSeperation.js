@@ -2,100 +2,88 @@ import React from 'react';
 
 const JudicialSeparationPage = () => {
   return (
-    <div className="min-h-screen bg-[#f5e7db]">
+    <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
+
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="font-serif text-2xl md:text-3xl font-semibold text-neutral-900 mb-6">
-          Unsaathi For You
-        </h2>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-          Personal Laws For Judicial Separation
+      <section className="w-full py-24 px-4 bg-white text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          Judicial Separation in India
         </h1>
-        <p className="text-lg md:text-xl text-[#c48e53] font-medium max-w-3xl mx-auto">
-          In India, There Are Various Different Laws That Govern The Judicial Separation.
-        </p>
-      </section>
-
-      {/* Hindu Marriage Act Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Hindu Marriage Act, 1955
+        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
+          A Legal Alternative to Divorce
         </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          Section 10 of the Hindu Marriage Act, 1955, provides for judicial separation. The act applies to the Hindus, Jains, Buddhists, and Sikhs.
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          Judicial separation is a legal remedy that allows a married couple to live apart without formally ending their marriage[29]. It serves as a cooling-off period, giving both parties time to reflect, reconcile, or decide on the future of their relationship[34].
         </p>
       </section>
 
-      {/* Special Marriage Act Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Special Marriage Act, 1954
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          Section 27(2) of the Special Marriage Act, 1954, has provisions for judicial separation. The act applies to inter-religious marriages.
-        </p>
-      </section>
-
-      {/* Indian Divorce Act Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Indian Divorce Act, 1869
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          The act applies to the Christians and Parsis. Section 10 of the Indian Divorce Act, 1869 provides for judicial separation.
-        </p>
-      </section>
-
-      {/* Decorative Swirl - Bottom Left */}
-      <div className="max-w-5xl mx-auto px-6 py-8">
-        <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-        </svg>
-      </div>
-
-      {/* Judicial Separation - A Legal Guide Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-5xl mx-auto px-6 relative">
-          {/* Decorative Swirl - Top Left */}
-          <div className="absolute left-0 top-0">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-          </div>
-
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6 text-center">
-            Judicial Separation - A Legal Guide
-          </h1>
-          <p className="text-lg md:text-xl text-[#c48e53] font-medium mb-8 text-center">
-            Judicial Separation Is A Legal Alternative To Divorce. It Is A Legal Decree That Allows The Couples To Live Separately Without Dissolving The Marriage. Further, There Are Several Grounds For Judicial Separation, They Are Mentioned Below:
-          </p>
-          <div className="text-base text-neutral-700 leading-relaxed space-y-4">
-            <p>
-              Cruelty - If either of the spouses inflicts mental or physical abuse on the other spouse, it counts as cruelty. The cruelty encompasses a comprehensive range of behaviour, which includes verbal abuse, neglect, emotional abuse, financial deprivation, physical abuse, etc. Desertion - If either of the spouses abandons the other without any justification or consent it can be a ground for judicial separation. Adultery - When one of the spouses cohabits with another individual. Insanity - When either of the spouses has been declared mentally unfit. Leprosy - If one of the spouses contracts leprosy in a communicable form, it becomes a ground for judicial separation. Venereal Disease - When one spouse contracts a disease in a communicable form.
+      {/* Governing Laws Section */}
+      <section className="w-full py-20 px-4">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold">Laws Governing Judicial Separation</h2>
+            <p className="text-lg text-[#c48e53] mt-2">
+              This remedy is available under various personal laws in India.
             </p>
           </div>
+          
+          {/* Grid container for the cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Hindu Marriage Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Hindu Marriage Act, 1955</h3>
+              <p className="text-gray-700 text-sm">
+                Section 10 of this Act allows either spouse to file for judicial separation on the same grounds required for divorce, such as cruelty, adultery, or desertion[29][31].
+              </p>
+            </div>
 
-          {/* Decorative Swirl - Bottom Right */}
-          <div className="absolute right-0 bottom-0">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M180 20 Q140 80, 100 60 T20 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
+            {/* Special Marriage Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Special Marriage Act, 1954</h3>
+              <p className="text-gray-700 text-sm">
+                Applicable to inter-faith and civil marriages, Section 23 provides for judicial separation on grounds similar to those in the Hindu Marriage Act[32].
+              </p>
+            </div>
+            
+            {/* Indian Divorce Act Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-xl font-bold mb-3 text-center">Indian Divorce Act, 1869</h3>
+              <p className="text-gray-700 text-sm">
+                This Act governs Christian marriages and permits judicial separation on the grounds of adultery, cruelty, or desertion for a period of two years or more[32].
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section with Light Bulb */}
-      <section className="bg-[#f5e7db] py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-            Judicial Separation: A Pathway To Reconciliation?
-          </h2>
-          <p className="text-lg md:text-xl text-[#c48e53] font-medium mb-8">
-            Understand The Grounds For Judicial Separation, And Keep Your Path Open For A Reunion. Know Your Rights And Duties When Doing A Judicial Separation.
+      {/* Grounds for Separation Section */}
+      <section className="w-full py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Common Grounds for Separation</h2>
+          <p className="text-lg text-gray-600 mb-8">
+            The grounds for judicial separation are generally the same as those for a contested divorce[29]. These include:
           </p>
-          <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300 mb-12">
-            Talk To Legal Experts
-          </button>
+          <div className="flex flex-wrap justify-center gap-4 text-gray-700">
+            <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Adultery</span>
+            <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Cruelty</span>
+            <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Desertion</span>
+            <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Conversion</span>
+            <span className="bg-[#f5e7db] px-4 py-2 rounded-full">Unsoundness of Mind</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="w-full py-24 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4">Considering Judicial Separation?</h2>
+            <p className="text-[#c48e53] text-lg mb-8">
+                This legal step can provide much-needed space and time for reflection. Let our legal experts help you understand your rights and obligations.
+            </p>
+            <button className="bg-[#c48e53] text-white px-12 py-4 rounded-full font-semibold text-lg transition-transform transform hover:scale-105 shadow-xl">
+                Talk To Legal Experts
+            </button>
         </div>
       </section>
     </div>

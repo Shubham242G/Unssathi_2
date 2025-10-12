@@ -19,6 +19,7 @@ import BlogListingPage from './components/Blogs/Blogs';
 import ContactUsPage from './contact/contact';
 import BlogPostPage from './components/Blogs/BlogPostPage';
 import ChatBot from './bot/bot';
+import Footer from './components/home/Footer';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         </Routes>
       </Router>
       <ChatBot/>
+      <Footer/>
     </div>
   );
 }

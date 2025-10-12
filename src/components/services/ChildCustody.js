@@ -2,135 +2,88 @@ import React from 'react';
 
 const ChildCustodyPage = () => {
   return (
-    <div className="min-h-screen bg-[#f5e7db]">
+    <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
+
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
-        <h2 className="font-serif text-2xl md:text-3xl font-semibold text-neutral-900 mb-6">
-          Unsaathi For You
-        </h2>
-        <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-          Types Of Child Custody - The Child's Interest Is Our Priority
+      <section className="w-full py-24 px-4 bg-white text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+          Understanding Child Custody
         </h1>
-        <p className="text-lg md:text-xl text-[#c48e53] font-medium max-w-3xl mx-auto">
-          Child Custody Is Basically Of 4 Types. Let's Know More About It.
-        </p>
-      </section>
-
-      {/* Physical Custody Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Physical Custody
+        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
+          Putting Your Child's Best Interest First
         </h2>
-        <p className="text-base text-neutral-700 leading-relaxed mb-4">
-          Physical custody refers to the place where the child will live on a day-to-day basis. Physical custody is of two types: Sole Physical Custody and Joint Physical Custody.
-        </p>
-        <p className="text-base text-neutral-700 leading-relaxed mb-4">
-          In Sole Physical Custody the child has to stay with that parent on an everyday basis. This parent is known as the 'Custodial Parent'. The other parent can meet the child and spend time with them from time to time. Whereas in the Joint Physical Custody, the child spends equal amounts of time between both parents. Where on the one hand, this arrangement helps the kid to spend time with both parents.
-        </p>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          On the other hand, it involves the child moving homes frequently, which can be disruptive to their development. Thus, Sole Joint Custody is more famous, as it provides stability for the growth and development of the kids. Also, sole custody does not mean that the non-custodial parent is not involved in the child's life and important decisions.
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          During a divorce, determining child custody is one of the most critical decisions. The primary goal of the Indian legal system is to ensure the child's welfare and stability.
         </p>
       </section>
 
-      {/* Legal Custody Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Legal Custody
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          The term Legal Custody provides the parent with the authority to make important decisions on behalf of the child. These decisions regarding education, healthcare, religion, etc play an important role in the shaping of the child's life. The Legal Custody can be both, Sole Legal Custody or Joint Legal Custody.
-        </p>
-      </section>
-
-      {/* Joint Custody Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Joint Custody
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          The term Legal Custody provides the parent with the authority to make important decisions on behalf of the child. These decisions regarding education, healthcare, religion, etc play an important role in the shaping of the child's life. The Legal Custody can be both, Sole Legal Custody or Joint Legal Custody.
-        </p>
-      </section>
-
-      {/* Sole Custody Section */}
-      <section className="max-w-5xl mx-auto px-6 py-12">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-          Sole Custody
-        </h2>
-        <p className="text-base text-neutral-700 leading-relaxed">
-          Joint custody refers to both the parents sharing the physical and legal custody of the child. This arrangement puts an emphasis on cooperative parenting, and shared decisions and leads to the equal involvement of both parents.
-        </p>
-      </section>
-
-      {/* Decorative Swirl - Bottom Left */}
-      <div className="max-w-5xl mx-auto px-6 py-8">
-        <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-        </svg>
-      </div>
-
-      {/* CTA Section - White Background */}
-      <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-8">
-            Unsaathi Works In The Best Interest Of Your Child
-          </h2>
-          <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300">
-            Talk To Us
-          </button>
-        </div>
-        
-        {/* Decorative Swirl - Bottom Right */}
-        <div className="max-w-5xl mx-auto px-6 flex justify-end mt-12">
-          <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M180 20 Q140 80, 100 60 T20 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-          </svg>
-        </div>
-      </section>
-
-      {/* Child Custody - Securing Your Child's Future Section */}
-      <section className="bg-[#f5e7db] py-16">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* Decorative Swirl - Top Left */}
-          <div className="mb-12">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 180 Q60 120, 100 140 T180 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
+      {/* Types of Custody Section */}
+      <section className="w-full py-20 px-4">
+        <div className="max-w-screen-lg mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold">The Four Main Types of Custody</h2>
+            <p className="text-lg text-[#c48e53] mt-2">
+              Custody arrangements are typically broken down into four key categories.
+            </p>
           </div>
-
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-neutral-900 mb-6 text-center">
-            Child Custody - Securing Your Child's Future
-          </h1>
-          <p className="text-lg md:text-xl text-[#c48e53] font-medium mb-8 text-center">
-            Amidst The Chaos Of Divorce, It Is Essential To Keep The Children In Consideration And Secure Their Future.
-          </p>
-          <p className="text-base text-neutral-700 leading-relaxed mb-8">
-            Child custody is one of the significant aspects of divorce. In India, child custody in India is governed by the following laws: Hindu Minority and Guardianship Act, 1956 - This law applies to Hindus. It emphasises that the welfare of the child is the primary consideration. Guardian and Wards Act, 1890 - This secular law applies to all communities. The main goal of this law is to appoint a guardian who will take care of the child's interests and nurture them. Muslim Personal Law (Shariat) Application Act, 1937 - The Muslim personal law governs the child custody rights and the guardianship matters of Muslims. Hizanat or child custody is usually granted to the mothers, and the fathers receive the child visitation rights. Christian and Parsi Law - The child custody disputes of Christian and Parsi individuals are now resolved under the Indian Divorce Act, 1869 or the Guardians and Wards Act, 1890.
-          </p>
-
-          {/* Decorative Swirl - Bottom Right */}
-          <div className="flex justify-end">
-            <svg className="w-32 h-32 text-neutral-400 opacity-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M180 20 Q140 80, 100 60 T20 100" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section with Light Bulb Illustration */}
-      <section className="bg-[#f5e7db] py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
-            Child Custody - Because Your Child Comes First
-          </h2>
-          <p className="text-lg md:text-xl text-[#c48e53] font-medium mb-8">
-            In Child Custody Cases, Prioritizing The Child's Best Interest Ensures Their Safety, Well-Being, And Emotional Stability Above All Else.
-          </p>
-          <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300 mb-12">
-            Talk To Legal Experts
-          </button>
           
+          {/* Grid container for the cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Physical Custody Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold mb-3 text-center">1. Physical Custody</h3>
+              <p className="text-gray-700">
+                This determines where the child lives. The parent with physical custody is the "custodial parent," responsible for the child's daily care. The other parent usually has visitation rights.
+              </p>
+            </div>
+
+            {/* Legal Custody Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold mb-3 text-center">2. Legal Custody</h3>
+              <p className="text-gray-700">
+                This grants a parent the legal authority to make major decisions about the child's life, including their education, healthcare, and religious upbringing.
+              </p>
+            </div>
+            
+            {/* Sole Custody Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold mb-3 text-center">3. Sole Custody</h3>
+              <p className="text-gray-700">
+                In this arrangement, one parent is granted both full physical and legal custody. This is often awarded when the court believes it's in the child's best interest to have a single, stable home environment.
+              </p>
+            </div>
+
+            {/* Joint Custody Card */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
+              <h3 className="text-2xl font-bold mb-3 text-center">4. Joint Custody</h3>
+              <p className="text-gray-700">
+                Both parents share legal and/or physical custody. This requires a high degree of cooperation, as parents must make decisions together and manage the logistics of the child living in two separate homes.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
+
+      {/* Governing Laws Section */}
+      <section className="w-full py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-4">Laws Governing Child Custody</h2>
+          <p className="text-lg text-gray-600">
+            In India, child custody is determined by a framework of secular and personal laws, including the **Guardians and Wards Act, 1890**, the **Hindu Minority and Guardianship Act, 1956**, and personal laws applicable to different religious communities. In all cases, the child's welfare is the paramount consideration.
+          </p>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="w-full py-24 px-4 text-center">
+        <h2 className="text-4xl font-bold mb-4">Navigate Custody with Confidence</h2>
+        <p className="text-[#c48e53] text-lg mb-8 max-w-2xl mx-auto">
+          Child custody matters are emotionally charged and legally complex. Our team is here to help you secure a future that serves the best interests of your child.
+        </p>
+        <button className="bg-[#c48e53] text-white px-12 py-4 rounded-full font-semibold text-lg transition-transform transform hover:scale-105 shadow-xl">
+          Talk To Legal Experts
+        </button>
       </section>
     </div>
   );
