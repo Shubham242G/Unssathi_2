@@ -56,7 +56,7 @@ export default function ForYou() {
           <div className="text-center">
             <h4 className="text-[#b88b6c] font-semibold mb-2 mt-8 md:mt-0">Unsaathi For You</h4>
             <h1 className="font-serif text-2xl md:text-4xl lg:text-5xl font-bold text-[#45362e] leading-snug mb-3">
-              Unsaathi Unravels The Complexities Of Divorce With Ease, Offering Best <span className="font-extrabold">Divorce Services</span>, Emotional Guidance, And A Fresh Start.
+            Clarity. Compassion. A Fresh Start.
             </h1>
             <div className="text-[#776e65] mb-8">
               For us, your peace of mind comes first; that’s why we ensure a hassle-free divorce process.

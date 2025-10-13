@@ -21,6 +21,7 @@ import ChatBot from './bot/bot';
 import Footer from './components/home/Footer';
 import DivorceInsightQuiz from './quiz/quiz';
 import AboutUsPage from './components/AboutUs.js/AboutUs';
+import ConnectWithUnsaathi from './components/home/connectWithUnsaathi';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='/contact' element={<ContactUsPage/>} />
           <Route path='/quiz' element={<DivorceInsightQuiz/>} />
           <Route path='/AboutUs' element={<AboutUsPage/>} />
+          <Route path='/connect_With_Us' element={<ConnectWithUnsaathi/>}/>
         </Routes>
       </Router>
       <ChatBot/>

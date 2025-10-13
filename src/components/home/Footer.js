@@ -62,12 +62,14 @@ export default function Footer() {
               {/* Use your actual icons here */}
               <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 9h4v12H4zm6.563 0h3.682v1.645h.053a4.105 4.105 0 0 1 3.699-2.034c3.954 0 4.69 2.603 4.69 5.986V21h-4v-5.855c0-1.344-.028-3.074-1.873-3.074-1.876 0-2.162 1.464-2.162 2.972V21h-4z"/></svg>
             </a>
-            <a href="#" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="Instagram">
+            <a href="https://www.instagram.com/official_unsaathi?igsh=bHFoZHNjd3Jua2M1" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="Instagram">
               <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M16 3h-8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5v-8a5 5 0 0 0-5-5zm0 3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
             </a>
-            <a href="#" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="Twitter">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.34-1.59.57-2.46.68a4.09 4.09 0 0 0 1.8-2.27c-.8.48-1.68.83-2.62 1.02a4.07 4.07 0 0 0-6.66 3.71c-3.38-.17-6.4-1.77-8.41-4.2a4.11 4.11 0 0 0-.55 2.04 4.07 4.07 0 0 0 1.81 3.38 4.1 4.1 0 0 1-1.84-.5v.05a4.07 4.07 0 0 0 3.27 3.97c-.39.1-.76.15-1.16.15-.29 0-.57-.03-.85-.08a4.06 4.06 0 0 0 3.8 2.82A8.13 8.13 0 0 1 2 19.54a11.48 11.48 0 0 0 6.21 1.82c7.46 0 11.55-6.18 11.55-11.54l-.01-.53A8.18 8.18 0 0 0 22.46 6z"/></svg>
-            </a>
+            <a href="https://www.facebook.com/share/1AmiCrdNcR/" className="text-[#cfd0d3] hover:text-[#3b5998] mt-1" aria-label="Facebook">
+  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.351C0 23.41.59 24 1.325 24h11.5v-9.294H9.691v-3.622h3.134V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.41 24 24 23.41 24 22.675v-21.35C24 .59 23.41 0 22.675 0z"/>
+  </svg>
+</a>
           </div>
         </div>
 

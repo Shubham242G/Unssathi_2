@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ConnectWithUnsaathi from '../home/connectWithUnsaathi';
 import Lottie from 'lottie-react';
 import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import { Link } from 'react-router-dom';
 
-// SocialIcon component remains the same
+
 const SocialIcon = ({ href, children }) => (
   <a href={href} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition">
     {children}
@@ -11,63 +12,199 @@ const SocialIcon = ({ href, children }) => (
 );
 
 export default function AboutUsPage() {
+   const [isStarted, setIsStarted] = useState(false);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [score, setScore] = useState(0);
+    const [showConclusion, setShowConclusion] = useState(false);
+  
+    const quizQuestions = [
+      {
+        question: "Which statement best describes the communication in your relationship?",
+        options: [
+          { text: "We talk openly and resolve conflicts constructively.", value: 0 },
+          { text: "We talk, but important issues are often avoided.", value: 1 },
+          { text: "Arguments are frequent and rarely resolved.", value: 2 },
+          { text: "We barely speak to each other anymore.", value: 3 }
+        ]
+      },
+      {
+        question: "How do you feel about the future of your relationship?",
+        options: [
+          { text: "Hopeful and committed to making it work.", value: 0 },
+          { text: "Uncertain, but willing to try.", value: 1 },
+          { text: "Pessimistic, I feel we are drifting apart.", value: 2 },
+          { text: "I believe the relationship may be over.", value: 3 }
+        ]
+      },
+      {
+        question: "Are there concerns about safety, respect, or trust?",
+        options: [
+          { text: "No, I feel completely safe and respected.", value: 0 },
+          { text: "There have been minor breaches of trust.", value: 1 },
+          { text: "I sometimes feel disrespected or unheard.", value: 2 },
+          { text: "Yes, I have concerns about my emotional or physical safety.", value: 4 }
+        ]
+      },
+      {
+        question: "If children are involved, what is your main concern regarding them?",
+        options: [
+          { text: "Ensuring they feel loved and supported by both parents.", value: 0 },
+          { text: "How to co-parent effectively if we separate.", value: 2 },
+          { text: "I'm worried about their well-being in the current environment.", value: 3 },
+          { text: "This question is not applicable.", value: 0 }
+        ]
+      },
+      {
+        question: "When you think about separation, what is your biggest question?",
+        options: [
+          { text: "Is it possible to separate amicably?", value: 1 },
+          { text: "What are my legal rights and obligations?", value: 2 },
+          { text: "How do we handle property and finances?", value: 2 },
+          { text: "How can I ensure my and my children's safety?", value: 4 }
+        ]
+      }
+    ];
+  
+    const handleAnswerClick = (value) => {
+      setScore(prevScore => prevScore + value);
+  
+      const nextQuestionIndex = currentQuestionIndex + 1;
+      if (nextQuestionIndex < quizQuestions.length) {
+        setCurrentQuestionIndex(nextQuestionIndex);
+      } else {
+        setShowConclusion(true);
+      }
+    };
+  
+    const getConclusion = () => {
+      if (score <= 3) {
+        return {
+          title: "Building on a Strong Foundation",
+          text: "Your answers suggest that while there may be challenges, your relationship has a strong foundation of communication and hope. Exploring couples counseling could provide you with new tools to strengthen your bond further."
+        };
+      }
+      if (score <= 7) {
+        return {
+          title: "Navigating Uncertainty",
+          text: "It sounds like you are at a crossroads, facing uncertainty but still open to solutions. This is a common stage where mediation or a trial separation (Judicial Separation) can provide clarity. A legal consultation could help you understand these options without pressure."
+        };
+      }
+      if (score <= 12) {
+        return {
+          title: "Considering a New Path",
+          text: "Your responses indicate significant and persistent challenges. It may be time to understand your legal rights regarding divorce, property division, and child custody. An expert consultation can provide a clear roadmap for your next steps."
+        };
+      }
+      return {
+        title: "Prioritizing Safety and Security",
+        text: "Your answers raise serious concerns about safety and well-being. It is crucial to seek immediate legal guidance, especially concerning domestic violence or dowry-related issues. Your safety is the highest priority, and legal protections are available."
+      };
+    };
+  
+    const restartQuiz = () => {
+      setIsStarted(true);
+      setCurrentQuestionIndex(0);
+      setScore(0);
+      setShowConclusion(false);
+    };
+    
+    const conclusion = getConclusion();
   return (
     <div className="bg-[#F5EFE9] font-serif overflow-x-hidden"> {/* Prevents horizontal scroll on mobile */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Section 1: Unravelling Unsaathi */}
-        <section className="text-center py-16 md:py-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#232122] mb-4">Unravelling Unsaathi</h1>
-          <p className="text-base md:text-lg text-[#726964] max-w-3xl mx-auto mb-8">
-            Empowering you with peace of mind, guiding you towards a brighter future, and redefining the divorce landscape in India.
-          </p>
-          {/* Lottie Animation - Adjusted for proportion and responsiveness */}
-          <div className="flex justify-center max-w-xl mx-auto">
-            <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+        {/* Section 1: Unravelling Unsaathi - Premium Version */}
+        <section className="py-24 md:py-36 ">
+          <div className="grid md:grid-cols-2 items-center gap-20 max-w-7xl mx-auto px-6">
+
+            {/* Left side - Text content */}
+            <div className="text-left space-y-10">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#232122] tracking-tight">
+                Unravelling Unsaathi
+              </h1>
+              <p className="text-lg md:text-xl text-[#726964] max-w-lg leading-relaxed">
+                Empowering you with peace of mind, guiding you towards a brighter future,
+                and redefining the divorce landscape in India.
+              </p>
+
+              {/* --- CTA Button --- */}
+              <div className="pt-4">
+                <Link to='/connect_With_Us'>
+                <button className="px-8 py-3 border-2 border-[#d4a373] text-[#b58850] rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#d4a373] hover:text-white shadow-md hover:shadow-lg ">
+                  Explore Our Services
+                </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right side - Lottie animation */}
+            <div className="flex justify-center md:justify-start">
+              <Lottie
+                animationData={aboutAnimation}
+                loop={true}
+                className="w-full md:w-[90%] lg:w-[85%] h-auto max-h-[600px]"
+              />
+            </div>
           </div>
         </section>
 
-        {/* Section 2: Divorce In India. Think Unsaathi */}
-        <section className="text-center py-16 md:py-20">
-          <p className="text-[#b88b6c] font-semibold mb-2">Divorce In India</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#232122] mb-6">Divorce In India. Think Unsaathi</h2>
-          <div className="max-w-4xl mx-auto text-base md:text-lg text-[#726964] space-y-6">
-            <p>
-              Unsaathi provides more than just divorce services; we are your compassionate ally, taking you towards a fresh start. Coping with a divorce can be emotionally and financially overwhelming. We strive to guide you through this challenging time with expertise, unparalleled support, and empathy, ensuring you come out of this phase more confident and stronger.
-            </p>
-            <p>
-              Our wide range of divorce services is designed to meet your unique requirements. Whether you need legal representation from the best divorce lawyer near you or avail separation guidance from expert divorce consultants, we are here for you. We look after every aspect of a divorce, from the complexities of matrimonial disputes to the emotional stress of legal separation.
-            </p>
-            <p>
-              We take pride in being not just legal experts but emotional anchors. We understand that the emotional stress of divorce can be difficult, but with Unsaathi, you will not have to face it alone. Our team of empathetic experts provides the legal aid you need to cope with the challenges ahead. We offer more than just legal guidance; we are here to help you heal, grow, and reconstruct your life.
-            </p>
-            <p>
-              Choosing Unsaathi means choosing a friend that's committed to your well-being. We provide affordable divorce lawyer services without compromising on quality, ensuring that everyone has access to the best legal representation. With us, you can trust that your divorce will be handled with the utmost professionalism, transparency, and care.
-            </p>
-            <p>
-              Let Unsaathi help you turn the page and embrace a future filled with hope, strength, and new beginnings.
-            </p>
-          </div>
-          <div className="mt-10">
-            <button className="bg-[#d5bfa7] text-[#232122] px-8 py-3 rounded-full font-semibold hover:bg-[#c4ab92] transition-transform transform hover:scale-105">
-              Let's Talk
-            </button>
-          </div>
-        </section>
+
+
+        {/* Section 5: Stress-Free Guidance */}
+        {/* Section 2: Divorce In India. Think Unsaathi. */}
+<section className="py-24 md:py-32 bg-white">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16 lg:gap-24">
+    
+    {/* Left side - Image */}
+    <div className="w-full h-[550px] rounded-2xl shadow-xl overflow-hidden order-last md:order-first">
+      <img 
+        src='/assets/About_Us_Page_2nd_image.webp' 
+        className='object-cover w-full h-full' 
+        alt="A compassionate legal consultation session" 
+      />
+    </div>
+    
+    {/* Right side - Text content */}
+    <div className="text-left">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-[#232122] tracking-tight mb-6">
+        Divorce In India. Think Unsaathi.
+      </h2>
+      
+      {/* Lead Paragraph (replaces H4) */}
+      <p className="text-xl text-[#726964] mb-8">
+        Getting a divorce in India can be stress-free with the right guidance, support, and compassionate legal care.
+      </p>
+
+      {/* Main Body Paragraph (Consolidated) */}
+      <p className="text-lg text-[#726964] leading-relaxed mb-10">
+        While divorce in India is often seen as a taboo that brings emotional stress, Unsaathi is breaking these barriers. We provide empathetic support and expert legal guidance, transforming a difficult process into an empowering journey of personal growth and new beginnings.
+      </p>
+      
+      {/* WhatsApp CTA Link */}
+      <div>
+        <a 
+          href="https://wa.me/919266877791" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-[#d5bfa7] text-[#232122] px-8 py-4 rounded-full font-semibold
+                     transition-all duration-300 ease-in-out
+                     hover:bg-[#c4ab92] hover:shadow-md hover:-translate-y-1"
+        >
+          Book An Appointment
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
         {/* Section 3: Mission and Vision */}
         <section className="py-16 md:py-20 space-y-16">
           <div className="text-center">
             <p className="text-[#b88b6c] font-semibold mb-2">The Unsaathi Mission</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#232122]">At Unsaathi Divorce Is Not The End, It's A Brand New Beginning.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#232122]">Divorce Is Not The End, It's A Brand New Beginning.</h2>
             <p className="max-w-4xl mx-auto text-base md:text-lg text-[#726964] mt-6">
               Unsaathi is committed to providing compassionate divorce services and expert separation guidance. We understand that the emotional stress of divorce can be overwhelming, so we empower our clients with the support and guidance to overcome the tough times legally and emotionally. We strongly believe divorce is not the end but the beginning of a new life.
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-[#b88b6c] font-semibold mb-2">Unsaathi Vision</p>
-            <p className="max-w-4xl mx-auto text-base md:text-lg text-[#726964]">
-              Unsaathi envisions a future where divorce is perceived as a path to healing and approached with compassion. We aim to revolutionize the notion of getting a divorce in India by providing seamless and tailored divorce services. With our separation guidance and one-on-one counselling, we help individuals and families move on with renewed hope and courage.
             </p>
           </div>
         </section>
@@ -95,40 +232,20 @@ export default function AboutUsPage() {
                 </p>
               </div>
               <div className="flex gap-4 mt-6">
-                <SocialIcon href="#">LinkedIn</SocialIcon>
-                <SocialIcon href="#">Other</SocialIcon>
+                <a href="www.linkedin.com/in/gaurav-sharma-82a87125b" className="text-[#b88b6c]" aria-label="LinkedIn">
+              <svg width="35" height="35" fill="currentColor" viewBox="0 0 24 24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 9h4v12H4zm6.563 0h3.682v1.645h.053a4.105 4.105 0 0 1 3.699-2.034c3.954 0 4.69 2.603 4.69 5.986V21h-4v-5.855c0-1.344-.028-3.074-1.873-3.074-1.876 0-2.162 1.464-2.162 2.972V21h-4z"/></svg>
+            </a>
+                <a href="https://www.instagram.com/gauravlaw?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-[#b88b6c] mt-1" aria-label="Instagram">
+              <svg width="35" height="35" fill="currentColor" viewBox="0 0 24 24"><path d="M16 3h-8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5v-8a5 5 0 0 0-5-5zm0 3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+            </a>
               </div>
             </div>
             <div className="md:w-1/2 w-full">
-                <img src='/assets/GAURAV-SHARMA-UNSAATHI.jpg' className='object-cover w-full h-auto md:h-[600px] rounded-2xl shadow-lg' alt="Gaurav Sharma, Founder of Unsaathi"/>
+              <img src='/assets/GAURAV-SHARMA-UNSAATHI.jpg' className='object-cover w-full h-auto md:h-[600px] rounded-2xl shadow-lg' alt="Gaurav Sharma, Founder of Unsaathi" />
             </div>
           </div>
         </section>
 
-        {/* Section 5: Stress-Free Guidance */}
-        <section className="py-16 md:py-20 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2 w-full">
-            <img src='/assets/About_Us_Page_2nd_image.webp' className='object-cover w-full h-auto md:h-[600px] rounded-2xl shadow-lg' alt="Compassionate legal guidance session"/>
-          </div>
-          <div className="md:w-1/2 text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#232122] mb-6">
-              Getting A Divorce In India Can Be Stress-Free With The Right Guidance, Support, And Compassionate Legal Care.
-            </h2>
-            <div className="text-base md:text-lg text-[#726964] space-y-4">
-              <p>
-                Divorce in India is still often seen as a taboo, bringing emotional stress and societal pressure. Many fear the complexities of the process and the stigma attached. Unsaathi is breaking these barriers by offering compassionate support and expert legal guidance, making divorce a stress-free and empowering journey toward a brighter future.
-              </p>
-              <p>
-                Unsaathi is transforming the way divorce is handled in India by providing empathetic support and expert legal guidance. Focused on care and understanding, Unsaathi helps individuals navigate the complexities of divorce with confidence, turning a difficult process into a journey of personal growth and new beginnings.
-              </p>
-            </div>
-            <div className="mt-8">
-              <button className="bg-[#d5bfa7] text-[#232122] px-8 py-3 rounded-full font-semibold hover:bg-[#c4ab92] transition-transform transform hover:scale-105">
-                Book An Appointment
-              </button>
-            </div>
-          </div>
-        </section>
 
         {/* Section 6: Real Stories */}
         <section className="text-center py-16 md:py-20">
@@ -156,7 +273,7 @@ export default function AboutUsPage() {
 
         {/* Section 7: Contact Form */}
         <section className="py-16 md:py-20">
-            <ConnectWithUnsaathi/>
+          <ConnectWithUnsaathi />
         </section>
 
       </div>

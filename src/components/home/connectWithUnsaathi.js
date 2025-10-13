@@ -65,8 +65,19 @@ export default function ConnectWithUnsaathi() {
             <label className="text-[#726964] text-sm mb-1">Service Interested In</label>
             <select
               className="bg-transparent border-b border-[#232122] outline-none py-2 text-lg text-[#a7a0a0]">
-              <option className="text-[#232122]">Option One</option>
-              <option className="text-[#232122]">Option Two</option>
+              <option className="text-[#232122]">Contested Divorce </option>
+              <option className="text-[#232122]">Mutual Divorce</option>
+              <option className="text-[#232122]">Child Custody </option>
+              <option className="text-[#232122]">Child Visitation</option>
+              <option className="text-[#232122]">Maintenance and Alimony  </option>
+              <option className="text-[#232122]">Judicial Seperation</option>
+              <option className="text-[#232122]">Annulment of marriage </option>
+              <option className="text-[#232122]">Dowry Case</option>
+              <option className="text-[#232122]">Domestic Violence  </option>
+              <option className="text-[#232122]">Case/Cruelty </option>
+              <option className="text-[#232122]">False Domestic Violence Case</option>
+              <option className="text-[#232122]">False Dowry </option>
+              <option className="text-[#232122]">Not mentioned </option>
             </select>
           </div>
           {/* Message row (grid spans 2 columns) */}

@@ -1,33 +1,42 @@
 import Lottie from "lottie-react";
 import React from "react";
-import data from "../../bannerImages/women.json";
+import line from "../../bannerImages/data.json";
 
 const HowUnsaathiWorksPage = () => {
   return (
     <div className="min-h-screen bg-[#f5e7db]">
       {/* Hero Section */}
-      <section className="bg-white py-20 text-center">
-        <div className="max-w-6xl mx-auto px-6">
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-neutral-900 mb-6">
-            How Unsaathi Works?
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto leading-relaxed">
-            Unsaathi streamlines your divorce journey with our expert divorce
-            services, compassionate divorce lawyers, and simplified legal
-            processes, ensuring clarity, confidence, and emotional support at
-            every step.
-          </p>
+      {/* Banner: How Unsaathi Works? */}
+{/* Banner: How Unsaathi Works? (Top-Down Layout) */}
+<section className="bg-white py-5 text-center">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    {/* Text Content */}
+    <div className="max-w-4xl mx-auto">
+      <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-extrabold text-neutral-900 mb-6 leading-tight tracking-tight">
+        How Unsaathi Works?
+      </h1>
+      <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
+        Unsaathi streamlines your divorce journey with our expert divorce
+        services, compassionate divorce lawyers, and simplified legal
+        processes, ensuring clarity, confidence, and emotional support at
+        every step.
+      </p>
+    </div>
 
-          {/* Lottie Animation */}
-          <div className="flex justify-center mt-8 md:mt-10">
-            <Lottie
-              animationData={data}
-              loop={true}
-              className="w-[220px] md:w-[300px] lg:w-[340px] h-auto opacity-95"
-            />
-          </div>
-        </div>
-      </section>
+    {/* Lottie Animation (Full-width) */}
+    <div className="mt-16 w-full h-[40vh]">
+      <Lottie 
+        animationData={line} 
+        loop={true} 
+        className="w-full h-full object-contain" 
+      />
+    </div>
+    
+  </div>
+</section>
+
+
 
       {/* A Resolute Steps Towards a Peaceful and a Brighter Tomorrow */}
       <section className="bg-[#f5e7db] py-20">
