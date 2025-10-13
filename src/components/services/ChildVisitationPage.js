@@ -1,6 +1,8 @@
 import React from 'react';
-import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import aboutAnimation from '../../bannerImages/beidge.json';
 import Lottie from 'lottie-react';
+import { Link } from 'react-router-dom';
+
 
 const ChildVisitationPage = () => {
   const whatsappNumber = '919266877791';
@@ -15,21 +17,33 @@ const ChildVisitationPage = () => {
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
 
       {/* Hero Section */}
-      <section className="w-full py-24 px-4 bg-white text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          Child Visitation Rights
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
-          Building Lasting Connections with Your Child
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          For a non-custodial parent, visitation rights are essential for maintaining a strong, healthy relationship with their child. The law provides various frameworks to ensure this bond is protected, always prioritizing the child's best interests.
-        </p>
-        {/* Lottie Banner Illustration */}
-        <div className="flex justify-center max-w-xl mx-auto mt-12">
-          <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
-        </div>
-        </section>
+      <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
+      {/* Text Content */}
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+        Child Visitation Rights
+      </h1>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
+        Building Lasting Connections with Your Child
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+        For a non-custodial parent, visitation rights are essential for maintaining a strong, healthy relationship with their child. The law provides various frameworks to ensure this bond is protected, always prioritizing the child's best interests.
+      </p>
+
+      {/* Lottie Banner Illustration */}
+      <div className="w-full max-w-lg mx-auto mb-8">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+      </div>
+
+      {/* CTA Button */}
+      {/* <div>
+        <Link to='/connect_With_Us'>
+          <button className="px-8 py-3 border-2 border-[#d4a373] text-[#b58850] rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#d4a373] hover:text-white shadow-md hover:shadow-lg">
+            Connect With Us
+          </button>
+        </Link>
+      </div> */}
+</section>
+
       
 
       {/* Types of Visitation Section */}

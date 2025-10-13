@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react';
-import aboutAnimation from '../../bannerImages/about-us-banner-anim.json'
+import aboutAnimation from '../../bannerImages/beidge.json'
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const ChildCustodyPage = () => {
   const whatsappNumber = '919266877791';
 
@@ -15,21 +15,27 @@ const ChildCustodyPage = () => {
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
 
       {/* Hero Section */}
-      <section className="w-full py-24 px-4 bg-white text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          Understanding Child Custody
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
-          Putting Your Child's Best Interest First
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          During a divorce, determining child custody is one of the most critical decisions. The primary goal of the Indian legal system is to ensure the child's welfare and stability.
-        </p>
-        {/* Lottie Banner Illustration */}
-        <div className="flex justify-center max-w-xl mx-auto mt-12">
-          <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
-        </div>
-      </section>
+      <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
+      {/* Text Content */}
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-3">
+        Understanding Child Custody
+      </h1>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-4">
+        Putting Your Child's Best Interest First
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+        During a divorce, determining child custody is one of the most critical decisions. The primary goal of the Indian legal system is to ensure the child's welfare and stability.
+      </p>
+
+      {/* Lottie Banner Illustration */}
+      <div className="w-full max-w-sm mx-auto mb-6 h-100">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full " />
+      </div>
+
+</section>
+
+
+
       
 
       {/* Types of Custody Section */}

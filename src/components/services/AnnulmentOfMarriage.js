@@ -1,6 +1,8 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import aboutAnimation from '../../bannerImages/beidge.json';
+import { Link } from 'react-router-dom';
+
 
 const AnnulmentOfMarriagePage = () => {
   const whatsappNumber = '919266877791';
@@ -15,22 +17,35 @@ const AnnulmentOfMarriagePage = () => {
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
 
       {/* Hero Section */}
-      <section className="w-full py-24 px-4 bg-white text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          Annulment of Marriage in India
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
-          Legally Declaring a Marriage Null and Void
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          An annulment is a legal procedure that declares a marriage void from its inception, as if it never happened. This is fundamentally different from a divorce, which dissolves a legally valid marriage.
-        </p>
+      <section className="w-full py-20 px-4 bg-white text-center">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-8">
+        Annulment of Marriage in India
+      </h1>
 
-        {/* Lottie Banner Illustration */}
-        <div className="flex justify-center max-w-xl mx-auto mt-12">
-          <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
-        </div>
-      </section>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-4">
+        A Comprehensive Guide to Nullifying Unions
+      </h2>
+
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+        Discover valid reasons for the annulment of the marriage. Understand the annulment of marriage through this step-by-step guide to voiding a marriage
+      </p>
+
+      {/* Lottie Banner Illustration */}
+      <div className="flex justify-center w-full max-w-xl mx-auto mb-8">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-100" />
+      </div>
+
+      <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53]">
+        Legally Declaring a Marriage Null and Void
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-4 mb-10">
+        An annulment is a legal procedure that declares a marriage void from its inception, as if it never happened. This is fundamentally different from a divorce, which dissolves a legally valid marriage.
+      </p>
+
+      {/* CTA Button */}
+      
+</section>
+
 
       {/* Governing Laws Section */}
       <section className="w-full py-20 px-4">

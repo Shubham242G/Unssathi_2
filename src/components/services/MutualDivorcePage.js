@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import aboutAnimation from '../../bannerImages/beidge.json';
 import Lottie from 'lottie-react';
 
 const MutualDivorcePage = () => {
@@ -18,20 +18,24 @@ const MutualDivorcePage = () => {
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
 
       {/* Hero Section */}
-      <section className="w-full py-24 px-4 bg-white text-center">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-          A Guide to Mutual Divorce in India
-        </h1>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
-          Peaceful Resolutions for Amicable Separations
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          A mutual divorce is a legal process where both spouses agree to end their marriage amicably. It is a faster and less contentious alternative to a contested divorce, as all key issues like alimony, child custody, and property division are settled beforehand.
-        </p>
-        <div className="flex justify-center max-w-xl mx-auto mt-12">
-          <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
-        </div>
-      </section>
+      <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
+      {/* Text Content */}
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+        A Guide to Mutual Divorce in India
+      </h1>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#c48e53] mb-6">
+        Peaceful Resolutions for Amicable Separations
+      </h2>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+        A mutual divorce is a legal process where both spouses agree to end their marriage amicably. It is a faster and less contentious alternative to a contested divorce, as all key issues like alimony, child custody, and property division are settled beforehand.
+      </p>
+
+      {/* Lottie Banner Illustration */}
+      <div className="w-full max-w-lg mx-auto">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+      </div>
+</section>
+
 
       {/* Governing Laws Section */}
       <section className="w-full py-20 px-4">

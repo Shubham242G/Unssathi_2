@@ -1,24 +1,8 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import aboutAnimation from '../../bannerImages/beidge.json';
 
-// An icon for visual consistency
-const GavelIcon = () => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    className="h-16 w-16 text-[#c48e53]" 
-    fill="none" 
-    viewBox="0 0 24 24" 
-    stroke="currentColor" 
-    strokeWidth={1.5}
-  >
-    <path 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      d="M14.25 7.75l-4.5 4.5m0 0l-4.5 4.5m4.5-4.5l4.5 4.5M3.75 12a8.25 8.25 0 1116.5 0 8.25 8.25 0 01-16.5 0z" 
-    />
-  </svg>
-);
+
 
 const MaintenanceAlimonyPage = () => {
   const whatsappNumber = '919266877791';

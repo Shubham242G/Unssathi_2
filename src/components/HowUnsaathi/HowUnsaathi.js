@@ -1,6 +1,8 @@
 import Lottie from "lottie-react";
 import React from "react";
 import line from "../../bannerImages/data.json";
+import { Link } from "react-router-dom";
+
 
 const HowUnsaathiWorksPage = () => {
   return (
@@ -92,58 +94,67 @@ const HowUnsaathiWorksPage = () => {
 
       {/* What To Expect Section */}
       <section className="bg-white py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h3 className="text-lg text-[#c48e53] font-semibold mb-4">
-            Unsaathi Process
-          </h3>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-            What To Expect From Our Divorce Consultants?
-          </h2>
-          <p className="text-base md:text-lg text-neutral-700 max-w-3xl mx-auto mb-14 leading-relaxed">
-            Unsaathi brings you tailored divorce services, wholehearted support,
-            and expert separation guidance, turning your divorce into an
-            opportunity to rebuild your life.
-          </p>
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <h3 className="text-lg text-[#c48e53] font-semibold mb-4">
+      Unsaathi Process
+    </h3>
+    <h2 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
+      What To Expect From Our Divorce Consultants?
+    </h2>
+    <p className="text-base md:text-lg text-neutral-700 max-w-3xl mx-auto mb-14 leading-relaxed">
+      Unsaathi brings you tailored divorce services, wholehearted support,
+      and expert separation guidance, turning your divorce into an
+      opportunity to rebuild your life.
+    </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-            {[
-              {
-                num: "01",
-                title: "Empowering New Beginnings",
-                text: "At Unsaathi, we look at divorce as a step towards growth, healing and a fulfilling future.",
-              },
-              {
-                num: "02",
-                title: "Tailored Guidance",
-                text: "Every divorce case is...",
-              },
-              {
-                num: "03",
-                title: "Healing Space",
-                text: "We become your guide to emotional strength and allow you to heal and grow.",
-              },
-              {
-                num: "04",
-                title: "Anytime, Anywhere",
-                text: "Whether you need a...",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-[#faf6f2] rounded-2xl p-8 text-left hover:shadow-md transition-shadow"
-              >
-                <h4 className="text-4xl font-serif font-bold text-gray-300">
-                  {item.num}
-                </h4>
-                <h3 className="font-serif text-2xl font-semibold mt-4 mb-3 text-[#232122]">
-                  {item.title}
-                </h3>
-                <p className="text-neutral-700 leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {[
+        {
+          num: "01",
+          title: "Empowering New Beginnings",
+          text: "At Unsaathi, we look at divorce as a step towards growth, healing and a fulfilling future.",
+        },
+        {
+          num: "02",
+          title: "Tailored Guidance",
+          text: "Every divorce case is...",
+        },
+        {
+          num: "03",
+          title: "Healing Space",
+          text: "We become your guide to emotional strength and allow you to heal and grow.",
+        },
+        {
+          num: "04",
+          title: "Anytime, Anywhere",
+          text: "Whether you need a...",
+        },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="bg-[#faf6f2] rounded-2xl p-8 text-left hover:shadow-md transition-shadow"
+        >
+          <h4 className="text-4xl font-serif font-bold text-gray-300">
+            {item.num}
+          </h4>
+          <h3 className="font-serif text-2xl font-semibold mt-4 mb-3 text-[#232122]">
+            {item.title}
+          </h3>
+          <p className="text-neutral-700 leading-relaxed">{item.text}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+  {/* The change is in the div below */}
+  <div className="pt-4 flex justify-center">
+    <Link to='/connect_With_Us'>
+      <button className="px-8 py-3 border-2 border-[#d4a373] text-[#b58850] rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#d4a373] hover:text-white shadow-md hover:shadow-lg ">
+        Explore Our Services
+      </button>
+    </Link>
+  </div>
+</section>
+
 
       {/* How To Prepare For The Divorce Section */}
       <section className="bg-[#f5e7db] py-20">

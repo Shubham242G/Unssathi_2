@@ -221,7 +221,7 @@ export default function AboutUsPage() {
               <h3 className="text-3xl font-bold text-[#232122] mb-1">GAURAV SHARMA</h3>
               <div className="flex flex-wrap gap-4 mb-4">
                 <span className="bg-[#e0d6cc] text-sm px-3 py-1 rounded-full">LLB, Faculty of Law</span>
-                <span className="bg-[#e0d6cc] text-sm px-3 py-1 rounded-full">MBA, IMT Ghaziabad</span>
+                <span className="bg-[#e0d6cc] text-sm px-3 py-1 rounded-full">MBA, IIM Calcutta</span>
               </div>
               <div className="text-base md:text-lg text-[#726964] space-y-4">
                 <p>

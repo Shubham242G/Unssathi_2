@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const counselingContent = [
   {
@@ -117,9 +118,11 @@ export default function HassleFreeProcess() {
 
         {/* Button */}
         <div className="flex justify-center mt-16">
+          <Link to='/howUnsaathi'>
           <button className="px-10 py-3 rounded-full bg-[#b88b6c] text-white text-lg font-semibold shadow-md hover:bg-[#a5775c] hover:shadow-lg transition-all duration-300">
             Know More
           </button>
+          </Link>
         </div>
       </div>
     </section>

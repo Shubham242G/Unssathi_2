@@ -1,5 +1,5 @@
 import React from "react";
-import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
+import aboutAnimation from '../../bannerImages/beidge.json';
 import Lottie from "lottie-react";
 
 
@@ -39,26 +39,29 @@ const whatsappNumber = '919266877791';
     <div className="min-h-screen bg-[#f3efe9] font-serif text-[#3d3d3d]">
       
       {/* Hero Section */}
-      <section className="w-full py-24 px-4 bg-white text-center">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-3">Unsaathi For You</h1>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#b88b6c] mb-6">
-          Laws Governing Contested Divorce
-        </h2>
-        <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-          Understand the legal framework in India for when spouses cannot agree on the terms of their separation.
-        </p>
-        <div className="flex justify-center max-w-xl mx-auto mt-12">
-          <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+      <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
+      {/* Text Content */}
+      <h1 className="text-5xl md:text-6xl font-extrabold mb-3">
+        Unsaathi For You
+      </h1>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#b88b6c] mb-6">
+        Laws Governing Contested Divorce
+      </h2>
+      <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+        Understand the legal framework in India for when spouses cannot agree on the terms of their separation.
+      </p>
 
-        </div>
-      </section>
+      {/* Lottie Banner Illustration */}
+      <div className="w-full max-w-lg mx-auto">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+      </div>
+</section>
+
 
       {/* Insights Section */}
       <section className="w-full py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mx-auto w-24 h-24 mb-8 flex items-center justify-center rounded-full bg-[#eaddcf]">
-             <LawBookIcon />
-          </div>
+          
           <h2 className="text-4xl font-bold mb-4">
             What is a Contested Divorce?
           </h2>
