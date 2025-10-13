@@ -43,7 +43,7 @@ const MutualDivorcePage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">Laws Governing Mutual Divorce</h2>
             <p className="text-lg text-[#c48e53] mt-2">
-              Is cooling-off period mandatory
+              The process is governed by various personal laws in India.
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const MutualDivorcePage = () => {
       {/* The Process Section */}
       <section className="w-full py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">The Mutual Divorce Process</h2>
+          <h2 className="text-4xl font-bold mb-4">Is cooling-off period mandatory?</h2>
           <p className="text-lg text-gray-600 mb-8">
             The process generally involves two court appearances, known as the "first motion" and "second motion," separated by a mandatory six-month cooling-off period. This period gives the couple time to reconsider. However, the Supreme Court has the power to waive this period in certain cases where the separation is long and there is no chance of reconciliation.
           </p>
