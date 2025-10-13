@@ -31,8 +31,8 @@ const MutualDivorcePage = () => {
       </p>
 
       {/* Lottie Banner Illustration */}
-      <div className="w-full max-w-lg mx-auto">
-        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+      <div className="flex justify-center w-full max-w-xl mx-auto mb-8">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-100" />
       </div>
 </section>
 
@@ -43,7 +43,7 @@ const MutualDivorcePage = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold">Laws Governing Mutual Divorce</h2>
             <p className="text-lg text-[#c48e53] mt-2">
-              The process is governed by various personal laws in India.
+              Is cooling-off period mandatory
             </p>
           </div>
 

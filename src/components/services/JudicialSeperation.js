@@ -29,8 +29,8 @@ const JudicialSeparationPage = () => {
       </p>
 
       {/* Lottie Banner Illustration */}
-      <div className="w-full max-w-lg mx-auto">
-        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-auto" />
+      <div className="flex justify-center w-full max-w-xl mx-auto mb-8">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-100" />
       </div>
 </section>
 

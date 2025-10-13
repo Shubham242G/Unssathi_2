@@ -28,8 +28,8 @@ const ChildCustodyPage = () => {
       </p>
 
       {/* Lottie Banner Illustration */}
-      <div className="w-full max-w-sm mx-auto mb-6 h-100">
-        <Lottie animationData={aboutAnimation} loop={true} className="w-full " />
+      <div className="flex justify-center w-full max-w-xl mx-auto mb-8">
+        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-100" />
       </div>
 
 </section>
