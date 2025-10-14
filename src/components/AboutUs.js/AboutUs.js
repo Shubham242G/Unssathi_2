@@ -5,14 +5,9 @@ import aboutAnimation from '../../bannerImages/about-us-banner-anim.json';
 import { Link } from 'react-router-dom';
 
 
-const SocialIcon = ({ href, children }) => (
-  <a href={href} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition">
-    {children}
-  </a>
-);
 
 export default function AboutUsPage() {
-   const [isStarted, setIsStarted] = useState(false);
+    const [isStarted, setIsStarted] = useState(false);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [showConclusion, setShowConclusion] = useState(false);
@@ -159,15 +154,14 @@ export default function AboutUsPage() {
 
 
 
-        {/* Section 5: Stress-Free Guidance */}
+        
         {/* Section 2: Divorce In India. Think Unsaathi. */}
-<section className="py-24 md:py-32 bg-white">
+<section className="py-10 md:py-32 rounded-lg bg-white">
   <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16 lg:gap-24">
-    
     {/* Left side - Image */}
-    <div className="w-full h-[550px] rounded-2xl shadow-xl overflow-hidden order-last md:order-first">
+    <div className="w-full h-[600px] rounded-2xl overflow-hidden order-last md:order-first">
       <img 
-        src='/assets/About_Us_Page_2nd_image.webp' 
+        src='/assets/About_Us_Page_2nd_image.png' 
         className='object-cover w-full h-full' 
         alt="A compassionate legal consultation session" 
       />

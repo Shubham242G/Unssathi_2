@@ -242,9 +242,9 @@ const HowUnsaathiWorksPage = () => {
     <div className="md:w-1/2 flex justify-center">
       <div className="w-full max-w-md">
         <img
-          src="/assets/how_unsaathi_works_image_2.webp"
+          src="/assets/how_unsaathi_works_image_2.png"
           alt="Unsaathi Divorce Consultants"
-          className="w-full h-110 rounded-2xl object-cover shadow-md"
+          className="w-full h-200 rounded-2xl object-cover "
         />
       </div>
     </div>
