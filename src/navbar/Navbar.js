@@ -46,7 +46,7 @@ function Navbar() {
           <div className="flex items-center gap-3">
             <Link to="/">
               <img
-                src="/assets/Unsaathi-logo.svg"
+                src="/assets/Unsaathi-logo.png"
                 alt="Unsaathi Logo"
                 className="w-42 h-10"
               />
@@ -116,7 +116,7 @@ function Navbar() {
               href="/whyUnsaathi"
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
             >
-              Unsaathi Right For Me
+              Why Unsaathi?
             </a>
             <a
               href="/howUnsaathi"
