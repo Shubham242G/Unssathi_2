@@ -8,9 +8,11 @@ const BlogPostPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const  url =  "https://unsaathi-backend.onrender.com"
+
   useEffect(() => {
     // The fetch URL is now dynamic, using the 'id' from the URL
-    fetch(`http://localhost:5000/api/blogs/${id}`)
+    fetch(`${url}/api/blogs/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
