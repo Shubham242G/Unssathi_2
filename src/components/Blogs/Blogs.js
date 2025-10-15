@@ -55,8 +55,10 @@ const BlogListingPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+   const  url =  "https://unsaathi-backend.onrender.com"
+
   useEffect(() => {
-    fetch('http://localhost:5000/api/blogs')
+    fetch(`${url}/api/blogs`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
