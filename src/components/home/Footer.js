@@ -18,25 +18,38 @@ export default function Footer() {
 
         {/* Navigation Links */}
         <div>
-          <h2 className="font-semibold text-white mb-4">Navigate</h2>
-          <ul className="space-y-2 text-[#cfd0d3] cursor-pointer">
-            <li className="hover:text-[#b88b6c]">Home</li>
-            <li className="hover:text-[#b88b6c]">About Unsaathi</li>
-            <li className="hover:text-[#b88b6c]">Why Us</li>
-            <li className="hover:text-[#b88b6c]">How Unsaathi Works</li>
-            <li className="hover:text-[#b88b6c]">Contact Us</li>
-          </ul>
-        </div>
+  <h2 className="font-semibold text-white mb-4">Navigate</h2>
+  <ul className="space-y-2 text-[#cfd0d3]">
+    <li>
+      <a href="/" className="hover:text-[#b88b6c]">Home</a>
+    </li>
+    <li>
+      <a href="/AboutUs" className="hover:text-[#b88b6c]">About Unsaathi</a>
+    </li>
+    <li>
+      <a href="/whyUnsaathi" className="hover:text-[#b88b6c]">Why Us</a>
+    </li>
+    <li>
+      <a href="/howUnsaathi" className="hover:text-[#b88b6c]">How Unsaathi Works</a>
+    </li>
+    <li>
+      <a href="/connect_With_Us" className="hover:text-[#b88b6c]">Contact Us</a>
+    </li>
+  </ul>
+</div>
+
 
         {/* Contact & Policies */}
         <div>
           <h2 className="font-semibold text-white mb-4">Contact & Policies</h2>
           <ul className="space-y-2 text-[#cfd0d3]">
-            <li className="hover:text-[#b88b6c] cursor-pointer">Blogs</li>
-            <li className="hover:text-[#b88b6c] cursor-pointer">FAQ</li>
+           <li>
+      <a href="/blogs" className="hover:text-[#b88b6c]">Blogs</a>
+    </li>
+            {/* <li className="hover:text-[#b88b6c] cursor-pointer">FAQ</li>
             <li className="hover:text-[#b88b6c] cursor-pointer">Cookie Policy</li>
             <li className="hover:text-[#b88b6c] cursor-pointer">Privacy Policy</li>
-            <li className="hover:text-[#b88b6c] cursor-pointer">Terms & Conditions</li>
+            <li className="hover:text-[#b88b6c] cursor-pointer">Terms & Conditions</li> */}
           </ul>
           <div className="mt-8 flex items-center gap-3 text-[#b88b6c] text-lg">
 
