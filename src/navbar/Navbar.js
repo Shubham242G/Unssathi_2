@@ -248,13 +248,13 @@ function Navbar() {
           >
             How Unsaathi Works
           </a>
-          <a
+          {/* <a
             href="/blogs"
             className="py-2 text-[#232122] hover:text-[#b88b6c]"
             onClick={() => setMobileMenuOpen(false)}
           >
             Blogs
-          </a>
+          </a> */}
           <a
             href="/contact"
             className="py-2 text-[#232122] hover:text-[#b88b6c]"
