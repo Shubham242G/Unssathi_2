@@ -43,9 +43,9 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold text-white mb-4">Contact & Policies</h2>
           <ul className="space-y-2 text-[#cfd0d3]">
-           <li>
+           {/* <li>
       <a href="/blogs" className="hover:text-[#b88b6c]">Blogs</a>
-    </li>
+    </li> */}
             {/* <li className="hover:text-[#b88b6c] cursor-pointer">FAQ</li>
             <li className="hover:text-[#b88b6c] cursor-pointer">Cookie Policy</li>
             <li className="hover:text-[#b88b6c] cursor-pointer">Privacy Policy</li>
