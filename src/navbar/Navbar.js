@@ -46,7 +46,7 @@ function Navbar() {
           <div className="flex items-center gap-3">
             <Link to="/">
               <img
-                src="/Unsaathi-logo.png"
+                src="/Unsaathi-logo1.png"
                 alt="Unsaathi Logo"
                 className="w-42 h-10"
               />
