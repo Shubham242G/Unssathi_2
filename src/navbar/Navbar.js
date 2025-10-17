@@ -124,12 +124,12 @@ function Navbar() {
             >
               How Unsaathi Works
             </a>
-            <a
+            {/* <a
               href="/blogs"
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
             >
               Blogs
-            </a>
+            </a> */}
             <a
               href="/contact"
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
