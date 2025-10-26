@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from 'lottie-react';
-import heart from '../../bannerImages/heart.json';
+import heart from '../../bannerImages/male.json';
 import { useNavigate } from 'react-router-dom';
 
 function Hero() {

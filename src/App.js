@@ -42,8 +42,8 @@ function App() {
           <Route path='/services/mutualDivorce' element={<MutualDivorcePage/>}/>
           <Route path='/whyUnsaathi' element={<DivorceServicesPage/>} />
           <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage/>} />
-          <Route path='/blogs' element={<BlogListingPage/>} />
-          <Route path="/blogs/:id" element={<BlogPostPage />} />
+          {/* <Route path='/blogs' element={<BlogListingPage/>} /> */}
+          {/* <Route path="/blogs/:id" element={<BlogPostPage />} /> */}
           <Route path='/contact' element={<ContactUsPage/>} />
           <Route path='/quiz' element={<DivorceInsightQuiz/>} />
           <Route path='/AboutUs' element={<AboutUsPage/>} />

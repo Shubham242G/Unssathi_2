@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Lottie from 'lottie-react';
+import mobileLoopAnimation from '../bannerImages/mobile_loop.json'
 
 const RollingNumber = ({ targetNumber }) => {
     const [currentNumber, setCurrentNumber] = useState(0);
@@ -52,28 +54,30 @@ const ContactUsPage = () => {
     return (
         <div className="min-h-screen font-serif bg-[#f5f1ed]">
             {/* Hero Section - NOW WHITE */}
-            <section className="relative py-24 md:py-32 text-center overflow-hidden">
-
-                {/* Background Image Container */}
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src='/assets/contact-us-png.png'
-                        alt="Contact background illustration"
-                        className="w-full h-full object-cover opacity-10"
-                    />
-                </div>
-
-                {/* Content Container */}
-                <div className="relative z-10 max-w-5xl mx-auto px-6">
-                    <h1 className="text-4xl md:text-6xl font-bold text-neutral-900 mb-6">
+            <section className="bg-white py-20 text-center">
+            <div className="max-w-7xl mx-auto px-6">
+                
+                {/* Text Content */}
+                <div className="max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight tracking-tight">
                         Your Brighter Tomorrow Is Just A Click Away
                     </h1>
-                    <p className="text-lg md:text-xl text-neutral-700 max-w-3xl mx-auto">
+                    <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
                         Have questions or need guidance on your divorce journey? Our team is here to provide expert divorce services and compassionate support. Reach out today to connect with our experienced divorce lawyers for personalized, hassle-free solutions that prioritize your well-being.
                     </p>
                 </div>
 
-            </section>
+                {/* Lottie Animation (Full-width) */}
+                {/* <div className="mt-16 w-full h-[40vh]">
+                    <Lottie 
+                        animationData={mobileLoopAnimation}
+                        loop={true}
+                        className="w-full h-full object-contain"
+                    />
+                </div> */}
+                
+            </div>
+        </section>
 
 
             {/* Main Content Section - NOW LIGHT WHITISH-PINK */}
