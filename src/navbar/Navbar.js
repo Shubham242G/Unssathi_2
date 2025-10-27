@@ -40,7 +40,7 @@ function Navbar() {
       ref={navRef}
       className="bg-[#f5f1ed] shadow-sm sticky top-0 z-50 transition-colors duration-300"
     >
-      <div className="max-w-7xl px-6 py-4 mx-auto">
+      <div className="max-w-8xl px-6 py-4 mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ function Navbar() {
               <img
                 src="/Unsaathi-logo1.png"
                 alt="Unsaathi Logo"
-                className="w-42 h-10"
+                className="w-42 h-12"
               />
             </Link>
           </div>

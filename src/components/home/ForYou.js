@@ -45,7 +45,18 @@ const secondaryCards = [
   },
 ];
 
+const redirectToWhatsApp = (number) => {
+  if (!number) return alert("WhatsApp number not provided!");
+  const cleanNumber = number.toString().replace(/[^0-9]/g, ""); // keep only digits
+  const whatsappUrl = `https://wa.me/${cleanNumber}`;
+  window.open(whatsappUrl, "_blank");
+};
+
+
+
 export default function ForYou() {
+    const whatsappNumber = "919266877791";
+
   return (
 
     <>
@@ -97,6 +108,7 @@ export default function ForYou() {
             Unsaathi Walks You Through This Journey Hassle-Free With Our Divorce Services.
           </h2>
           <button
+            onClick={() => redirectToWhatsApp(whatsappNumber)} 
             className="px-8 py-2 rounded-full bg-[#b88b6c] text-white shadow-md font-semibold text-lg hover:bg-[#a5775c] transition"
           >
             Make An Appointment

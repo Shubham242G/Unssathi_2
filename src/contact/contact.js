@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Lottie from 'lottie-react';
-import mobileLoopAnimation from '../bannerImages/mobile_loop.json'
+import mobileLoopAnimation from '../bannerImages/mobile_line_loop.json'
 
 const RollingNumber = ({ targetNumber }) => {
     const [currentNumber, setCurrentNumber] = useState(0);
@@ -68,13 +68,13 @@ const ContactUsPage = () => {
                 </div>
 
                 {/* Lottie Animation (Full-width) */}
-                {/* <div className="mt-16 w-full h-[40vh]">
+                <div className="mt-19 w-full h-[45vh]">
                     <Lottie 
                         animationData={mobileLoopAnimation}
                         loop={true}
                         className="w-full h-full object-contain"
                     />
-                </div> */}
+                </div>
                 
             </div>
         </section>
