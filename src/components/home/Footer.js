@@ -8,7 +8,7 @@ export default function Footer() {
         <div>
           <h2 className="text-white mb-4">Our Offices</h2>
           <ul className="text-xs space-y-9">
-            <li><span className="font-semibold text-white">Delhi:</span> Plot No. 7, 4th Floor, Arihant Nagar, Rohtak Rd., Punjabi Bagh, New Delhi-110026</li>
+            <li><span className="font-semibold text-white">Delhi:</span>Plot No. 25, Fourth Floor, Thana Road, Near Chhawla Stand, Najafgarh, New Delhi - 110043</li>
             <li><span className="font-semibold text-white">Noida:</span> 208-209, Tower-E, Alphathum, Noida-201305</li>
             <li><span className="font-semibold text-white">Bhopal:</span> 401, B-Block HIG, Vijay Stambh, Zone-1, MP Nagar, Bhopal-462011</li>
             <li><span className="font-semibold text-white">Gurgaon:</span> 412, Emaar Colonande, Golf Course Extension Rd, Sec-66, Gurgaon-122018</li>
