@@ -1,7 +1,6 @@
 import React from 'react';
 import aboutAnimation from '../../bannerImages/beidge.json';
 import Lottie from 'lottie-react';
-import { Link } from 'react-router-dom';
 
 
 const ChildVisitationPage = () => {

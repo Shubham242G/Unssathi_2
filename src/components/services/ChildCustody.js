@@ -1,7 +1,6 @@
 import Lottie from 'lottie-react';
 import aboutAnimation from '../../bannerImages/beidge.json'
 import React from 'react';
-import { Link } from 'react-router-dom';
 const ChildCustodyPage = () => {
   const whatsappNumber = '919266877791';
 
