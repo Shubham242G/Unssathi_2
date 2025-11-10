@@ -32,7 +32,7 @@ function AboutUs() {
         <div className="flex items-center justify-center">
           <div className="w-full max-w-[500px] h-[420px] bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
             {/* Replace this with your actual image later */}
-            <img src='/assets/About_Us_Image.jpg' className='w-full h-[420px]'/>
+            <img src='/assets/About_Us_Image.jpg' className='w-full h-[420px]' alt='footer'/>
           </div>
         </div>
       </div>

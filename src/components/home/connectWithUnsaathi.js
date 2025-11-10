@@ -20,12 +20,12 @@ export default function ConnectWithUnsaathi() {
           <div className="flex flex-col gap-3 mt-4 md:mt-0">
             <div className="flex items-center gap-3 text-[#b88b6c] text-2xl w-full mt-4">
               {/* phone icon */}
-             <img src="/assets/Call.png" className="h-[18px] w-[20px]"/>
+             <img src="/assets/Call.png" className="h-[18px] w-[20px]" alt='connect'/>
               <span className="text-[#232122] text-xl font-medium">+91-9266877791</span>
             </div>
             <div className="flex items-center gap-3 text-[#b88b6c] text-2xl  w-full mt-2">
               {/* mail icon */}
-              <img src="/assets/Message.png" className="h-[18px] w-[20px]"/>
+              <img src="/assets/Message.png" className="h-[18px] w-[20px]" alt='connect'/>
               <span className="text-[#232122] text-xl font-medium">info@unsaathi.com</span>
             </div>
           </div>
