@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import aboutAnimation from '../../bannerImages/beidge.json';
-import { Link } from 'react-router-dom';
+
 
 
 const AnnulmentOfMarriagePage = () => {

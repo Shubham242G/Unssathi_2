@@ -4,27 +4,27 @@ import Lottie from "lottie-react";
 
 
 // An icon for visual flair
-const LawBookIcon = () => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    className="h-16 w-16 text-[#b88b6c]" 
-    fill="none" 
-    viewBox="0 0 24 24" 
-    stroke="currentColor" 
-    strokeWidth={1}
-  >
-    <path 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
-    />
-    <path 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-      d="M9 10h.01M15 10h.01M9 14h.01M15 14h.01" 
-    />
-  </svg>
-);
+// const LawBookIcon = () => (
+//   <svg 
+//     xmlns="http://www.w3.org/2000/svg" 
+//     className="h-16 w-16 text-[#b88b6c]" 
+//     fill="none" 
+//     viewBox="0 0 24 24" 
+//     stroke="currentColor" 
+//     strokeWidth={1}
+//   >
+//     <path 
+//       strokeLinecap="round" 
+//       strokeLinejoin="round" 
+//       d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" 
+//     />
+//     <path 
+//       strokeLinecap="round" 
+//       strokeLinejoin="round" 
+//       d="M9 10h.01M15 10h.01M9 14h.01M15 14h.01" 
+//     />
+//   </svg>
+// );
 
 export default function ContestedDivorce() {
 const whatsappNumber = '919266877791';
