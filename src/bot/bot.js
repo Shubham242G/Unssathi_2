@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import emailjs from '@emailjs/browser';
 import './bot.css'; // Make sure this CSS file is in the same directory
 
@@ -8,6 +8,7 @@ const ChatBot = () => {
   const [answers, setAnswers] = useState({});
   const [showWhatsApp, setShowWhatsApp] = useState(false);
 
+  // This array is stable and doesn't need to be in the component
   const questions = [
     { id: 1, text: "Hi! What's your name?", type: "text", key: "name" },
     { id: 2, text: "What's your email address?", type: "email", key: "email" },
@@ -20,26 +21,8 @@ const ChatBot = () => {
     },
   ];
 
-  // This effect triggers the email sending process once all answers are in.
-  useEffect(() => {
-    if (Object.keys(answers).length === questions.length) {
-      sendEmail();
-    }
-  }, [answers, questions.length]);
-
-  const handleAnswer = (answer) => {
-    const currentQ = questions[currentQuestion];
-    const newAnswers = { ...answers, [currentQ.key]: answer };
-    setAnswers(newAnswers);
-
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(prev => prev + 1);
-    } else {
-      setShowWhatsApp(true);
-    }
-  };
-
-  const sendEmail = () => {
+  // Memoize the sendEmail function with useCallback
+  const sendEmail = useCallback(() => {
     if (Object.keys(answers).length !== questions.length) return;
 
     const templateParams = {
@@ -54,11 +37,30 @@ const ChatBot = () => {
       templateParams, 
       'am1VZPuktoi7yeO5J'
     )
-      .then((response) => {
-        console.log('SUCCESS! Email sent.', response.status, response.text);
-      }, (error) => {
-        console.log('FAILED... Email not sent.', error);
-      });
+    .then((response) => {
+      console.log('SUCCESS! Email sent.', response.status, response.text);
+    }, (error) => {
+      console.log('FAILED... Email not sent.', error);
+    });
+  }, [answers, questions.length]); // Dependencies for useCallback
+
+  // Add `sendEmail` to the useEffect dependency array
+  useEffect(() => {
+    if (Object.keys(answers).length === questions.length) {
+      sendEmail();
+    }
+  }, [answers, questions.length, sendEmail]);
+
+  const handleAnswer = (answer) => {
+    const currentQ = questions[currentQuestion];
+    const newAnswers = { ...answers, [currentQ.key]: answer };
+    setAnswers(newAnswers);
+
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(prev => prev + 1);
+    } else {
+      setShowWhatsApp(true);
+    }
   };
 
   const handleWhatsAppRedirect = () => {
@@ -75,15 +77,12 @@ const ChatBot = () => {
     setShowWhatsApp(false);
   };
 
-  // --- NEW: Function to go back ---
   const goBack = () => {
-    // If on the final screen, go back to the last question
     if (showWhatsApp) {
       setShowWhatsApp(false);
       setCurrentQuestion(questions.length - 1);
       return;
     }
-    // Otherwise, go to the previous question index
     if (currentQuestion > 0) {
       setCurrentQuestion(prev => prev - 1);
     }
@@ -136,7 +135,6 @@ const ChatBot = () => {
               placeholder={`Enter your ${question.key}`}
               className="text-input"
               autoFocus
-              // --- NEW: Prefill the input with the existing answer ---
               defaultValue={answers[question.key] || ''}
             />
           </form>
@@ -145,7 +143,6 @@ const ChatBot = () => {
             {question.options.map((option, index) => (
               <button
                 key={index}
-                // --- NEW: Add 'active' class if this option was selected ---
                 className={`option-button ${answers[question.key] === option ? 'active' : ''}`}
                 onClick={() => handleAnswer(option)}
               >
@@ -155,7 +152,6 @@ const ChatBot = () => {
           </div>
         ) : null}
 
-        {/* --- NEW: Renders the "Previous" button if not on the first question --- */}
         {currentQuestion > 0 && (
           <button className="back-button" onClick={goBack}>
             ← Previous
