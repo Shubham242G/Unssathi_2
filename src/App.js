@@ -14,7 +14,7 @@ import AnnulmentOfMarriagePage from './components/services/AnnulmentOfMarriage';
 import MutualDivorcePage from './components/services/MutualDivorcePage';
 import DivorceServicesPage from './components/WhyUnsaathi.js/WhyUnsaathi';
 import HowUnsaathiWorksPage from './components/HowUnsaathi/HowUnsaathi';
-import BlogListingPage from './components/Blogs/Blogs';
+import BlogCard from './components/Blogs/Blogs';
 import ContactUsPage from './contact/contact';
 import BlogPostPage from './components/Blogs/BlogPostPage';
 import ChatBot from './bot/bot';
@@ -22,36 +22,38 @@ import Footer from './components/home/Footer';
 import DivorceInsightQuiz from './quiz/quiz';
 import AboutUsPage from './components/AboutUs.js/AboutUs';
 import ConnectWithUnsaathi from './components/home/connectWithUnsaathi';
+import BlogDetailPage from './components/Blogs/BlogDetailPage';
 
 function App() {
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
-      <Router> 
+      <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} /> 
-          <Route path="/services/conjugalRights" element={<ConjugalRightsPage />} /> 
+          <Route path="/" element={<Home />} />
+          <Route path="/services/conjugalRights" element={<ConjugalRightsPage />} />
           <Route path="/services/contestedDivorce" element={<ContestedDivorce />} />
           <Route path="/services/maintananceAndAlimony" element={<MaintenanceAlimonyPage />} />
-          <Route path="/services/dowry" element={<DowryCasesPage/>} />
-          <Route path='/services/childCustody' element={<ChildCustodyPage/>}/>
-          <Route path='/services/cruelty' element={<CrueltyPage/>}/>
-          <Route path='/services/judicialSeparation' element={<JudicialSeparationPage/>}/>
-          <Route path='/services/childVisitation' element={<ChildVisitationPage/>}/>
-          <Route path='/services/annulmentOfMarriage' element={<AnnulmentOfMarriagePage/>}/>
-          <Route path='/services/mutualDivorce' element={<MutualDivorcePage/>}/>
-          <Route path='/whyUnsaathi' element={<DivorceServicesPage/>} />
-          <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage/>} />
-          <Route path='/blogs' element={<BlogListingPage/>} />
-          <Route path="/blogs/:id" element={<BlogPostPage />} />
-          <Route path='/contact' element={<ContactUsPage/>} />
-          <Route path='/quiz' element={<DivorceInsightQuiz/>} />
-          <Route path='/AboutUs' element={<AboutUsPage/>} />
-          <Route path='/connect_With_Us' element={<ConnectWithUnsaathi/>}/>
+          <Route path="/services/dowry" element={<DowryCasesPage />} />
+          <Route path='/services/childCustody' element={<ChildCustodyPage />} />
+          <Route path='/services/cruelty' element={<CrueltyPage />} />
+          <Route path='/services/judicialSeparation' element={<JudicialSeparationPage />} />
+          <Route path='/services/childVisitation' element={<ChildVisitationPage />} />
+          <Route path='/services/annulmentOfMarriage' element={<AnnulmentOfMarriagePage />} />
+          <Route path='/services/mutualDivorce' element={<MutualDivorcePage />} />
+          <Route path='/whyUnsaathi' element={<DivorceServicesPage />} />
+          <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage />} />
+          <Route path='/blogs' element={<BlogPostPage />} />
+          <Route path="/blogs/:id" element={<BlogCard />} />
+          <Route path='/contact' element={<ContactUsPage />} />
+          <Route path='/quiz' element={<DivorceInsightQuiz />} />
+          <Route path='/AboutUs' element={<AboutUsPage />} />
+          <Route path='/connect_With_Us' element={<ConnectWithUnsaathi />} />
+          <Route path="/blogDetailPage/:id" element={<BlogDetailPage />} />
         </Routes>
       </Router>
-      <ChatBot/>
-      <Footer/>
+      <ChatBot />
+      <Footer />
     </div>
   );
 }
