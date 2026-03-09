@@ -23,6 +23,7 @@ import DivorceInsightQuiz from './quiz/quiz';
 import AboutUsPage from './components/AboutUs.js/AboutUs';
 import ConnectWithUnsaathi from './components/home/connectWithUnsaathi';
 import BlogDetailPage from './components/Blogs/BlogDetailPage';
+import CityDivorcePage from './components/cityPages/CityDivorcePage';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path='/AboutUs' element={<AboutUsPage />} />
           <Route path='/connect_With_Us' element={<ConnectWithUnsaathi />} />
           <Route path="/blogDetailPage/:id" element={<BlogDetailPage />} />
+          <Route path="/city/:citySlug" element={<CityDivorcePage />} />  
         </Routes>
       </Router>
       <ChatBot />

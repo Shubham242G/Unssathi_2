@@ -1,10 +1,11 @@
+// Updated Footer.jsx - Add new "Divorce by City" section, alignment intact
 import React from "react";
 
 export default function Footer() {
   return (
     <footer className="bg-[#232122] text-[#cfd0d3] text-sm pt-10 pb-10 px-6 md:px-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        {/* Offices */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10"> {/* Changed to 5 cols */}
+        {/* Offices - unchanged */}
         <div>
           <h2 className="text-white mb-4">Our Offices</h2>
           <ul className="text-xs space-y-9">
@@ -16,77 +17,59 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Navigation Links */}
+        {/* NEW: Divorce by City Section */}
         <div>
-  <h2 className="font-semibold text-white mb-4">Navigate</h2>
-  <ul className="space-y-2 text-[#cfd0d3]">
-    <li>
-      <a href="/" className="hover:text-[#b88b6c]">Home</a>
-    </li>
-    <li>
-      <a href="/AboutUs" className="hover:text-[#b88b6c]">About Unsaathi</a>
-    </li>
-    <li>
-      <a href="/whyUnsaathi" className="hover:text-[#b88b6c]">Why Us</a>
-    </li>
-    <li>
-      <a href="/howUnsaathi" className="hover:text-[#b88b6c]">How Unsaathi Works</a>
-    </li>
-    <li>
-      <a href="/connect_With_Us" className="hover:text-[#b88b6c]">Contact Us</a>
-    </li>
-  </ul>
-</div>
-
-
-        {/* Contact & Policies */}
-        <div>
-          <h2 className="font-semibold text-white mb-4">Contact & Policies</h2>
+          <h2 className="font-semibold text-white mb-4">Divorce by City</h2>
           <ul className="space-y-2 text-[#cfd0d3]">
-           {/* <li>
-      <a href="/blogs" className="hover:text-[#b88b6c]">Blogs</a>
-    </li> */}
-            {/* <li className="hover:text-[#b88b6c] cursor-pointer">FAQ</li>
-            <li className="hover:text-[#b88b6c] cursor-pointer">Cookie Policy</li>
-            <li className="hover:text-[#b88b6c] cursor-pointer">Privacy Policy</li>
-            <li className="hover:text-[#b88b6c] cursor-pointer">Terms & Conditions</li> */}
+            <li><a href="/city/noida" className="hover:text-[#b88b6c]">Divorce in Noida</a></li>
+            <li><a href="/city/delhi" className="hover:text-[#b88b6c]">Divorce in Delhi</a></li>
+            <li><a href="/city/gurgaon" className="hover:text-[#b88b6c]">Divorce in Gurgaon</a></li>
           </ul>
-          <div className="mt-8 flex items-center gap-3 text-[#b88b6c] text-lg">
+        </div>
 
+        {/* Navigation Links - unchanged */}
+        <div>
+          <h2 className="font-semibold text-white mb-4">Navigate</h2>
+          <ul className="space-y-2 text-[#cfd0d3]">
+            <li><a href="/" className="hover:text-[#b88b6c]">Home</a></li>
+            <li><a href="/AboutUs" className="hover:text-[#b88b6c]">About Unsaathi</a></li>
+            <li><a href="/whyUnsaathi" className="hover:text-[#b88b6c]">Why Us</a></li>
+            <li><a href="/howUnsaathi" className="hover:text-[#b88b6c]">How Unsaathi Works</a></li>
+            <li><a href="/connect_With_Us" className="hover:text-[#b88b6c]">Contact Us</a></li>
+          </ul>
+        </div>
 
-             <div className="flex flex-col gap-3 mt-4 md:mt-0">
+        {/* Contact & Policies - unchanged */}
+        <div>
+          <h2 className="font-semibold text-white mb-4">Contact</h2>
+          <div className="flex flex-col gap-3 mt-4 md:mt-0">
             <div className="flex items-center gap-3 text-[#b88b6c] text-2xl w-full mt-4">
-              {/* phone icon */}
-             <img src="/assets/Call.png" className="h-[18px] w-[20px]" alt='footer'/>
+              <img src="/assets/Call.png" className="h-[18px] w-[20px]" alt='footer'/>
               <span className="text-white text-xl font-medium">+91-9266877791</span>
             </div>
-            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl  w-full mt-2">
-              {/* mail icon */}
+            <div className="flex items-center gap-3 text-[#b88b6c] text-2xl w-full mt-2">
               <img src="/assets/Message.png" className="h-[18px] w-[20px]" alt='footer'/>
               <span className="text-white text-xl font-medium">info@unsaathi.com</span>
             </div>
           </div>
-          </div>
 
-
-          {/* Social Icons */}
-<div className="mt-6 flex space-x-4">
+          {/* Social Icons - unchanged */}
+          <div className="mt-6 flex space-x-4">
             <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A104375160&keywords=unsaathi%20official&origin=RICH_QUERY_SUGGESTION&position=0&searchId=9be0b8b4-9aee-4e18-af9a-d037a94d41dd&sid=Bp7&spellCorrectionEnabled=false" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="LinkedIn">
-              {/* Use your actual icons here */}
               <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM4 9h4v12H4zm6.563 0h3.682v1.645h.053a4.105 4.105 0 0 1 3.699-2.034c3.954 0 4.69 2.603 4.69 5.986V21h-4v-5.855c0-1.344-.028-3.074-1.873-3.074-1.876 0-2.162 1.464-2.162 2.972V21h-4z"/></svg>
             </a>
             <a href="https://www.instagram.com/official_unsaathi?igsh=bHFoZHNjd3Jua2M1" className="text-[#cfd0d3] hover:text-[#b88b6c]" aria-label="Instagram">
               <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M16 3h-8a5 5 0 0 0-5 5v8a5 5 0 0 0 5 5h8a5 5 0 0 0 5-5v-8a5 5 0 0 0-5-5zm0 3a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
             </a>
             <a href="https://www.facebook.com/share/1AmiCrdNcR/" className="text-[#cfd0d3] hover:text-[#3b5998] mt-1" aria-label="Facebook">
-  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.351C0 23.41.59 24 1.325 24h11.5v-9.294H9.691v-3.622h3.134V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.41 24 24 23.41 24 22.675v-21.35C24 .59 23.41 0 22.675 0z"/>
-  </svg>
-</a>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.675 0h-21.35C.59 0 0 .59 0 1.325v21.351C0 23.41.59 24 1.325 24h11.5v-9.294H9.691v-3.622h3.134V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24h-1.918c-1.504 0-1.796.715-1.796 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.41 24 24 23.41 24 22.675v-21.35C24 .59 23.41 0 22.675 0z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
-        {/* Newsletter */}
+        {/* Newsletter - unchanged */}
         <div className="flex flex-col gap-3 min-w-[220px] mt-6 md:mt-0">
           <h2 className="font-semibold text-white mb-4">Newsletter</h2>
           <input
