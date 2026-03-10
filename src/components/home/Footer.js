@@ -1,5 +1,6 @@
 // Updated Footer.jsx - Add new "Divorce by City" section, alignment intact
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -21,9 +22,23 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold text-white mb-4">Divorce by City</h2>
           <ul className="space-y-2 text-[#cfd0d3]">
-            <li><a href="/city/noida" className="hover:text-[#b88b6c]">Divorce in Noida</a></li>
-            <li><a href="/city/delhi" className="hover:text-[#b88b6c]">Divorce in Delhi</a></li>
-            <li><a href="/city/gurgaon" className="hover:text-[#b88b6c]">Divorce in Gurgaon</a></li>
+            <li>
+              <Link to="/divorce-lawyer-noida" className="hover:text-[#b88b6c]">
+                Divorce in Noida
+              </Link>
+            </li>
+
+<li>
+  <Link to="/divorce-lawyer-delhi" className="hover:text-[#b88b6c]">
+    Divorce in Delhi
+  </Link>
+</li>
+
+<li>
+  <Link to="/divorce-lawyer-gurgaon" className="hover:text-[#b88b6c]">
+    Divorce in Gurgaon
+  </Link>
+</li>
           </ul>
         </div>
 

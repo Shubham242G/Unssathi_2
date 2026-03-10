@@ -24,15 +24,20 @@ import AboutUsPage from './components/AboutUs.js/AboutUs';
 import ConnectWithUnsaathi from './components/home/connectWithUnsaathi';
 import BlogDetailPage from './components/Blogs/BlogDetailPage';
 import CityDivorcePage from './components/cityPages/CityDivorcePage';
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
-      <Router>
+      <Router>                          {/* Router wraps EVERYTHING */}
         <Navbar />
+        <ScrollToTop /> 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services/conjugalRights" element={<ConjugalRightsPage />} />
+<Route path="/divorce-lawyer-noida" element={<CityDivorcePage />} />
+  <Route path="/divorce-lawyer-delhi" element={<CityDivorcePage />} />
+  <Route path="/divorce-lawyer-gurgaon" element={<CityDivorcePage />} />
+<Route path="/services/conjugalRights" element={<ConjugalRightsPage />} />
           <Route path="/services/contestedDivorce" element={<ContestedDivorce />} />
           <Route path="/services/maintananceAndAlimony" element={<MaintenanceAlimonyPage />} />
           <Route path="/services/dowry" element={<DowryCasesPage />} />
@@ -51,11 +56,12 @@ function App() {
           <Route path='/AboutUs' element={<AboutUsPage />} />
           <Route path='/connect_With_Us' element={<ConnectWithUnsaathi />} />
           <Route path="/blogDetailPage/:id" element={<BlogDetailPage />} />
-          <Route path="/city/:citySlug" element={<CityDivorcePage />} />  
-        </Routes>
+          <Route index element={<Home />} />
+          <Route path="*" element={<Home />} />
+          </Routes>
+        <ChatBot />
+        <Footer />                       
       </Router>
-      <ChatBot />
-      <Footer />
     </div>
   );
 }
