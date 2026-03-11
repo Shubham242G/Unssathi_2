@@ -1,10 +1,16 @@
 // components/DelhiDivorcePage.jsx
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
 const DelhiDivorcePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-white py-12 px-4 md:px-8">
+      <Helmet>
+  <title>Divorce Lawyers Delhi | Mutual & Contested | GSLO Unsaathi</title>
+  <meta name="description" content="Best divorce lawyers Delhi. ₹25k-₹20L. Delhi High Court experts." />
+  <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+</Helmet>
       <motion.div 
         initial={{ opacity: 0, y: 20 }} 
         animate={{ opacity: 1, y: 0 }} 

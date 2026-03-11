@@ -28,6 +28,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   return (
+    <HelmetProvider>
     <div className="min-h-screen bg-[#f5f1ed]">
       <Router>                          {/* Router wraps EVERYTHING */}
         <Navbar />
@@ -63,6 +64,7 @@ function App() {
         <Footer />                       
       </Router>
     </div>
+    </HelmetProvider>
   );
 }
 
