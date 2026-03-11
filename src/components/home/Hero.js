@@ -7,11 +7,11 @@ function Hero() {
   const navigate = useNavigate();
 
   const handleBeginDivorce = () => {
-    navigate('/connect_With_Us');
+    navigate('/connect-With-Us');
   };
 
   const handleLearnMore = () => {
-    navigate('/whyUnsaathi');
+    navigate('/why-Unsaathi');
   };
 
   return (

@@ -147,7 +147,7 @@ const HowUnsaathiWorksPage = () => {
   </div>
   {/* The change is in the div below */}
   <div className="pt-4 flex justify-center">
-    <Link to='/connect_With_Us'>
+    <Link to='/connect-With-Us'>
       <button className="px-8 py-3 border-2 border-[#d4a373] text-[#b58850] rounded-full font-medium text-lg transition-all duration-300 hover:bg-[#d4a373] hover:text-white shadow-md hover:shadow-lg ">
         Explore Our Services
       </button>

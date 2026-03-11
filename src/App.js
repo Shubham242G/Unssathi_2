@@ -37,25 +37,25 @@ function App() {
 <Route path="/divorce-lawyer-noida" element={<CityDivorcePage />} />
   <Route path="/divorce-lawyer-delhi" element={<CityDivorcePage />} />
   <Route path="/divorce-lawyer-gurgaon" element={<CityDivorcePage />} />
-<Route path="/services/conjugalRights" element={<ConjugalRightsPage />} />
-          <Route path="/services/contestedDivorce" element={<ContestedDivorce />} />
-          <Route path="/services/maintananceAndAlimony" element={<MaintenanceAlimonyPage />} />
+<Route path="/services/conjugal-Rights" element={<ConjugalRightsPage />} />
+          <Route path="/services/contested-Divorce" element={<ContestedDivorce />} />
+          <Route path="/services/maintanance-And-Alimony" element={<MaintenanceAlimonyPage />} />
           <Route path="/services/dowry" element={<DowryCasesPage />} />
-          <Route path='/services/childCustody' element={<ChildCustodyPage />} />
+          <Route path='/services/child-Custody' element={<ChildCustodyPage />} />
           <Route path='/services/cruelty' element={<CrueltyPage />} />
-          <Route path='/services/judicialSeparation' element={<JudicialSeparationPage />} />
-          <Route path='/services/childVisitation' element={<ChildVisitationPage />} />
-          <Route path='/services/annulmentOfMarriage' element={<AnnulmentOfMarriagePage />} />
-          <Route path='/services/mutualDivorce' element={<MutualDivorcePage />} />
-          <Route path='/whyUnsaathi' element={<DivorceServicesPage />} />
-          <Route path='/howUnsaathi' element={<HowUnsaathiWorksPage />} />
+          <Route path='/services/judicial-Separation' element={<JudicialSeparationPage />} />
+          <Route path='/services/child-Visitation' element={<ChildVisitationPage />} />
+          <Route path='/services/annulment-Of-Marriage' element={<AnnulmentOfMarriagePage />} />
+          <Route path='/services/mutual-Divorce' element={<MutualDivorcePage />} />
+          <Route path='/why-Unsaathi' element={<DivorceServicesPage />} />
+          <Route path='/how-Unsaathi' element={<HowUnsaathiWorksPage />} />
           <Route path='/blogs' element={<BlogPostPage />} />
           <Route path="/blogs/:id" element={<BlogCard />} />
           <Route path='/contact' element={<ContactUsPage />} />
           <Route path='/quiz' element={<DivorceInsightQuiz />} />
           <Route path='/AboutUs' element={<AboutUsPage />} />
-          <Route path='/connect_With_Us' element={<ConnectWithUnsaathi />} />
-          <Route path="/blogDetailPage/:id" element={<BlogDetailPage />} />
+          <Route path='/connect-With-Us' element={<ConnectWithUnsaathi />} />
+          <Route path="/blog-Detail-Page/:id" element={<BlogDetailPage />} />
           <Route index element={<Home />} />
           <Route path="*" element={<Home />} />
           </Routes>

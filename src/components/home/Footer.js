@@ -47,10 +47,10 @@ export default function Footer() {
           <h2 className="font-semibold text-white mb-4">Navigate</h2>
           <ul className="space-y-2 text-[#cfd0d3]">
             <li><a href="/" className="hover:text-[#b88b6c]">Home</a></li>
-            <li><a href="/AboutUs" className="hover:text-[#b88b6c]">About Unsaathi</a></li>
-            <li><a href="/whyUnsaathi" className="hover:text-[#b88b6c]">Why Us</a></li>
-            <li><a href="/howUnsaathi" className="hover:text-[#b88b6c]">How Unsaathi Works</a></li>
-            <li><a href="/connect_With_Us" className="hover:text-[#b88b6c]">Contact Us</a></li>
+            <li><a href="/About-Us" className="hover:text-[#b88b6c]">About Unsaathi</a></li>
+            <li><a href="/why-Unsaathi" className="hover:text-[#b88b6c]">Why Us</a></li>
+            <li><a href="/how-Unsaathi" className="hover:text-[#b88b6c]">How Unsaathi Works</a></li>
+            <li><a href="/connect-With-Us" className="hover:text-[#b88b6c]">Contact Us</a></li>
           </ul>
         </div>
 

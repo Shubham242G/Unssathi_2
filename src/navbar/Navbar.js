@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const services = [
-  { label: "Restitution of Conjugal Rights", path: "/services/conjugalRights" },
-  { label: "Contested Divorce", path: "/services/contestedDivorce" },
-  { label: "Maintenance and Alimony", path: "/services/maintananceAndAlimony" },
+  { label: "Restitution of Conjugal Rights", path: "/services/conjugal-Rights" },
+  { label: "Contested Divorce", path: "/services/contested-Divorce" },
+  { label: "Maintenance and Alimony", path: "/services/maintanance-And-Alimony" },
   { label: "Dowry Cases", path: "/services/dowry" },
-  { label: "Child Custody", path: "/services/childCustody" },
+  { label: "Child Custody", path: "/services/child-Custody" },
   { label: "Cruelty", path: "/services/cruelty" },
-  { label: "Judicial separation", path: "/services/judicialSeparation" },
-  { label: "Child Visitation", path: "/services/childVisitation" },
-  { label: "Annulment of Marriage", path: "/services/annulmentOfMarriage" },
-  { label: "Mutual Divorce", path: "/services/mutualDivorce" },
+  { label: "Judicial separation", path: "/services/judicial-Separation" },
+  { label: "Child Visitation", path: "/services/child-Visitation" },
+  { label: "Annulment of Marriage", path: "/services/annulment-Of-Marriage" },
+  { label: "Mutual Divorce", path: "/services/mutual-Divorce" },
 ];
 
 function Navbar() {
@@ -56,7 +56,7 @@ function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             <a
-              href="/AboutUs"
+              href="/About-Us"
               onMouseEnter={() => onNavItemHover("About Us")}
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
             >
@@ -113,13 +113,13 @@ function Navbar() {
             </div>
 
             <a
-              href="/whyUnsaathi"
+              href="/why-Unsaathi"
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
             >
               Why Unsaathi?
             </a>
             <a
-              href="/howUnsaathi"
+              href="/how-Unsaathi"
               className="text-[#232122] hover:text-[#b88b6c] text-[15px] transition-colors"
             >
               How Unsaathi Works
@@ -184,7 +184,7 @@ function Navbar() {
       >
         <div className="flex flex-col px-6 pb-4 space-y-3">
           <a
-            href="/AboutUs"
+            href="/About-Us"
             className="py-2 text-[#232122] hover:text-[#b88b6c]"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -235,14 +235,14 @@ function Navbar() {
           </div>
 
           <a
-            href="/whyUnsaathi"
+            href="/why-Unsaathi"
             className="py-2 text-[#232122] hover:text-[#b88b6c]"
             onClick={() => setMobileMenuOpen(false)}
           >
             Unsaathi Right For Me
           </a>
           <a
-            href="/howUnsaathi"
+            href="/how-Unsaathi"
             className="py-2 text-[#232122] hover:text-[#b88b6c]"
             onClick={() => setMobileMenuOpen(false)}
           >
