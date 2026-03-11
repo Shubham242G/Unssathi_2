@@ -25,6 +25,7 @@ import ConnectWithUnsaathi from './components/home/connectWithUnsaathi';
 import BlogDetailPage from './components/Blogs/BlogDetailPage';
 import CityDivorcePage from './components/cityPages/CityDivorcePage';
 import ScrollToTop from './components/ScrollToTop'
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
