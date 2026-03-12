@@ -17,7 +17,6 @@ export default function AboutUsPage() {
 
   return (
     <div className="bg-[#F5EFE9] font-serif overflow-x-hidden"> {/* Prevents horizontal scroll on mobile */}
-    
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section 1: Unravelling Unsaathi - Premium Version */}
