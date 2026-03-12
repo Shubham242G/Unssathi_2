@@ -7,8 +7,8 @@ const GurgaonDivorcePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-white py-12 px-4 md:px-8">
       <Helmet>
-  <title>Divorce Lawyers Gurgaon | Family Court Experts | GSLO</title>
-  <meta name="description" content="Divorce lawyers Gurgaon. Fast mutual divorces for MNC professionals." />
+  <title>Best Divorce Lawyer in Gurgaon | Top Family Law Firm | Unsaathi</title>
+  <meta name="description" content="Need the best divorce lawyer in Gurgaon? Unsaathi's expert family lawyers handle divorce, custody, alimony, 498A & DV cases near you. Free consult. Call: +91 9266877791" />
   <meta name="keywords" content="divorce lawyer gurgaon, divorce gurgaon" />
 </Helmet>
       <motion.div 

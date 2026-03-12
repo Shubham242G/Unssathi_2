@@ -14,7 +14,11 @@ const CrueltyInMarriagePage = () => {
 
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
-
+       <Helmet>
+        <title> Best Cruelty & 498A Lawyers in India | Unsaathi Legal Help</title>
+        <meta name="description" content=" Suffering physical or mental cruelty in marriage? India's best lawyers at Unsaathi help you file under Sec 498A IPC & Sec 13 HMA. Call now: +91 9266877791" />
+        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+      </Helmet>
       {/* --- Hero Section (Banner) --- */}
       <section className="w-full py-20 px-4 bg-white text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">

@@ -7,8 +7,8 @@ const DelhiDivorcePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-white py-12 px-4 md:px-8">
       <Helmet>
-  <title>Divorce Lawyers Delhi | Mutual & Contested | GSLO Unsaathi</title>
-  <meta name="description" content="Best divorce lawyers Delhi. ₹25k-₹20L. Delhi High Court experts." />
+  <title> Best Divorce Lawyer in Delhi | Top Family Law Firm | Unsaathi </title>
+  <meta name="description" content="Searching for the best divorce lawyer in Delhi? Unsaathi's top family lawyers handle divorce, custody, alimony, 498A & DV cases. Free consultation. Call: +91 9266877791." />
   <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
 </Helmet>
       <motion.div 

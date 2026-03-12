@@ -16,7 +16,11 @@ const MaintenanceAlimonyPage = () => {
 
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
-
+      <Helmet>
+        <title>Maintenance & Alimony Lawyers in India | Consult Unsaathi</title>
+        <meta name="description" content="Not getting financial support after separation? Claim maintenance & alimony under Section 125 CrPC or HMA. Expert family lawyers at Unsaathi fight for your rights. Talk to us now." />
+        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+      </Helmet>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
       {/* Text Content */}

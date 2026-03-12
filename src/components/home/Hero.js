@@ -20,7 +20,7 @@ function Hero() {
         {/* Left Content */}
         <div className="space-y-8 -mb-13">
           <h1 className="text-5xl lg:text-[64px] font-serif leading-[1.15] text-gray-900">
-            Your ally for a simpler divorce.
+            India's Most Trusted Divorce & Family Law Firm 
           </h1>
 
           <p className="text-gray-600 text-lg leading-relaxed max-w-lg">

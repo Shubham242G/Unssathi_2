@@ -16,7 +16,11 @@ const MutualDivorcePage = () => {
 
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
-
+      <Helmet>
+        <title> Best Mutual Divorce Lawyers in India | Fast & Easy | Unsaathi </title>
+        <meta name="description" content=" Both agreed to separate? File mutual divorce under Sec 13B HMA fast — waive 6-month cooling period too. India's best family lawyers at Unsaathi. Call: +91 9266877791 " />
+        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+      </Helmet>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
       {/* Text Content */}

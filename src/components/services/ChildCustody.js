@@ -12,7 +12,11 @@ const ChildCustodyPage = () => {
   };
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
-
+      <Helmet>
+        <title> Best Child Custody Lawyers in India | Unsaathi</title>
+        <meta name="description" content="Losing custody of your child? India's best family lawyers at Unsaathi fight for your parental rights — sole, joint & interim custody. Call now: +91 9266877791" />
+        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+      </Helmet>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
       {/* Text Content */}

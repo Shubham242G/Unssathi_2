@@ -13,7 +13,11 @@ const DowryCasesPage = () => {
   };
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
-
+      <Helmet>
+        <title>Dowry Harassment Case Lawyers in India| Call +91 9266877791.</title>
+        <meta name="description" content="  Facing dowry harassment or a false 498A case? Get expert legal help to file or defend dowry cases under IPC 498A & Dowry Prohibition Act. Call Unsaathi's lawyers today." />
+        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+      </Helmet>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
       {/* Text Content */}
