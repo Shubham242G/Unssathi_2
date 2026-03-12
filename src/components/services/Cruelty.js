@@ -1,6 +1,8 @@
 import React from 'react';
 import Lottie from 'lottie-react';
 import aboutAnimation from '../../bannerImages/beidge.json'; // Re-using the same animation as requested
+import { Helmet } from 'react-helmet-async';
+
 
 const CrueltyInMarriagePage = () => {
   const whatsappNumber = '919266877791';

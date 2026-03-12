@@ -1,6 +1,8 @@
 import React from "react";
 import aboutAnimation from '../../bannerImages/beidge.json';
 import Lottie from "lottie-react";
+import { Helmet } from 'react-helmet-async';
+
 
 
 // An icon for visual flair
