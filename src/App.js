@@ -36,10 +36,10 @@ function App() {
         <ScrollToTop /> 
         <Routes>
           <Route path="/" element={<Home />} />
-<Route path="/divorce-lawyer-noida" element={<CityDivorcePage />} />
-  <Route path="/divorce-lawyer-delhi" element={<CityDivorcePage />} />
-  <Route path="/divorce-lawyer-gurgaon" element={<CityDivorcePage />} />
-<Route path="/services/conjugal-Rights" element={<ConjugalRightsPage />} />
+          <Route path="/divorce-lawyer-noida" element={<CityDivorcePage />} />
+          <Route path="/divorce-lawyer-delhi" element={<CityDivorcePage />} />
+          <Route path="/divorce-lawyer-gurgaon" element={<CityDivorcePage />} />
+          <Route path="/services/conjugal-Rights" element={<ConjugalRightsPage />} />
           <Route path="/services/contested-Divorce" element={<ContestedDivorce />} />
           <Route path="/services/maintanance-And-Alimony" element={<MaintenanceAlimonyPage />} />
           <Route path="/services/dowry" element={<DowryCasesPage />} />
