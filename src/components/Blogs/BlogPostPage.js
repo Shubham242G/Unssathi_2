@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BlogCard from './Blogs'; // Make sure this path is correct
- 
+
 const BlogListingPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
   const [page, setPage] = useState(1);

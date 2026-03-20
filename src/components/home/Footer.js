@@ -51,6 +51,8 @@ export default function Footer() {
             <li><a href="/why-Unsaathi" className="hover:text-[#b88b6c]">Why Us</a></li>
             <li><a href="/how-Unsaathi" className="hover:text-[#b88b6c]">How Unsaathi Works</a></li>
             <li><a href="/connect-With-Us" className="hover:text-[#b88b6c]">Contact Us</a></li>
+            <li><a href="/faqs" className="hover:text-[#b88b6c]">FAQ's</a></li>
+
           </ul>
         </div>
 

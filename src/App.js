@@ -25,6 +25,7 @@ import ConnectWithUnsaathi from './components/home/connectWithUnsaathi';
 import BlogDetailPage from './components/Blogs/BlogDetailPage';
 import CityDivorcePage from './components/cityPages/CityDivorcePage';
 import ScrollToTop from './components/ScrollToTop'
+import FaqPage from './components/Faq/FaqPage';
 import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
@@ -58,6 +59,8 @@ function App() {
           <Route path='/AboutUs' element={<AboutUsPage />} />
           <Route path='/connect-With-Us' element={<ConnectWithUnsaathi />} />
           <Route path="/blog-Detail-Page/:id" element={<BlogDetailPage />} />
+          <Route path="/faqs" element={<FaqPage />} />
+
           <Route index element={<Home />} />
           <Route path="*" element={<Home />} />
           </Routes>

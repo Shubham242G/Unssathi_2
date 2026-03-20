@@ -32,13 +32,13 @@ const BlogCard = React.memo(({ post }) => {
         </p>
 
         <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-4 flex-grow group-hover:text-[#c48e53] transition-colors">
-          <Link to={`/blogDetailPage/${post._id}`}>{post.seoTitle || post.title}</Link>
+          <Link to={`/blog-Detail-Page/${post._id}`}>{post.seoTitle || post.title}</Link>
         </h3>
 
         <p className="text-neutral-600 text-base mb-6">{post.summary}</p>
 
         <div className="mt-auto">
-          <Link to={`/blogDetailPage/${post._id}`} className="font-semibold text-[#c48e53] hover:text-neutral-900 transition-colors">Read More →</Link>
+          <Link to={`/blog-Detail-Page/${post._id}`} className="font-semibold text-[#c48e53] hover:text-neutral-900 transition-colors">Read More →</Link>
 
         </div>
       </div>
