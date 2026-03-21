@@ -1,73 +1,156 @@
-// components/NoidaDivorcePage.jsx
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import NoidaDivorcePage from "./NoidaDivorcePage";
+import DelhiDivorcePage from "./DelhiDivorcePage";
+import GurgaonDivorcePage from "./GurgaonDivorcePage";
+import FaqPage from "../Faq/FaqPage";
 
-const NoidaDivorcePage = () => {
+const CityDivorcePage = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  let citySlug = "";
+
+  if (pathname === "/divorce-lawyer-noida") citySlug = "noida";
+  else if (pathname === "/divorce-lawyer-delhi") citySlug = "delhi";
+  else if (pathname === "/divorce-lawyer-gurgaon") citySlug = "gurgaon";
+
+  const cityName =
+    citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
+
+  const cityPages = {
+    noida: <NoidaDivorcePage />,
+    delhi: <DelhiDivorcePage />,
+    gurgaon: <GurgaonDivorcePage />,
+  };
+
+  const page = cityPages[citySlug];
+
+  if (!page) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        City Not Found
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-white py-12 px-4 md:px-8">
-      <Helmet>
-  <title>Best Divorce Lawyer in Noida | Trusted Family Law | Unsaathi </title>
-  <meta name="Looking for the best divorce lawyer in Noida? Unsaathi's expert family lawyers handle divorce, custody, alimony & 498A cases. Free consultation. Call: +91 9266877791" />
-</Helmet>
+    <div className="bg-[#f5f1ed] text-[#232122]">
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto"
-      >
-        {/* SEO Title/Meta - Use Next.js Head in _app or page */}
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
-          Divorce in Noida: Complete Legal Process, Costs & Expert Guidance from GSLO
+      {/* ================= HERO ================= */}
+      <section className="py-20 text-center max-w-5xl mx-auto px-6">
+        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+          Divorce Lawyers in {cityName}
         </h1>
-        
-        <section className="mb-12">
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Noida, in Uttar Pradesh, sees rising divorce filings at Gautam Budh Nagar Family Court, with ~9,000 annual cases in NCR influenced by urban stress and women's independence.<span className="text-pink-500">*</span>[web:13][web:14]
-          </p>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Governed by Hindu Marriage Act 1955, Muslim Personal Law, or Special Marriage Act, mutual consent divorces (fastest at 6-12 months) require joint petitions, 6-month cooling-off (waivable), alimony/child custody agreements.<span className="text-pink-500">*</span>[web:14]
-          </p>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Contested cases drag 2-5+ years on cruelty, desertion, adultery grounds, costing ₹1L-₹15L+ including lawyer fees (junior: ₹20k-₹40k; senior: ₹75k+), court/notary (₹1k-₹5k).<span className="text-pink-500">*</span>[web:9][web:11][web:16]
-          </p>
-        </section>
 
-        <motion.section 
-          initial={{ opacity: 0 }} 
-          whileInView={{ opacity: 1 }} 
-          className="mb-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">Mutual vs Contested Divorce</h2>
-          <ul className="space-y-4 text-lg text-gray-700">
-            <li>• <strong>Mutual Divorce Steps:</strong> File joint petition (First Motion), wait 6 months for Second Motion; total ~6-12 months; costs ₹20k-₹80k (lawyer ₹15k-₹60k, court ₹500-₹2k).<span className="text-pink-500">*</span>[web:11][web:14]</li>
-            <li>• <strong>Contested Divorce:</strong> Prove fault grounds; multiple hearings, evidence; higher costs with expert witnesses (₹5k-₹20k).<span className="text-pink-500">*</span>[web:9]</li>
-            <li>• <strong>Child Custody/Alimony:</strong> Courts prioritize child welfare; shared custody rising; alimony based on income (up to 1/3rd).<span className="text-pink-500">*</span>[web:10]</li>
-            <li>• <strong>Noida Stats:</strong> NCR divorce rate ~1-2%, up 30-40% in cities; women file more.<span className="text-pink-500">*</span>[web:13][web:18]</li>
-            <li>• <strong>GSLO Services:</strong> Unsaathi/GSLO handles Noida filings, mediation, 100% privacy; contact for free consult.<span className="text-pink-500">*</span></li>
-          </ul>
-        </motion.section>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+          Expert legal support for divorce, custody, alimony, and family disputes.
+          Get guidance from experienced lawyers in {cityName}.
+        </p>
 
-        <motion.section 
-          initial={{ opacity: 0, x: -20 }} 
-          whileInView={{ opacity: 1, x: 0 }} 
-          className="bg-pink-50 p-8 rounded-2xl"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Unsaathi/GSLO for Divorce in Noida?</h2>
-          <p className="text-lg text-gray-700">
-            Established 2010, GSLO excels in family law across NCR courts, offering end-to-end support from petition drafting to settlements.<span className="text-pink-500">*</span>
-          </p>
-          <Link 
-  to="/contact"
-  className="mt-10 px-8 py-3 bg-[#d4a373] text-white rounded-full font-medium text-lg transition-all duration-300 hover:bg-transparent hover:text-[#b58850] border-2 border-[#d4a373] shadow-md hover:shadow-lg inline-block hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#d4a373] focus:ring-offset-2"
->
-  Get Help Now
-</Link>
-        </motion.section>
-      </motion.div>
+        <button className="bg-[#b88b6c] hover:bg-[#a3775a] text-white px-8 py-4 rounded-full font-semibold shadow-lg transition">
+          Talk to a Lawyer
+        </button>
+      </section>
+
+      {/* ================= SERVICES GRID ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-serif font-bold text-center mb-12">
+          Our Legal Services
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            "Mutual Divorce",
+            "Contested Divorce",
+            "Child Custody",
+            "Alimony & Maintenance",
+            "Domestic Violence",
+            "Dowry Cases",
+          ].map((service, i) => (
+            <div
+              key={i}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition duration-300 border border-[#eee]"
+            >
+              <h3 className="text-xl font-semibold mb-3">{service}</h3>
+
+              <p className="text-gray-600 text-sm mb-4">
+                Professional legal support tailored to your case with complete confidentiality.
+              </p>
+
+              <button className="text-[#b88b6c] font-semibold">
+                Know More →
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= WHY CHOOSE US ================= */}
+      <section className="bg-white py-16 px-6">
+        <h2 className="text-3xl font-serif font-bold text-center mb-12">
+          Why Choose Unsaathi
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
+          {[
+            "Expert Lawyers",
+            "Transparent Pricing",
+            "Confidential Support",
+            "Fast Process",
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="p-6 rounded-xl border border-[#eee] shadow-sm hover:shadow-md transition"
+            >
+              <p className="font-semibold">{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= PROCESS ================= */}
+      <section className="py-16 max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-serif font-bold text-center mb-12">
+          How It Works
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-6 text-center">
+          {[
+            "Consultation",
+            "Case Evaluation",
+            "Legal Filing",
+            "Resolution",
+          ].map((step, i) => (
+            <div key={i}>
+              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#b88b6c] text-white flex items-center justify-center font-bold">
+                {i + 1}
+              </div>
+              <p className="font-medium">{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="bg-[#232122] text-white py-16 text-center px-6">
+        <h2 className="text-3xl font-serif mb-4">
+          Need Legal Help in {cityName}?
+        </h2>
+
+        <p className="mb-6 text-gray-300">
+          Connect with experienced divorce lawyers today.
+        </p>
+
+        <button className="bg-[#b88b6c] px-8 py-4 rounded-full font-semibold">
+          Get Started
+        </button>
+      </section>
+
+      {/* ================= FAQ ================= */}
+      <FaqPage/>
     </div>
   );
 };
 
-export default NoidaDivorcePage;
+export default CityDivorcePage;
