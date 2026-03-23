@@ -1,12 +1,25 @@
-// components/DelhiDivorcePage.jsx
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import FaqPage from '../Faq/FaqPage';
+import React from "react";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import FaqPage from "../Faq/FaqPage";
+import ForYou from "../home/ForYou";
 
 const DelhiDivorcePage = () => {
+  const services = [
+    { label: "Restitution of Conjugal Rights", path: "/services/conjugal-Rights" },
+    { label: "Contested Divorce", path: "/services/contested-Divorce" },
+    { label: "Maintenance and Alimony", path: "/services/maintanance-And-Alimony" },
+    { label: "Dowry Cases", path: "/services/dowry" },
+    { label: "Child Custody", path: "/services/child-Custody" },
+    { label: "Cruelty", path: "/services/cruelty" },
+    { label: "Judicial Separation", path: "/services/judicial-Separation" },
+    { label: "Child Visitation", path: "/services/child-Visitation" },
+    { label: "Annulment of Marriage", path: "/services/annulment-Of-Marriage" },
+    { label: "Mutual Divorce", path: "/services/mutual-Divorce" },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#f5f1ed] text-[#232122]">
+    <div className="bg-[#f5f1ed] text-[#232122]">
 
       {/* ================= SEO ================= */}
       <Helmet>
@@ -18,122 +31,77 @@ const DelhiDivorcePage = () => {
       </Helmet>
 
       {/* ================= HERO ================= */}
-      <section className="py-20 text-center max-w-5xl mx-auto px-6">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight"
-        >
-          Divorce Lawyers in Delhi
-        </motion.h1>
+      <section className="relative py-24 text-center overflow-hidden">
 
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-          Navigate divorce with confidence. From mutual consent to contested cases,
-          our experienced legal team ensures clarity, speed, and complete confidentiality.
-        </p>
+        {/* Background Image */}
+      <div
+  className="absolute inset-0 bg-contain bg-center bg-no-repeat bg-black"
+  style={{ backgroundImage: "url('/assets/Delhi.jpeg')" }}
+></div>
 
-        <Link
-          to="/contact"
-          className="bg-[#b88b6c] hover:bg-[#a3775a] text-white px-8 py-4 rounded-full font-semibold shadow-lg transition"
-        >
-          Talk to a Lawyer
-        </Link>
-      </section>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* ================= OVERVIEW ================= */}
-      <section className="max-w-5xl mx-auto px-6 mb-16">
-        <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          Divorce cases in Delhi have significantly increased over the years due to changing lifestyles,
-          financial independence, and evolving societal norms. Whether it’s a mutual separation or a
-          contested dispute, understanding the legal process is crucial.
-        </p>
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-white">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+            Divorce Lawyers in Delhi
+          </h1>
 
-        <p className="text-lg text-gray-700 leading-relaxed">
-          Under Indian law, divorce can be filed under acts like the Hindu Marriage Act or Special Marriage Act.
-          The process, cost, and duration vary depending on the nature of the case.
-        </p>
-      </section>
+          <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-8">
+            Navigate divorce with confidence. Our experienced Delhi lawyers handle mutual and contested divorce,
+            custody, alimony, and family disputes with complete confidentiality.
+          </p>
 
-      {/* ================= COMPARISON CARDS ================= */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
-        <h2 className="text-3xl font-serif font-bold text-center mb-12">
-          Types of Divorce in Delhi
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-8">
-
-          {/* Mutual */}
-          <div className="bg-white p-8 rounded-2xl shadow-md border border-[#eee]">
-            <h3 className="text-xl font-semibold mb-4">Mutual Consent Divorce</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>✔ Timeline: 6–12 months</li>
-              <li>✔ Cost: ₹25,000 – ₹1,00,000</li>
-              <li>✔ Requires agreement on alimony & custody</li>
-              <li>✔ Faster & less stressful process</li>
-            </ul>
-          </div>
-
-          {/* Contested */}
-          <div className="bg-white p-8 rounded-2xl shadow-md border border-[#eee]">
-            <h3 className="text-xl font-semibold mb-4">Contested Divorce</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>✔ Timeline: 2–5 years</li>
-              <li>✔ Cost: ₹2,00,000+</li>
-              <li>✔ Based on legal grounds (cruelty, etc.)</li>
-              <li>✔ Requires evidence & court hearings</li>
-            </ul>
-          </div>
-
+          <Link
+            to="/contact"
+            className="bg-[#b88b6c] hover:bg-[#a3775a] px-8 py-4 rounded-full font-semibold shadow-lg transition"
+          >
+            Talk to a Lawyer
+          </Link>
         </div>
       </section>
 
-      {/* ================= WHY CHOOSE ================= */}
-      <section className="bg-white py-16 px-6">
-        <h2 className="text-3xl font-serif font-bold text-center mb-12">
-          Why Choose Unsaathi in Delhi
+      {/* ================= SERVICES ================= */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-serif font-bold text-center mb-4">
+          Our Legal Services in Delhi
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
-          {[
-            "Expert Divorce Lawyers",
-            "Transparent Pricing",
-            "Confidential Handling",
-            "Quick Resolution",
-          ].map((item, i) => (
+        <p className="text-center text-gray-600 mb-10">
+          Serving major courts across Delhi including Tis Hazari, Saket, Dwarka & Rohini.
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, i) => (
             <div
               key={i}
-              className="p-6 rounded-xl border border-[#eee] shadow-sm hover:shadow-md transition"
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition border border-[#eee]"
             >
-              <p className="font-semibold">{item}</p>
+              <h3 className="text-xl font-semibold mb-3">
+                {service.label}
+              </h3>
+
+              <p className="text-gray-600 text-sm mb-4">
+                Professional legal support tailored to your case with complete confidentiality.
+              </p>
+
+              <Link
+                to={service.path}
+                className="text-[#b88b6c] font-semibold"
+              >
+                Know More →
+              </Link>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ================= PROCESS ================= */}
-      <section className="py-16 max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-serif font-bold text-center mb-12">
-          How the Process Works
-        </h2>
+      {/* ================= WHY + PROCESS (REPLACED) ================= */}
+      <ForYou />
 
-        <div className="grid md:grid-cols-4 gap-6 text-center">
-          {[
-            "Consultation",
-            "Case Evaluation",
-            "Filing & Documentation",
-            "Final Resolution",
-          ].map((step, i) => (
-            <div key={i}>
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-[#b88b6c] text-white flex items-center justify-center font-bold">
-                {i + 1}
-              </div>
-              <p className="font-medium">{step}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <FaqPage/>
+      {/* ================= FAQ ================= */}
+      <FaqPage />
 
       {/* ================= CTA ================= */}
       <section className="bg-[#232122] text-white py-16 text-center px-6">

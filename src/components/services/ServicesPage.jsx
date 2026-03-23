@@ -22,10 +22,15 @@ const ServicesPage = () => {
 <section className="relative py-24 text-center overflow-hidden">
 
   {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/assets/serviceBanner.jpg')" }} // 👈 PUT YOUR IMAGE PATH HERE
-  ></div>
+  <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/assets/servicePage.mp4" type="video/mp4" />
+</video>
 
   {/* Overlay (VERY IMPORTANT for readability) */}
   <div className="absolute inset-0 bg-black/40"></div>
