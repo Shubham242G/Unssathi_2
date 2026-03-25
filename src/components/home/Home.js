@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from './Hero';
 import AboutUs from './AboutUs';
 import ForYou from './ForYou';
@@ -7,9 +7,19 @@ import NewBeginning from './NewBegining';
 import HassleFreeProcess from './HassleFreeProcess';
 import ConnectWithUnsaathi from './connectWithUnsaathi';
 import { Helmet } from 'react-helmet-async';
+import FaqAccordion from '../FaqAccordion';
+import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
 
 
 function Home() {
+   const [faqs, setFaqs] = useState([]);
+  
+    useEffect(() => {
+      fetchFaqsByCategory("home")
+        .then(setFaqs)
+        .catch(err => console.error("FAQs services page error:", err));
+    }, []);
+  
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
       <Helmet>
@@ -24,6 +34,12 @@ function Home() {
       <UnsaathiSolutions/>
       <NewBeginning/>
       <ConnectWithUnsaathi/>
+      {/* FAQ SECTION (for services page) */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
+        <FaqAccordion faqs={faqs} />
+      </section>
+
       {/* JSON-LD Schema - SEO Supercharger */}
 <Helmet>
   <script type="application/ld+json">

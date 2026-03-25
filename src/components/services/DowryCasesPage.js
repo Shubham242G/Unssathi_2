@@ -1,7 +1,9 @@
 import Lottie from 'lottie-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import aboutAnimation from '../../bannerImages/beidge.json';
 import { Helmet } from 'react-helmet-async';
+import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
+import FaqAccordion from '../FaqAccordion';
 
 
 const DowryCasesPage = () => {
@@ -13,6 +15,16 @@ const DowryCasesPage = () => {
     );
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
+
+      const [faqs, setFaqs] = useState([]);
+          
+              
+                useEffect(() => {
+                  fetchFaqsByCategory("dowry")
+                    .then(setFaqs)
+                    .catch(err => console.error("FAQs services page error:", err));
+                }, []);
+
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
       <Helmet>
@@ -118,6 +130,14 @@ const DowryCasesPage = () => {
     </div>
   </div>
 </section>
+
+ {/* FAQ SECTION (for services page) */}
+            <section className="max-w-6xl mx-auto px-6 py-16">
+              <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
+              <FaqAccordion faqs={faqs} />
+
+            </section>
+
     </div>
   );
 };

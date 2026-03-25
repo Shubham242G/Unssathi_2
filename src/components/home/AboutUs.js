@@ -19,20 +19,21 @@ function AboutUs() {
           {/* Paragraphs */}
           <div className="space-y-6 text-lg text-gray-700">
             <p>
-              Navigating a divorce can be overwhelming, but our expert <span className="font-semibold text-gray-900">divorce services</span> are designed to ease your journey.
-              Our team of compassionate and affordable divorce lawyers provides comprehensive support for every aspect of your separation, from <span className="font-semibold text-gray-900"> financial settlements</span> to <span className="font-semibold text-gray-900"> child custody disputes</span>. We offer a full spectrum of divorce services, including mediation and legal guidance, ensuring your rights are protected.
+              Navigating a divorce can be overwhelming, but Unsaathi offers the best online <span className="font-semibold text-gray-900">divorce service</span> designed to simplify the journey.
+              Whether you are looking for divorce <span className="font-semibold text-gray-900"> divorce lawyers</span> near me, good <span className="font-semibold text-gray-900"> divorce lawyers</span> near me, or trusted divorce and family lawyer near me, our platform connects you with experienced professionals who prioritise your well-being.
             </p>
             <p>
-              With a proven track record, our top-tier divorce lawyers are committed to securing a positive outcome for you. Trust our dedicated divorce services to provide the peace of mind you need.
+             Our legal experts help with every aspect of separation - from <span className="font-semibold text-gray-900">financial settlements </span>to custody disputes. If you are searching for the<span className="font-semibold text-gray-900"> best divorce lawyers</span> near me or a reliable lawyer near me for divorce, Unsaathi ensures the process remains simple, transparent, and supportive.
+ 
             </p>
           </div>
         </div>
 
         {/* Right Section: Image Placeholder */}
         <div className="flex items-center justify-center">
-          <div className="w-full max-w-[500px] h-[420px] bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
+          <div className="w-full max-w-[500px] h-[470px] bg-gray-200 rounded-xl flex items-center justify-center overflow-hidden">
             {/* Replace this with your actual image later */}
-            <img src='/assets/About_Us_Image.jpg' className='w-full h-[420px]' alt='footer'/>
+            <img src='/assets/About_Us_Image.jpg' className='w-full h-[470px]' alt='footer'/>
           </div>
         </div>
       </div>

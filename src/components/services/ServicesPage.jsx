@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import FaqAccordion from "../FaqAccordion";
+import { fetchFaqsByCategory } from "../../utils/fetchFaqs";
 
 const services = [
   { label: "Restitution of Conjugal Rights", path: "/services/conjugal-Rights" },
@@ -15,50 +17,64 @@ const services = [
 ];
 
 const ServicesPage = () => {
+  const [faqs, setFaqs] = useState([]);
+
+  useEffect(() => {
+    fetchFaqsByCategory("services")
+      .then(setFaqs)
+      .catch(err => console.error("FAQs services page error:", err));
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
-
       {/* HERO SECTION */}
-<section className="relative py-24 text-center overflow-hidden">
+      <section className="min-h-[60vh] flex items-center justify-center px-6 py-16 bg-[#f5f1ed]">
+        <div className="max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center">
+          {/* LEFT: Video */}
+          <div
+            className="w-full h-[30vh] md:h-[35vh] rounded-2xl overflow-hidden shadow-lg bg-[#f5f1ed]"
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/assets/servicePage.mp4" type="video/mp4" />
+            </video>
+          </div>
 
-  {/* Background Image */}
-  <video
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="absolute inset-0 w-full h-full object-cover"
->
-  <source src="/assets/servicePage.mp4" type="video/mp4" />
-</video>
+          {/* RIGHT: Content */}
+          <div className="flex flex-col justify-center h-full">
+            <p className="text-[#c48e53] tracking-widest uppercase mb-3 text-sm font-semibold">
+              Our Services
+            </p>
 
-  {/* Overlay (VERY IMPORTANT for readability) */}
-  <div className="absolute inset-0 bg-black/40"></div>
+            <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#232122] leading-tight mb-6">
+              A Fresh Start: Insights into Mutual Divorce
+            </h1>
 
-  <div className="relative z-10 max-w-5xl mx-auto px-6">
-    
-    <p className="text-[#e6c7a3] tracking-widest uppercase mb-4 text-sm font-semibold">
-      Our Services
-    </p>
+            <p className="text-lg text-gray-600 mb-8">
+              Divorces aren't always supposed to be a battle. Mutual divorce helps couples attain
+              peace during this separation. Divorce refers to the dissolution of the marriage; it
+              can be emotionally burdensome and legally complicated. If both spouses agree to part
+              ways, the process becomes straightforward.
+            </p>
 
-    <h1 className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight mb-8">
-      Expert Legal Support <br /> for Every Need
-    </h1>
-
-    <Link
-      to="/contact"
-      className="inline-block bg-[#c48e53] hover:bg-[#a07a3a] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-    >
-      Get Started Today
-    </Link>
-
-  </div>
-</section>
+            <Link
+              to="/contact"
+              className="inline-block bg-[#c48e53] hover:bg-[#a07a3a] text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg w-fit"
+            >
+              Get Started Today
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* SERVICES GRID */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
           {services.map((service, index) => (
             <div
               key={index}
@@ -80,10 +96,14 @@ const ServicesPage = () => {
               </Link>
             </div>
           ))}
-
         </div>
       </section>
 
+      {/* FAQ SECTION (for services page) */}
+      {/* <section className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
+        <FaqAccordion faqs={faqs} />
+      </section> */}
     </div>
   );
 };

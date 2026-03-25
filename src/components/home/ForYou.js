@@ -5,17 +5,17 @@ const infoCards = [
   {
     img: "/assets/approach.webp", // Affordable Solutions icon
     title: "Affordable Solutions",
-    desc: "Never worry about how a divorce impacts your pocket. Our solutions are competitively priced, making divorce more accessible.",
+    desc: "We provide access to an affordable divorce lawyer India so you never have to worry about the financial impact of legal support.",
   },
   {
     img: "assets/potential-icon-2.webp", // Tailored Approach icon
     title: "Tailored Approach",
-    desc: "We personalized our services according to your specific needs, providing comprehensive and tailored services.",
+    desc: "Every relationship is unique, which is why our services are personalised to suit your situation and goals.",
   },
   {
     img: "assets/different-perspective.webp", // Peace of Mind icon
     title: "Peace of Mind",
-    desc: "We are committed to elevating your well-being and offering you peace of mind during your difficult times.",
+    desc: "Our legal team ensures that your rights are protected throughout the process.",
   },
 ];
 
@@ -25,7 +25,7 @@ const secondaryCards = [
     title: "Empathetic Guidance",
     desc: (
       <>
-        Our team of <span className="font-semibold">divorce lawyers</span> provides compassionate support to help you navigate the emotional turmoil of a divorce.
+        Our <span className="font-semibold">lawyers</span> offer compassionate support while helping you navigate emotional challenges.
       </>
     ),
   },
@@ -34,14 +34,14 @@ const secondaryCards = [
     title: "Legal Expertise",
     desc: (
       <>
-        Seek assistance from our experienced <span className="font-semibold">divorce lawyers</span>, who are experts in <span className="font-semibold">Indian family law</span> and offer tailored solutions.
+        Whether you are searching for top <span className="font-semibold">divorce lawyers</span> near me or legal clarity on family law, our experts provide practical solutions.
       </>
     ),
   },
   {
     img: "assets/approach.webp", // Simplified Process icon
     title: "Simplified Process",
-    desc: "At Unsaathi, we streamline your divorce process, reducing stress and saving time.",
+    desc: "From documentation to legal filing, Unsaathi streamlines the entire journey for a smoother experience.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function ForYou() {
             Clarity. Compassion. A Fresh Start.
           </h1>
           <div className="text-[#776e65] mb-10">
-            For us, your peace of mind comes first; that’s why we ensure a hassle-free divorce process.
+            For us, your peace of mind comes first. Our goal is to simplify the legal process while connecting you with the best lawyer for divorce near me and trusted legal guidance.
           </div>
         </div>
 

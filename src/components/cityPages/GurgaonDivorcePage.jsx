@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import FaqPage from "../Faq/FaqPage";
 import ForYou from "../home/ForYou";
+import { fetchFaqsByCategory } from "../../utils/fetchFaqs";
+import FaqAccordion from "../FaqAccordion";
 
 const GurgaonDivorcePage = () => {
   const services = [
@@ -17,6 +18,14 @@ const GurgaonDivorcePage = () => {
     { label: "Annulment of Marriage", path: "/services/annulment-Of-Marriage" },
     { label: "Mutual Divorce", path: "/services/mutual-Divorce" },
   ];
+
+   const [faqs, setFaqs] = useState([]);
+  
+    useEffect(() => {
+      fetchFaqsByCategory("divorce-lawyer-gurgaon")
+        .then(setFaqs)
+        .catch(err => console.error("FAQs services page error:", err));
+    }, []);
 
   return (
     <div className="bg-[#f5f1ed] text-[#232122]">
@@ -34,10 +43,15 @@ const GurgaonDivorcePage = () => {
       <section className="relative py-24 text-center overflow-hidden">
 
         {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/Gurgaon.json')" }}
-        ></div>
+        <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/assets/Gurgaon.mp4" type="video/mp4" />
+</video>
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
@@ -49,8 +63,7 @@ const GurgaonDivorcePage = () => {
           </h1>
 
           <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-8">
-            Professional legal support for divorce, custody, alimony, and family disputes in Gurgaon.
-            Trusted by clients for confidential and result-oriented legal solutions.
+            Expert help for mutual divorce, custody, alimony, and legal documentation—handled with care and confidentiality.
           </p>
 
           <Link
@@ -61,6 +74,17 @@ const GurgaonDivorcePage = () => {
           </Link>
         </div>
       </section>
+
+      {/* ================= TRUSTED SECTION ================= */}
+<section className="max-w-5xl mx-auto px-6 py-16 text-center">
+  <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+    Trusted Divorce Services in Gurgaon
+  </h2>
+
+  <p className="text-lg text-gray-700 leading-relaxed">
+    Unsaathi offers reliable and discreet divorce services in Gurgaon, helping individuals navigate legal separation with clarity and confidence. If you are searching for the best divorce lawyer in Gurgaon, our platform connects you with experienced professionals who handle both mutual and contested divorce cases efficiently. From legal consultation to documentation and court procedures, we ensure every step is managed smoothly. Our goal is to reduce emotional stress while maintaining complete confidentiality and legal accuracy. With the guidance of the best divorce lawyer in Gurgaon, you can expect a structured approach that prioritises faster resolution, transparency, and your peace of mind.
+  </p>
+</section>
 
       {/* ================= SERVICES ================= */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -100,8 +124,11 @@ const GurgaonDivorcePage = () => {
       {/* ================= WHY + PROCESS (REPLACED) ================= */}
       <ForYou />
 
-      {/* ================= FAQ ================= */}
-      <FaqPage />
+      {/* FAQ SECTION (for services page) */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
+        <FaqAccordion faqs={faqs} />
+      </section>
 
       {/* ================= CTA ================= */}
       <section className="bg-[#232122] text-white py-16 text-center px-6">

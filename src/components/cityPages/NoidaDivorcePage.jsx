@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import NoidaDivorcePage from "./NoidaDivorcePage";
 import DelhiDivorcePage from "./DelhiDivorcePage";
 import GurgaonDivorcePage from "./GurgaonDivorcePage";
-import FaqPage from "../Faq/FaqPage";
 import { Link } from "react-router-dom";
 import ForYou from "../home/ForYou";
+import { fetchFaqsByCategory } from "../../utils/fetchFaqs";
+import FaqAccordion from "../FaqAccordion";
 
 
 const CityDivorcePage = () => {
@@ -40,6 +41,14 @@ const CityDivorcePage = () => {
   { label: "Mutual Divorce", path: "/services/mutual-Divorce" },
 ];
 
+const [faqs, setFaqs] = useState([]);
+  
+    useEffect(() => {
+      fetchFaqsByCategory("divorce-lawyer-noida")
+        .then(setFaqs)
+        .catch(err => console.error("FAQs services page error:", err));
+    }, []);
+
   const page = cityPages[citySlug];
 
   if (!page) {
@@ -54,13 +63,18 @@ const CityDivorcePage = () => {
     <div className="bg-[#f5f1ed] text-[#232122]">
 
       {/* ================= HERO ================= */}
-      <section className="relative py-24 text-center overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden">
 
   {/* Background Image */}
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/assets/Noida.jpeg')" }} // 👈 your image in public/assets
-  ></div>
+  <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-full h-full object-cover"
+>
+  <source src="/assets/Noida.mp4" type="video/mp4" />
+</video>
 
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/50"></div>
@@ -72,14 +86,25 @@ const CityDivorcePage = () => {
     </h1>
 
     <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-8">
-      Expert legal support for divorce, custody, alimony, and family disputes.
+      Expert help for mutual divorce, custody, alimony, and legal documentation—handled with care and confidentiality.
       Get guidance from experienced lawyers in {cityName}.
     </p>
 
     <button className="bg-[#b88b6c] hover:bg-[#a3775a] px-8 py-4 rounded-full font-semibold shadow-lg transition">
-      Talk to a Lawyer
+      Talk to an Expert
     </button>
   </div>
+</section>
+
+{/* ================= TRUSTED SECTION ================= */}
+<section className="max-w-5xl mx-auto px-6 py-16 text-center">
+  <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
+    Trusted Divorce Services in Noida
+  </h2>
+
+  <p className="text-lg text-gray-700 leading-relaxed">
+    Unsaathi offers reliable and discreet divorce services in Noida, helping individuals navigate legal separation with clarity and confidence. If you are searching for the best divorce lawyer in Noida, our platform connects you with experienced professionals who handle both mutual and contested divorce cases efficiently. From legal consultation to documentation and court procedures, we ensure every step is managed smoothly. Our goal is to reduce emotional stress while maintaining complete confidentiality and legal accuracy. With the guidance of the best divorce lawyer in Noida, you can expect a structured approach that prioritises faster resolution, transparency, and your peace of mind.
+  </p>
 </section>
 
       {/* ================= SERVICES GRID ================= */}
@@ -116,8 +141,11 @@ const CityDivorcePage = () => {
       {/* ================= WHY CHOOSE US ================= */}
       <ForYou/>
 
-      {/* ================= FAQ ================= */}
-      <FaqPage/>
+        {/* FAQ SECTION (for services page) */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
+        <FaqAccordion faqs={faqs} />
+      </section>
     </div>
   );
 };

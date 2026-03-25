@@ -57,7 +57,7 @@ function App() {
           <Route path="/blogs/:id" element={<BlogCard />} />
           <Route path='/contact' element={<ContactUsPage />} />
           <Route path='/quiz' element={<DivorceInsightQuiz />} />
-          <Route path='/AboutUs' element={<AboutUsPage />} />
+          <Route path='/About-Us' element={<AboutUsPage />} />
           <Route path='/connect-With-Us' element={<ConnectWithUnsaathi />} />
           <Route path="/blog-Detail-Page/:id" element={<BlogDetailPage />} />
           <Route path="/faqs" element={<FaqPage />} />

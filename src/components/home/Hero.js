@@ -20,13 +20,14 @@ function Hero() {
         {/* Left Content */}
         <div className="space-y-8 -mb-13">
           <h1 className="text-5xl lg:text-[64px] font-serif leading-[1.15] text-gray-900">
-            India's Most Trusted Divorce & Family Law Firm 
+            Your Ally for a Simpler Divorce.
           </h1>
 
           <p className="text-gray-600 text-lg leading-relaxed max-w-lg">
-            Divorce is a turning point. Unsaathi provides expert{' '}
-            <span className="font-semibold text-gray-800">divorce lawyer</span> support and advanced{' '}
-            <span className="font-semibold text-gray-800">divorce services</span>, to lift your emotional stress, empowering a strong, fresh start.
+            Divorce is a turning point. Unsaathi provides support from the best{' '}
+            <span className="font-semibold text-gray-800">divorce lawyer</span>  in India along with advanced online{' '}
+            <span className="font-semibold text-gray-800">divorce services</span>,  to reduce your emotional stress and help you begin a strong, fresh start.
+
           </p>
 
           {/* CTA Buttons */}

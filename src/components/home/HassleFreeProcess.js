@@ -6,25 +6,25 @@ const counselingContent = [
     step: "1",
     title: "Understanding Your Situation",
     description:
-      "We start with a personalized one-on-one session. Our divorce consultants listen to your situations to provide customised separation guidance.",
+      "We start with a personalised one-on-one session. Our divorce consultants listen to your situation and explain your legal options, including the mutual divorce procedure and important aspects like lawyer fees for divorce in India.",
   },
   {
     step: "2",
     title: "Counselling for Emotional Support",
     description:
-      "We offer emotional support and coping strategies, connecting you with legal and psychological help throughout your divorce journey.",
+      "Divorce can be overwhelming. Our support system connects you with counsellors and offers access to free divorce lawyer consultation online so you can make informed decisions with clarity.",
   },
   {
     step: "3",
     title: "Leading the Way with Legal Procedures",
     description:
-      "Our experienced divorce lawyers help you understand your legal options, from separation and custody to financial planning post-divorce.",
+      "Our experienced legal team guides you through every legal stage including the mutual divorce process in India, filing a mutual divorce petition, and understanding the relevant mutual divorce section under Indian law.",
   },
   {
     step: "4",
     title: "Getting Support After Divorce",
     description:
-      "Our support continues beyond the legal process — helping you rebuild with financial, emotional, and legal resources tailored for you.",
+      "Our services extend beyond legal procedures. From financial planning to parenting guidance with experienced child custody lawyers, we help you rebuild your life with confidence.",
   },
 ];
 

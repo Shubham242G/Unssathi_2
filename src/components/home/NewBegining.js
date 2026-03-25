@@ -13,7 +13,7 @@ export default function NewBeginning() {
             Turn Heartaches Into New Beginning
           </h1>
           <div className="text-[#726964] text-base md:text-lg mb-8">
-            Unsaathi divorce services reimagine the way divorces are perceived. We empower you with end-to-end solutions fostering healing and hope for a better future.
+            Unsaathi reimagines divorce support with compassionate guidance and practical legal solutions.
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[#bcb0a6] pt-8 gap-2">
             <div className="pr-4">
@@ -21,7 +21,7 @@ export default function NewBeginning() {
                 Cost-Effective Solutions
               </h3>
               <p className="text-[#726964] text-base">
-                Our divorce consultants extend affordable divorce solutions, ensuring you get personalised support without breaking the bank.
+                Our consultants ensure accessible services so you can move forward with the right legal support.
               </p>
             </div>
             <div className="md:border-l border-[#bcb0a6] px-4">
@@ -29,7 +29,7 @@ export default function NewBeginning() {
                 Optimised Strategies
               </h3>
               <p className="text-[#726964] text-base">
-                With our quick documentation and streamlined procedure, getting legal support for separation becomes seamless.
+                Quick documentation and streamlined procedures make legal support for separation simple and efficient.
               </p>
             </div>
             <div className="md:border-l border-[#bcb0a6] pl-4">
@@ -37,7 +37,7 @@ export default function NewBeginning() {
                 Cultural Sensitivity
               </h3>
               <p className="text-[#726964] text-base">
-                Our divorce services are deeply rooted in our clients’ cultural interests, and we ensure that every client is respected and supported throughout the process.
+                Our team understands the cultural and emotional complexities of divorce in India and provides respectful guidance throughout the journey.
               </p>
             </div>
           </div>

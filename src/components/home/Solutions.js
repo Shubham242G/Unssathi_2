@@ -6,25 +6,25 @@ const services = [
     icon: "/assets/consultation.png",
     title: "Divorce Attorney",
     description:
-      "Our expert divorce attorneys guide you through the legal complexities of divorce to ensure a smoother transition.",
+      "Our expert divorce attorneys guide you through the legal complexities and help you move forward with confidence.",
   },
   {
     icon: "/assets/agreement.png",
     title: "1 On 1 Counselling",
     description:
-      "With our 1 on 1 counselling, we help you cope with divorce stress and rediscover your strength.",
+      "Personalised counselling sessions help you manage stress and rediscover your emotional strength.",
   },
   {
     icon: "/assets/talking.png",
     title: "Off Court Settlements",
     description:
-      "With our off-court settlements, you can achieve peaceful resolutions, saving time, money and effort.",
+      "Our mediation experts help resolve disputes peacefully, saving time, money, and effort.",
   },
   {
     icon: "/assets/woman.png",
     title: "Separation Coaching",
     description:
-      "Empower yourself with our separation coaching to steer clear from early challenges after divorce.",
+      "Practical guidance helps you navigate the early challenges of separation and rebuild your life.",
   },
 ];
 
@@ -50,8 +50,7 @@ export default function UnsaathiSolutions() {
         </h1>
         <p className="text-[#7f756f] text-base md:text-lg mb-9">
           Get hassle-free solutions under one roof with our comprehensive
-          divorce services. Everything you need is conveniently available in a
-          single law firm.
+          divorce services. 
         </p>
 
         {/* Service Grid */}
@@ -79,13 +78,13 @@ export default function UnsaathiSolutions() {
         <div className="mt-20 text-center">
           <div className="inline-block rounded-2xl border border-[#bcb0a6] px-8 py-10 bg-white shadow-sm w-full max-w-2xl">
             <h3 className="font-sans font-semibold text-2xl text-[#232122] mb-6">
-              Talk Your Heart Out! We Are Listening
+              Talk Your Heart Out! We Are Listening 
             </h3>
             <button
               onClick={() => redirectToWhatsApp(whatsappNumber)} // ✅ cleaner function call
               className="bg-[#b88b6c] hover:bg-[#a5775c] text-white text-lg font-semibold py-4 px-8 rounded-full w-full max-w-sm mx-auto transition-transform transform hover:scale-105"
             >
-              Schedule A Call via WhatsApp
+              Start Afresh Today
             </button>
           </div>
         </div>
