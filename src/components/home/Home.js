@@ -104,7 +104,7 @@ function Home() {
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text":
-                  "6 months minimum cooling-off period at Gautam Budh Nagar Family Court. Total 6-12 months with GSLO Unsaathi."
+                  "6 months minimum cooling-off period at Gautam Budh Nagar Family Court. Total 6-12 months with Unsaathi."
               }
             },
             {
