@@ -30,7 +30,7 @@ function Home() {
         {
           "@type": "Organization",
           "@id": "https://unsaathi.com/#organization",
-          "name": "GSLO Unsaathi",
+          "name": "Unsaathi",
           "alternateName": "Unsaathi Divorce Lawyers",
           "url": "https://unsaathi.com",
           "logo": {
@@ -71,13 +71,13 @@ function Home() {
           ],
           "serviceType": "Divorce Lawyer",
           "priceRange": "₹20k - ₹20L+",
-          "legalName": "Gaurav Sharma Legal Offices (GSLO)"
+          "legalName": "Unsaathi"
         },
         {
           "@type": "WebSite",
           "@id": "https://unsaathi.com/#website",
           "url": "https://unsaathi.com",
-          "name": "GSLO Unsaathi - Divorce Lawyers Delhi NCR",
+          "name": "Unsaathi - Divorce Lawyers Delhi NCR",
           "publisher": { "@id": "https://unsaathi.com/#organization" },
           "potentialAction": {
             "@type": "SearchAction",
