@@ -33,12 +33,13 @@ import FaqAccordion from "../FaqAccordion";
 export default function ContestedDivorce() {
 const whatsappNumber = '919266877791';
 
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      "Hello, I’d like to connect with a legal advisor regarding Mutual Divorce."
-    );
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-  };
+const handleWhatsAppClick = () => {
+  const message = encodeURIComponent(
+    "Hello, I’d like to connect with a legal advisor regarding a contested divorce."
+  );
+  window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+};
+
 
   const [faqs, setFaqs] = useState([]);
       
@@ -52,10 +53,13 @@ const whatsappNumber = '919266877791';
   return (
     <div className="min-h-screen bg-[#f3efe9] font-serif text-[#3d3d3d]">
       <Helmet>
-        <title>Contested Divorce Lawyers in India | Fight & Win -Unsaathi</title>
-        <meta name="description" content=" Facing a contested divorce? Get aggressive legal representation from India's top family lawyers. Protect your rights on alimony, custody & assets. Consult Unsaathi today." />
-        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
-      </Helmet>
+  <title>Contested Divorce Lawyers in India | Fight & Win – Unsaathi</title>
+  <meta
+    name="description"
+    content="Facing a contested divorce? Get aggressive legal representation from India's top family lawyers. Protect your rights on alimony, custody & assets. Consult Unsaathi today."
+  />
+  <meta name="keywords" content="divorce lawyer delhi, contested divorce delhi" />
+</Helmet>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
       {/* Text Content */}
@@ -71,7 +75,11 @@ const whatsappNumber = '919266877791';
 
       {/* Lottie Banner Illustration */}
       <div className="flex justify-center w-full max-w-xl mx-auto mb-8">
-        <Lottie animationData={aboutAnimation} loop={true} className="w-full h-100" />
+        <Lottie
+  animationData={aboutAnimation}
+  loop={true}
+  className="w-full h-auto"
+/>
       </div>
 </section>
 
@@ -86,8 +94,8 @@ const whatsappNumber = '919266877791';
           <p className="font-medium text-[#b88b6c] mb-4">
             Ending a toxic marriage is a crucial step towards personal well-being.
           </p>
-          <p className="text-lg text-gray-700">
-            A contested divorce is a legal process that occurs when spouses disagree on one or more key issues, such as child custody, alimony, or the division of assets. Unlike a mutual divorce, it requires court intervention to resolve these disputes through litigation.
+          <p className="text-[#c48e53] mb-8">
+            Contested divorce can be intimidating, but you don’t have to face it alone. Let our experts protect your rights and guide you through the legal process.
           </p>
         </div>
       </section>

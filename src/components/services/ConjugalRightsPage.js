@@ -28,7 +28,7 @@ export default function ConjugalRightsPage() {
   return (
     <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
       <Helmet>
-        <title>Title: Conjugal Rights Lawyers in India | Consult Unsaathi </title>
+        <title>Conjugal Rights Lawyers in India | Consult Unsaathi </title>
         <meta name="description" content="Spouse deserted you? File for Restitution of Conjugal Rights under Section 9 HMA. Expert family lawyers at Unsaathi protect your marriage rights. Book a free consultation today." />
         <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
       </Helmet>
