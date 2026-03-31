@@ -27,64 +27,64 @@ function Home() {
     {JSON.stringify({
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://unsaathi.com/#organization",
-          "name": "Unsaathi",
-          "alternateName": "Unsaathi Divorce Lawyers",
-          "url": "https://unsaathi.com",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://unsaathi.com/assets/logo.png"
-          },
-          "description":
-            "Expert divorce lawyers serving Delhi NCR - Noida, Delhi, Gurgaon. Mutual consent & contested divorces from ₹20k. Family law specialists.",
-          "address": [
-            {
-              "@type": "PostalAddress",
-              "streetAddress":
-                "Plot No. 25, Fourth Floor, Thana Road, Near Chhawla Stand",
-              "addressLocality": "Najafgarh",
-              "addressRegion": "Delhi",
-              "postalCode": "110043",
-              "addressCountry": "IN"
-            },
-            {
-              "@type": "PostalAddress",
-              "streetAddress": "208-209, Tower-E, Alphathum",
-              "addressLocality": "Noida",
-              "addressRegion": "Uttar Pradesh",
-              "postalCode": "201305",
-              "addressCountry": "IN"
-            }
-          ],
-          "telephone": "+91-9266877791",
-          "email": "info@unsaathi.com",
-          "sameAs": [
-            "https://www.linkedin.com/company/unsaathi-official",
-            "https://www.facebook.com/unsaathi"
-          ],
-          "areaServed": [
-            { "@type": "City", "name": "Delhi" },
-            { "@type": "City", "name": "Noida" },
-            { "@type": "City", "name": "Gurgaon" }
-          ],
-          "serviceType": "Divorce Lawyer",
-          "priceRange": "₹20k - ₹20L+",
-          "legalName": "Unsaathi"
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://unsaathi.com/#website",
-          "url": "https://unsaathi.com",
-          "name": "Unsaathi - Divorce Lawyers Delhi NCR",
-          "publisher": { "@id": "https://unsaathi.com/#organization" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://unsaathi.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
+        // {
+        //   "@type": "Organization",
+        //   "@id": "https://unsaathi.com/#organization",
+        //   "name": "Unsaathi",
+        //   "alternateName": "Unsaathi Divorce Lawyers",
+        //   "url": "https://unsaathi.com",
+        //   "logo": {
+        //     "@type": "ImageObject",
+        //     "url": "https://unsaathi.com/assets/logo.png"
+        //   },
+        //   "description":
+        //     "Expert divorce lawyers serving Delhi NCR - Noida, Delhi, Gurgaon. Mutual consent & contested divorces from ₹20k. Family law specialists.",
+        //   "address": [
+        //     {
+        //       "@type": "PostalAddress",
+        //       "streetAddress":
+        //         "Plot No. 25, Fourth Floor, Thana Road, Near Chhawla Stand",
+        //       "addressLocality": "Najafgarh",
+        //       "addressRegion": "Delhi",
+        //       "postalCode": "110043",
+        //       "addressCountry": "IN"
+        //     },
+        //     {
+        //       "@type": "PostalAddress",
+        //       "streetAddress": "208-209, Tower-E, Alphathum",
+        //       "addressLocality": "Noida",
+        //       "addressRegion": "Uttar Pradesh",
+        //       "postalCode": "201305",
+        //       "addressCountry": "IN"
+        //     }
+        //   ],
+        //   "telephone": "+91-9266877791",
+        //   "email": "info@unsaathi.com",
+        //   "sameAs": [
+        //     "https://www.linkedin.com/company/unsaathi-official",
+        //     "https://www.facebook.com/unsaathi"
+        //   ],
+        //   "areaServed": [
+        //     { "@type": "City", "name": "Delhi" },
+        //     { "@type": "City", "name": "Noida" },
+        //     { "@type": "City", "name": "Gurgaon" }
+        //   ],
+        //   "serviceType": "Divorce Lawyer",
+        //   "priceRange": "₹20k - ₹20L+",
+        //   "legalName": "Unsaathi"
+        // },
+        // {
+        //   "@type": "WebSite",
+        //   "@id": "https://unsaathi.com/#website",
+        //   "url": "https://unsaathi.com",
+        //   "name": "Unsaathi - Divorce Lawyers Delhi NCR",
+        //   "publisher": { "@id": "https://unsaathi.com/#organization" },
+        //   "potentialAction": {
+        //     "@type": "SearchAction",
+        //     "target": "https://unsaathi.com/search?q={search_term_string}",
+        //     "query-input": "required name=search_term_string"
+        //   }
+        // },
         {
           "@type": "FAQPage",
           "@id": "https://unsaathi.com/#faq",
