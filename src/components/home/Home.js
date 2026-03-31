@@ -62,7 +62,6 @@ function Home() {
           "email": "info@unsaathi.com",
           "sameAs": [
             "https://www.linkedin.com/company/unsaathi-official",
-            "https://www.instagram.com/official_unsaathi",
             "https://www.facebook.com/unsaathi"
           ],
           "areaServed": [
