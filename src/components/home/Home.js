@@ -6,7 +6,7 @@ import UnsaathiSolutions from './Solutions';
 import NewBeginning from './NewBegining';
 import HassleFreeProcess from './HassleFreeProcess';
 import ConnectWithUnsaathi from './connectWithUnsaathi';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 import FaqAccordion from '../FaqAccordion';
 import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
 
