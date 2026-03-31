@@ -22,7 +22,7 @@ function Home() {
   
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
-      <Helmet>
+      {/* <Helmet>
   <script type="application/ld+json">
     {JSON.stringify({
       "@context": "https://schema.org",
@@ -139,7 +139,7 @@ function Home() {
       ]
     })}
   </script>
-</Helmet>
+</Helmet> */}
 
 
       <Hero />
@@ -154,8 +154,6 @@ function Home() {
         <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
         <FaqAccordion faqs={faqs} />
       </section>
-
-      {/* JSON-LD Schema - SEO Supercharger */}
 
 
 
