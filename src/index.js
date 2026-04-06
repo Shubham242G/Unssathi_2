@@ -13,7 +13,7 @@ const app = (
   </React.StrictMode>
 );
 
-// Check if we're on Vercel
+// (Check if we're on Vercel)
 const isVercel = process.env.VERCEL === 'true';
 
 if (rootElement.hasChildNodes() && !isVercel) {
