@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Use BrowserRouter
+import { BrowserRouter as  Routes, Route } from 'react-router-dom'; // Use BrowserRouter
 import Navbar from './navbar/Navbar';
 import Home from './components/home/Home';
 import ConjugalRightsPage from './components/services/ConjugalRightsPage';
