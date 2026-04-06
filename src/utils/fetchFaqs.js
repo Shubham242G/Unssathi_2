@@ -1,5 +1,5 @@
-const BASE_URL = "http://localhost:5000";
-// const BASE_URL = "https://unsaathi-backend.onrender.com";
+// const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://unsaathi-backend.onrender.com";
 
 export const fetchFaqsByCategory = async (category, blogId = null) => {
   let url = `${BASE_URL}/api/faq/by-category/${category}`;
