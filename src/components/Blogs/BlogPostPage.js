@@ -8,8 +8,8 @@ const BlogListingPage = () => {
   const [error, setError] = useState(null);
   const [totalPages, setTotalPages] = useState(1);
 
-  // const url = "https://unsaathi-backend.onrender.com";
-  const url = "http://localhost:5000";
+  const url = "https://unsaathi-backend.onrender.com";
+  // const url = "http://localhost:5000";
   const limit = 10;
 
   useEffect(() => {

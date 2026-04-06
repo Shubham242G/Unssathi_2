@@ -11,8 +11,8 @@ const BlogDetailPage = () => {
   const [error, setError] = useState(null);
   const [faqs, setFaqs] = useState([]);
 
-  // const url = "https://unsaathi-backend.onrender.com";
-  const url = "http://localhost:5000";
+  const url = "https://unsaathi-backend.onrender.com";
+  // const url = "http://localhost:5000";
 
   useEffect(() => {
   if (!slug) return;
