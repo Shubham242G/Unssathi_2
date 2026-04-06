@@ -27,6 +27,7 @@ import ScrollToTop from './components/ScrollToTop'
 import FaqPage from './components/Faq/FaqPage';
 import { HelmetProvider } from 'react-helmet-async';
 import ServicesPage from './components/services/ServicesPage';
+import NotFoundPage from './components/notFound/NotFoundPage';
 
 function App() {
   return (
