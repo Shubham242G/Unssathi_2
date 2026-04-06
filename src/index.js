@@ -5,8 +5,6 @@ import './index.css';
 import App from './App';
 
 const rootElement = document.getElementById('root');
-
-// Create the app element
 const app = (
   <React.StrictMode>
     <BrowserRouter>
@@ -15,11 +13,11 @@ const app = (
   </React.StrictMode>
 );
 
-// Check if we're in prerendering/hydration mode
-if (rootElement.hasChildNodes()) {
-  // For prerendered content - hydrate
+// Check if we're on Vercel
+const isVercel = process.env.VERCEL === 'true';
+
+if (rootElement.hasChildNodes() && !isVercel) {
   ReactDOM.hydrateRoot(rootElement, app);
 } else {
-  // For normal rendering
   ReactDOM.createRoot(rootElement).render(app);
 }
