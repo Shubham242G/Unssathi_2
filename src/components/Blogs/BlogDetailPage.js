@@ -1,52 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
+import FaqAccordion from '../FaqAccordion';
+// import { fetchFaqsByCategory } from '../../utils/fetchFaqs'; // REMOVED - not needed for embedded FAQs
 
 const BlogDetailPage = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [faqs, setFaqs] = useState([]);
 
-  const url = "https://unsaathi-backend.onrender.com";
-  // const url = "http://localhost:5000";
+  // const url = "https://unsaathi-backend.onrender.com";
+  const url = "http://localhost:5000";
 
   useEffect(() => {
-    fetch(`${url}/api/blogs/${id}`)
-      .then(response => {
-        if (!response.ok) throw new Error('Blog not found');
-        return response.json();
-      })
-      .then(data => {
-        setBlog(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [id]);
+  if (!slug) return;
 
-
-
-
-useEffect(() => {
-  fetch(`${url}/api/faq`)
-    .then(res => {
-      console.log("STATUS:", res.status);
-
-      if (!res.ok) throw new Error('Failed to fetch FAQs');
-      return res.json();
+  fetch(`${url}/api/blogs/slug/${slug}`)
+    .then(response => {
+      if (!response.ok) throw new Error('Blog not found');
+      return response.json();
     })
     .then(data => {
-      // ✅ Only show active FAQs
-      console.log("FAQ DATA:", data); 
-      const activeFaqs = data.filter(faq => faq.isActive !== false);
-      setFaqs(activeFaqs);
+      setBlog(data);
+      // Set FAQs directly from blog's embedded faqs array
+      if (data.faqs && data.faqs.length > 0) {
+        setFaqs(data.faqs);
+      }
+      setLoading(false);
     })
-    .catch(err => console.error('FAQ fetch error:', err));
-}, []);
+    .catch(err => {
+      setError(err.message);
+      setLoading(false);
+    });
+}, [slug]);
+
+
+// REMOVED the second useEffect that was fetching FAQs from standalone API
+
 
   /* ---------- Dynamic Blog Schema ---------- */
 
@@ -72,8 +64,7 @@ useEffect(() => {
     "dateModified": blog.date,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://unsaathi.com/blogDetailPage/${blog._id}`
-    }
+"@id": `https://unsaathi.com/blogDetailPage/${blog.slug}`    }
   } : null;
 
   /* ---------- Loading ---------- */
@@ -136,7 +127,7 @@ useEffect(() => {
 
         <link
           rel="canonical"
-          href={`https://unsaathi.com/blogDetailPage/${blog._id}`}
+href={`https://unsaathi.com/blogDetailPage/${blog.slug}`}
         />
 
         {/* Structured Data */}
@@ -165,15 +156,24 @@ useEffect(() => {
 
           <div className="max-w-5xl mx-auto px-6 relative z-10">
 
-            {blog.images && blog.images[0] && (
-              <div className="mb-12">
-                <img
-                  src={blog.images[0]}
-                  alt={blog.title}
-                  className="w-full h-[500px] md:h-[600px] object-cover rounded-3xl shadow-2xl mx-auto max-w-4xl"
-                />
-              </div>
-            )}
+            {blog.images && blog.images.length > 0 && blog.images[0] ? (
+  <div className="mb-12">
+    <img
+      src={blog.images[0]}
+      alt={blog.title}
+      className="w-full h-[500px] md:h-[600px] object-cover rounded-3xl shadow-2xl mx-auto max-w-4xl"
+      onError={(e) => {
+        console.log('Image error:', e.target.src.substring(0, 50) + '...');
+        e.target.style.display = 'none';
+      }}
+      loading="lazy"
+    />
+  </div>
+) : (
+  <div className="w-full h-[500px] md:h-[600px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl shadow-2xl mx-auto max-w-4xl flex items-center justify-center">
+    <span className="text-gray-500 text-lg font-medium">No Featured Image</span>
+  </div>
+)}
 
             <div className="text-center">
 
@@ -227,16 +227,13 @@ useEffect(() => {
         <div className="mt-10">
   <h2 className="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
 
-  {faqs.map((faq, index) => (
-    <details key={index} className="mb-3 border p-3 rounded">
-      <summary className="font-semibold cursor-pointer">
-        {faq.question}
-      </summary>
-      <p className="mt-2 text-gray-600">
-        {faq.answer}
-      </p>
-    </details>
-  ))}
+  {/* ✅ NEW: Blog-specific FAQs */}
+{faqs.length > 0 && (
+        <section className="max-w-6xl mx-auto px-6 py-16">
+          <h2 className="text-3xl font-bold mb-8 text-[#232122]">FAQs</h2>
+          <FaqAccordion faqs={faqs} />
+        </section>
+      )}
 </div>
 
       </div>

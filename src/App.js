@@ -14,7 +14,6 @@ import AnnulmentOfMarriagePage from './components/services/AnnulmentOfMarriage';
 import MutualDivorcePage from './components/services/MutualDivorcePage';
 import DivorceServicesPage from './components/WhyUnsaathi.js/WhyUnsaathi';
 import HowUnsaathiWorksPage from './components/HowUnsaathi/HowUnsaathi';
-import BlogCard from './components/Blogs/Blogs';
 import ContactUsPage from './contact/contact';
 import BlogPostPage from './components/Blogs/BlogPostPage';
 import ChatBot from './bot/bot';
@@ -54,16 +53,15 @@ function App() {
           <Route path='/why-Unsaathi' element={<DivorceServicesPage />} />
           <Route path='/how-Unsaathi' element={<HowUnsaathiWorksPage />} />
           <Route path='/blogs' element={<BlogPostPage />} />
-          <Route path="/blogs/:id" element={<BlogCard />} />
           <Route path='/contact' element={<ContactUsPage />} />
           <Route path='/quiz' element={<DivorceInsightQuiz />} />
           <Route path='/About-Us' element={<AboutUsPage />} />
           <Route path='/connect-With-Us' element={<ConnectWithUnsaathi />} />
-          <Route path="/blog-Detail-Page/:id" element={<BlogDetailPage />} />
+          <Route path="/blog-Detail-Page/:slug" element={<BlogDetailPage />} />          
           <Route path="/faqs" element={<FaqPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route index element={<Home />} />
-          <Route path="*" element={<Home />} />
+          {/* <Route index element={<Home />} />
+          <Route path="*" element={<Home />} /> */}
           </Routes>
         <ChatBot />
         <Footer />                       
