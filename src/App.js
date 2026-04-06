@@ -58,8 +58,7 @@ function App() {
           <Route path='/quiz' element={<DivorceInsightQuiz />} />
           <Route path='/About-Us' element={<AboutUsPage />} />
           <Route path='/connect-With-Us' element={<ConnectWithUnsaathi />} />
-          <Route path="/blog-Detail-Page/:slug" element={<BlogDetailPage />} />          
-          <Route path="/faqs" element={<FaqPage />} />
+          <Route path="/blog/:slug" element={<BlogDetailPage />} />          <Route path="/faqs" element={<FaqPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="*" element={<NotFoundPage />} />
           {/* <Route index element={<Home />} />
