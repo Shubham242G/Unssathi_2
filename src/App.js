@@ -33,7 +33,7 @@ function App() {
   return (
     <HelmetProvider>
     <div className="min-h-screen bg-[#f5f1ed]">
-      <Router>                          {/* Router wraps EVERYTHING */}
+                         {/* Router wraps EVERYTHING */}
         <Navbar />
         <ScrollToTop /> 
         <Routes>
@@ -66,7 +66,7 @@ function App() {
           </Routes>
         <ChatBot />
         <Footer />                       
-      </Router>
+
     </div>
     </HelmetProvider>
   );
