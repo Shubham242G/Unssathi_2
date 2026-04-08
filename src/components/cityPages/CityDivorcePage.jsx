@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import NoidaDivorcePage from './NoidaDivorcePage';
 import DelhiDivorcePage from './DelhiDivorcePage';
 import GurgaonDivorcePage from './GurgaonDivorcePage';
+import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
 
 const CityDivorcePage = () => {
   const location = useLocation();
@@ -11,9 +12,27 @@ const CityDivorcePage = () => {
   // ✅ FIXED: let allows reassignment
   let citySlug = '';
   
-  if (pathname === '/divorce-lawyer-noida') citySlug = 'noida';
-  else if (pathname === '/divorce-lawyer-delhi') citySlug = 'delhi';
-  else if (pathname === '/divorce-lawyer-gurgaon') citySlug = 'gurgaon';
+ const getCityCategory = () => {
+    if (pathname === "/divorce-lawyer-noida") return "divorce-lawyer-noida";
+    if (pathname === "/divorce-lawyer-delhi") return "divorce-lawyer-delhi";
+    if (pathname === "/divorce-lawyer-gurgaon") return "divorce-lawyer-gurgaon";
+    return "divorce-lawyer-noida"; // default
+  };
+
+  const [faqs, setFaqs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+    window.__REVI_READY__ = false;
+    
+    fetchFaqsByCategory(getCityCategory())
+      .then(setFaqs)
+      .catch(err => console.error("FAQs services page error:", err))
+      .finally(() => {
+        window.__REVI_READY__ = true;
+      });
+  }, [pathname]);
   
   const cityPages = {
     noida: <NoidaDivorcePage />,

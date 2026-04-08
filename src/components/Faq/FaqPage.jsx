@@ -79,11 +79,17 @@ const FaqPage = () => {
   const [faqs, setFaqs] = useState([]);
 
   useEffect(() => {
+    window.__REVI_READY__ = false;
+    
     fetch(`${BASE_URL}/api/faq/by-category/general`)
       .then(res => res.json())
       .then(data => setFaqs(data))
-      .catch(err => console.error("FAQ error:", err));
+      .catch(err => console.error("FAQ error:", err))
+      .finally(() => {
+        window.__REVI_READY__ = true;
+      });
   }, []);
+
 
   const faqSchema = {
     "@context": "https://schema.org",

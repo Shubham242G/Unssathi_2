@@ -4,6 +4,7 @@ import Lottie from "lottie-react";
 import { Helmet } from 'react-helmet-async';
 import { fetchFaqsByCategory } from "../../utils/fetchFaqs";
 import FaqAccordion from "../FaqAccordion";
+import { useReviReady } from "../../hooks/useReviReady";
 
 
 
@@ -42,12 +43,16 @@ const handleWhatsAppClick = () => {
 
 
   const [faqs, setFaqs] = useState([]);
-      
+  const [loading, setLoading] = useState(true);
+
+const isDataReady = !loading && faqs !== null;
+useReviReady([isDataReady]);    
           
             useEffect(() => {
               fetchFaqsByCategory("contested-divorce")
                 .then(setFaqs)
-                .catch(err => console.error("FAQs services page error:", err));
+                .catch(err => console.error("FAQs services page error:", err))
+                .finally(() => setLoading(false));
             }, []);
 
   return (

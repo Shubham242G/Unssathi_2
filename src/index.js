@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM, { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
@@ -13,11 +13,12 @@ const app = (
   </React.StrictMode>
 );
 
-// (Check if we're on Vercel)
-const isVercel = process.env.VERCEL === 'true';
 
-if (rootElement.hasChildNodes() && !isVercel) {
-  ReactDOM.hydrateRoot(rootElement, app);
+
+if (rootElement.hasChildNodes()) {
+  // Prerendered HTML exists - hydrate it
+  hydrateRoot(rootElement, <App />);
 } else {
-  ReactDOM.createRoot(rootElement).render(app);
+  // Normal SPA mount
+  createRoot(rootElement).render(<App />);
 }

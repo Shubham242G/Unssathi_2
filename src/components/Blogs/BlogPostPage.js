@@ -13,6 +13,7 @@ const BlogListingPage = () => {
   const limit = 10;
 
   useEffect(() => {
+    window.__REVI_READY__ = false;
     setLoading(true);
     setError(null);
 
@@ -41,6 +42,8 @@ const BlogListingPage = () => {
       .catch(err => {
         setError(err.message);
         setLoading(false);
+      }).finally(() => {
+        window.__REVI_READY__ = true;
       });
   }, [page]);
 

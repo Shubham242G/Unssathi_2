@@ -4,6 +4,7 @@ import aboutAnimation from '../../bannerImages/beidge.json';
 import { Helmet } from 'react-helmet-async';
 import FaqAccordion from '../FaqAccordion';
 import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
+import { useReviReady } from '../../hooks/useReviReady';
 
 
 const JudicialSeparationPage = () => {
@@ -17,13 +18,17 @@ const JudicialSeparationPage = () => {
   };
 
   const [faqs, setFaqs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const isDataReady = !loading && faqs !== null;
+  useReviReady([isDataReady]);
 
             
                 
                   useEffect(() => {
                     fetchFaqsByCategory("judicial-separation")
                       .then(setFaqs)
-                      .catch(err => console.error("FAQs services page error:", err));
+                      .catch(err => console.error("FAQs services page error:", err))
+                      .finally(() => setLoading(false));
                   }, []);
 
   return (

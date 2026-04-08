@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
 import FaqAccordion from '../FaqAccordion';
+import { useReviReady } from '../../hooks/useReviReady'; // Adjust path as needed
 
 const BlogDetailPage = () => {
   const { slug } = useParams(); // This could be a slug OR an ID
@@ -11,6 +12,10 @@ const BlogDetailPage = () => {
   const [faqs, setFaqs] = useState([]);
 
   const url = "https://unsaathi-backend.onrender.com";
+
+  // Track when data is fully loaded for ReviJs
+  const isDataReady = !loading && (blog !== null || error !== null);
+  useReviReady([isDataReady]);
 
   useEffect(() => {
     if (!slug) return;
@@ -41,9 +46,6 @@ const BlogDetailPage = () => {
         setLoading(false);
       });
   }, [slug, url]);
-
-  // Rest of your component remains exactly the same...
-  // (keep all the schema, loading, error, and return code as is)
 
   const schemaData = blog ? {
     "@context": "https://schema.org",

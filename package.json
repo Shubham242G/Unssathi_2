@@ -22,40 +22,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:prerender": "react-scripts build && react-snap",
-    "postbuild": "SKIP_PRERENDER=true react-scripts build",
+    "build:prerender": "react-scripts build && node revi-build.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "serve -s build"
-  },
-  "reactSnap": {
-    "include": [
-      "/",
-      "/blogs",
-      "/blog/*",
-      "/faqs",
-      "/services/*",
-      "/why-Unsaathi",
-      "/how-Unsaathi",
-      "/About-Us",
-      "/connect-With-Us",
-      "/contact",
-      "/quiz",
-      "/divorce-lawyer-noida",
-      "/divorce-lawyer-delhi",
-      "/divorce-lawyer-gurgaon"
-    ],
-    "skipThirdPartyRequests": false,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage"
-    ],
-    "waitFor": 5000,
-    "timeout": 30000,
-    "httpHeaders": {
-      "Accept-Language": "en-US"
-    }
+    "serve": "serve -s build-prerendered"
   },
   "eslintConfig": {
     "extends": [
@@ -80,6 +50,7 @@
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
+    "puppeteer": "^24.40.0",
     "react-snap": "^1.23.0",
     "serve": "^14.2.0",
     "tailwindcss": "^3.4.17"

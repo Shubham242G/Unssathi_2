@@ -15,10 +15,17 @@ function Home() {
    const [faqs, setFaqs] = useState([]);
   
     useEffect(() => {
-      fetchFaqsByCategory("home")
-        .then(setFaqs)
-        .catch(err => console.error("FAQs services page error:", err));
-    }, []);
+    // Show ReviJs that we're loading
+    window.__REVI_READY__ = false;
+    
+    fetchFaqsByCategory("home")
+      .then(setFaqs)
+      .catch(err => console.error("FAQs services page error:", err))
+      .finally(() => {
+        // CRITICAL: Tell ReviJs we're done (even if error)
+        window.__REVI_READY__ = true;
+      });
+  }, []);
   
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
