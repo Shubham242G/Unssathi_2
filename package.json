@@ -21,11 +21,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:prerender": "react-scripts build && node revi-build.js",
+    "build": "react-scripts build && node prerender.js",
+    "build:local": "react-scripts build && node prerender.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "serve -s build-prerendered"
+    "serve": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
@@ -51,7 +51,6 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "puppeteer": "^24.40.0",
-    "react-snap": "^1.23.0",
     "serve": "^14.2.0",
     "tailwindcss": "^3.4.17"
   }
