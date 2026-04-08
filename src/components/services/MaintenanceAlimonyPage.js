@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
 import FaqAccordion from '../FaqAccordion';
 import { useReviReady } from '../../hooks/useReviReady';
-import { organizationSchema, serviceSchema, faqSchemaFromData, breadcrumbSchema } from '../../utils/schemaHelper';
+import { organizationSchema, serviceSchema, faqSchemaFromData} from '../../utils/schemaHelper';
 
 const MaintenanceAlimonyPage = () => {
   const whatsappNumber = '919266877791';
