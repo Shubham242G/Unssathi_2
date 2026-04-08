@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import BlogCard from './Blogs'; // Make sure this path is correct
+import BlogCard from './Blogs';
+import { useReviReady } from '../../hooks/useReviReady';
 
 const BlogListingPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -9,11 +10,13 @@ const BlogListingPage = () => {
   const [totalPages, setTotalPages] = useState(1);
 
   const url = "https://unsaathi-backend.onrender.com";
-  // const url = "http://localhost:5000";
   const limit = 10;
 
+  // Track when data is fully loaded for ReviJs
+  const isDataReady = !loading && (blogPosts !== null || error !== null);
+  useReviReady(isDataReady);
+
   useEffect(() => {
-    window.__REVI_READY__ = false;
     setLoading(true);
     setError(null);
 
@@ -21,19 +24,16 @@ const BlogListingPage = () => {
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
-          
         }
-        // Get total count from header or default to null
         const totalCount = response.headers.get('X-Total-Count');
         if (totalCount) {
           setTotalPages(Math.ceil(parseInt(totalCount, 10) / limit));
         } else {
-          setTotalPages(1); // Default to 1 if header not present
+          setTotalPages(1);
         }
         return response.json();
       })
       .then(data => {
-        // Filter out any null/empty posts just in case
         const filteredData = data.filter(post => post);
         console.log('Fetched blogs:', filteredData);
         setBlogPosts(filteredData);
@@ -42,10 +42,8 @@ const BlogListingPage = () => {
       .catch(err => {
         setError(err.message);
         setLoading(false);
-      }).finally(() => {
-        window.__REVI_READY__ = true;
       });
-  }, [page]);
+  }, [page, url, limit]);
 
   if (error) {
     return (
@@ -122,7 +120,6 @@ const BlogListingPage = () => {
 
         <div className="flex justify-center mt-12">{renderPagination()}</div>
       </main>
-      
     </div>
   );
 };

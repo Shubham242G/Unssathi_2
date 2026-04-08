@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
 import FaqAccordion from '../FaqAccordion';
-import { useReviReady } from '../../hooks/useReviReady'; // Adjust path as needed
+import { useReviReady } from '../../hooks/useReviReady';
 
 const BlogDetailPage = () => {
-  const { slug } = useParams(); // This could be a slug OR an ID
+  const { slug } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,9 +13,9 @@ const BlogDetailPage = () => {
 
   const url = "https://unsaathi-backend.onrender.com";
 
-  // Track when data is fully loaded for ReviJs
+  // ✅ FIXED: Pass boolean directly, not an array
   const isDataReady = !loading && (blog !== null || error !== null);
-  useReviReady([isDataReady]);
+  useReviReady(isDataReady);  // Removed the array brackets
 
   useEffect(() => {
     if (!slug) return;

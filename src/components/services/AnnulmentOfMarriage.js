@@ -21,7 +21,7 @@ const AnnulmentOfMarriagePage = () => {
   const [loading, setLoading] = useState(true);
 
 const isDataReady = !loading && faqs !== null;
-useReviReady([isDataReady]);
+useReviReady(isDataReady);
     
       useEffect(() => {
         fetchFaqsByCategory("annulment-of-marriage")

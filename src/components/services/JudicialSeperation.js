@@ -19,8 +19,8 @@ const JudicialSeparationPage = () => {
 
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const isDataReady = !loading && faqs !== null;
-  useReviReady([isDataReady]);
+const isDataReady = !loading && faqs !== null;
+useReviReady(isDataReady);
 
             
                 

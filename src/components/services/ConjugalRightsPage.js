@@ -21,7 +21,7 @@ export default function ConjugalRightsPage() {
   const [loading, setLoading] = useState(true);
 
 const isDataReady = !loading && faqs !== null;
-useReviReady([isDataReady]);  
+useReviReady(isDataReady);
         
           useEffect(() => {
             fetchFaqsByCategory("conjugal-rights")

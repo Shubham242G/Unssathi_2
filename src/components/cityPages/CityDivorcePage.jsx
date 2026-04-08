@@ -41,25 +41,23 @@ const CityDivorcePage = () => {
   ];
 
   const [faqs, setFaqs] = useState([]);
-  const [loading, setLoading] = useState(true); // Keep loading but we'll use it
+  const [loading, setLoading] = useState(true);
   
-  // Use the hook
+  // ✅ FIXED: Pass boolean directly, not an array
   const isDataReady = !loading && faqs !== null;
-  useReviReady([isDataReady]);
-
-  const getCityCategory = () => {
-    if (pathname === "/divorce-lawyer-noida") return "divorce-lawyer-noida";
-    if (pathname === "/divorce-lawyer-delhi") return "divorce-lawyer-delhi";
-    if (pathname === "/divorce-lawyer-gurgaon") return "divorce-lawyer-gurgaon";
-    return "divorce-lawyer-noida";
-  };
+  useReviReady(isDataReady);  // Removed the array brackets
 
   useEffect(() => {
-    fetchFaqsByCategory(getCityCategory())
+    const category = pathname === "/divorce-lawyer-noida" ? "divorce-lawyer-noida" :
+                      pathname === "/divorce-lawyer-delhi" ? "divorce-lawyer-delhi" :
+                      pathname === "/divorce-lawyer-gurgaon" ? "divorce-lawyer-gurgaon" :
+                      "divorce-lawyer-noida";
+    
+    fetchFaqsByCategory(category)
       .then(setFaqs)
       .catch(err => console.error("FAQs services page error:", err))
       .finally(() => setLoading(false));
-  }, [pathname]); // Added getCityCategory inside, using pathname as dependency
+  }, [pathname]);
 
   const page = cityPages[citySlug];
 
