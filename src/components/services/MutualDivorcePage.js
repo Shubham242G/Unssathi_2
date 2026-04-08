@@ -1,44 +1,50 @@
 import React, { useEffect, useState } from 'react';
-import aboutAnimation from '../../bannerImages/beidge.json';
-import Lottie from 'lottie-react';
 import { Helmet } from 'react-helmet-async';
 import { fetchFaqsByCategory } from '../../utils/fetchFaqs';
 import FaqAccordion from '../FaqAccordion';
 import { useReviReady } from '../../hooks/useReviReady';
-
+import { organizationSchema, serviceSchema, faqSchemaFromData } from '../../utils/schemaHelper';
 
 const MutualDivorcePage = () => {
-
-  // Replace this number with your real WhatsApp number (no spaces or dashes)
-  const whatsappNumber = '919266877791';
-
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      "Hello, I’d like to connect with a legal advisor regarding Mutual Divorce."
-    );
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-  };
-
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+  const isDataReady = !loading && faqs !== null;
+  useReviReady(isDataReady);
+  
+  useEffect(() => {
+    fetchFaqsByCategory("mutual-divorce")
+      .then(setFaqs)
+      .catch(err => console.error("FAQs services page error:", err))
+      .finally(() => setLoading(false));
+  }, []);
 
-const isDataReady = !loading && faqs !== null;
-useReviReady(isDataReady);
-                
-                    
-                      useEffect(() => {
-                        fetchFaqsByCategory("mutual-divorce")
-                          .then(setFaqs)
-                          .catch(err => console.error("FAQs services page error:", err))
-                          .finally(() => setLoading(false));
-                      }, []);
+  const serviceDescription = "Both agreed to separate? File mutual divorce under Sec 13B HMA fast — waive 6-month cooling period too. India's best family lawyers at Unsaathi.";
 
   return (
-    <div className="min-h-screen bg-[#f9f6f2] font-serif text-[#3d3d3d]">
+    <div>
       <Helmet>
-        <title> Best Mutual Divorce Lawyers in India | Fast & Easy | Unsaathi </title>
-        <meta name="description" content=" Both agreed to separate? File mutual divorce under Sec 13B HMA fast — waive 6-month cooling period too. India's best family lawyers at Unsaathi. Call: +91 9266877791 " />
-        <meta name="keywords" content="divorce lawyer delhi, mutual divorce delhi" />
+        <title>Best Mutual Divorce Lawyers in India | Fast & Easy | Unsaathi</title>
+        <meta name="description" content={serviceDescription} />
+        <meta name="keywords" content="mutual divorce, divorce lawyers, mutual consent divorce, section 13B" />
+        <link rel="canonical" href="https://www.unsaathi.com/services/mutual-Divorce" />
+        
+        {/* Organization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        
+        {/* Service Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema("Mutual Divorce", serviceDescription, "/services/mutual-Divorce"))}
+        </script>
+        
+        {/* FAQ Schema */}
+        {faqs.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchemaFromData(faqs))}
+          </script>
+        )}
       </Helmet>
       {/* Hero Section */}
       <section className="w-full min-h-screen flex flex-col justify-center items-center bg-white text-center px-4 py-8">
@@ -136,6 +142,7 @@ useReviReady(isDataReady);
             </section>
 
     </div>
+    
   );
 };
 

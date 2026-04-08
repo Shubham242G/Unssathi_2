@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import BlogCard from './Blogs';
+import { Helmet } from 'react-helmet-async';
 import { useReviReady } from '../../hooks/useReviReady';
+import { organizationSchema, websiteSchema } from '../../utils/schemaHelper';
 
 const BlogListingPage = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -12,7 +14,6 @@ const BlogListingPage = () => {
   const url = "https://unsaathi-backend.onrender.com";
   const limit = 10;
 
-  // Track when data is fully loaded for ReviJs
   const isDataReady = !loading && (blogPosts !== null || error !== null);
   useReviReady(isDataReady);
 
@@ -35,7 +36,6 @@ const BlogListingPage = () => {
       })
       .then(data => {
         const filteredData = data.filter(post => post);
-        console.log('Fetched blogs:', filteredData);
         setBlogPosts(filteredData);
         setLoading(false);
       })
@@ -44,6 +44,20 @@ const BlogListingPage = () => {
         setLoading(false);
       });
   }, [page, url, limit]);
+
+  // Generate BlogList Schema
+  const blogListSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Divorce & Legal Advice Blogs | Unsaathi",
+    "description": "Expert articles on divorce laws, child custody, alimony, and family legal matters in India.",
+    "url": "https://www.unsaathi.com/blogs",
+    "numberOfItems": blogPosts.length,
+    "about": {
+      "@type": "Thing",
+      "name": "Divorce and Family Law"
+    }
+  };
 
   if (error) {
     return (
@@ -76,51 +90,73 @@ const BlogListingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <section className="bg-[#f5e7db] py-20 text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-neutral-900 mb-6">
-            Our Blogs
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-700 max-w-2xl mx-auto">
-            Our blog aims to provide valuable information, practical advice, and inspiration for our readers.
-          </p>
-          <div className="h-32 mt-8"></div>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Divorce & Legal Advice Blogs | Unsaathi</title>
+        <meta 
+          name="description" 
+          content="Read expert articles on divorce laws, child custody, alimony, and family legal matters in India. Get insights from top divorce lawyers." 
+        />
+        <link rel="canonical" href="https://www.unsaathi.com/blogs" />
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(websiteSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(blogListSchema)}
+        </script>
+      </Helmet>
 
-      <main className="py-20 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-            {loading ? (
-              <div className="text-center py-12 text-xl font-serif col-span-full">
-                Loading blogs...
+      <div className="min-h-screen bg-gray-50">
+        {/* Rest of your component remains the same */}
+        <section className="bg-[#f5e7db] py-20 text-center">
+          <div className="max-w-5xl mx-auto px-6">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-neutral-900 mb-6">
+              Our Blogs
+            </h1>
+            <p className="text-lg md:text-xl text-neutral-700 max-w-2xl mx-auto">
+              Our blog aims to provide valuable information, practical advice, and inspiration for our readers.
+            </p>
+            <div className="h-32 mt-8"></div>
+          </div>
+        </section>
+
+        <main className="py-20 max-w-7xl mx-auto px-6">
+          {/* Rest of your JSX remains the same */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+              {loading ? (
+                <div className="text-center py-12 text-xl font-serif col-span-full">
+                  Loading blogs...
+                </div>
+              ) : blogPosts.length === 0 ? (
+                <div className="text-center py-12 text-xl font-serif col-span-full">
+                  No blogs found.
+                </div>
+              ) : (
+                blogPosts.map(post => <BlogCard key={post._id} post={post} />)
+              )}
+            </div>
+
+            <aside className="lg:col-span-1">
+              <div className="bg-[#f5e7db] p-8 rounded-lg text-center sticky top-28">
+                <div className="h-40 mb-6"></div>
+                <h3 className="font-serif text-2xl font-semibold mb-6 text-neutral-900">
+                  Looking For Expert Guidance?
+                </h3>
+                <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300">
+                  Contact Us
+                </button>
               </div>
-            ) : blogPosts.length === 0 ? (
-              <div className="text-center py-12 text-xl font-serif col-span-full">
-                No blogs found.
-              </div>
-            ) : (
-              blogPosts.map(post => <BlogCard key={post._id} post={post} />)
-            )}
+            </aside>
           </div>
 
-          <aside className="lg:col-span-1">
-            <div className="bg-[#f5e7db] p-8 rounded-lg text-center sticky top-28">
-              <div className="h-40 mb-6"></div>
-              <h3 className="font-serif text-2xl font-semibold mb-6 text-neutral-900">
-                Looking For Expert Guidance?
-              </h3>
-              <button className="bg-[#d5bfa7] hover:bg-[#c48e53] text-neutral-900 font-semibold px-8 py-3 rounded-full text-lg transition-colors duration-300">
-                Contact Us
-              </button>
-            </div>
-          </aside>
-        </div>
-
-        <div className="flex justify-center mt-12">{renderPagination()}</div>
-      </main>
-    </div>
+          <div className="flex justify-center mt-12">{renderPagination()}</div>
+        </main>
+      </div>
+    </>
   );
 };
 

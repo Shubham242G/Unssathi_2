@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import NoidaDivorcePage from "./NoidaDivorcePage";
-import DelhiDivorcePage from "./DelhiDivorcePage";
-import GurgaonDivorcePage from "./GurgaonDivorcePage";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ForYou from "../home/ForYou";
 import { fetchFaqsByCategory } from "../../utils/fetchFaqs";
 import FaqAccordion from "../FaqAccordion";
 import { useReviReady } from "../../hooks/useReviReady";
+import { localBusinessSchema, organizationSchema, faqSchemaFromData } from "../../utils/schemaHelper";
 
 const CityDivorcePage = () => {
   const location = useLocation();
   const pathname = location.pathname;
 
   let citySlug = "";
-
   if (pathname === "/divorce-lawyer-noida") citySlug = "noida";
   else if (pathname === "/divorce-lawyer-delhi") citySlug = "delhi";
   else if (pathname === "/divorce-lawyer-gurgaon") citySlug = "gurgaon";
 
   const cityName = citySlug.charAt(0).toUpperCase() + citySlug.slice(1);
 
-  const cityPages = {
-    noida: <NoidaDivorcePage />,
-    delhi: <DelhiDivorcePage />,
-    gurgaon: <GurgaonDivorcePage />,
-  };
+  const [faqs, setFaqs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  
+  const isDataReady = !loading && faqs !== null;
+  useReviReady(isDataReady);
+  
+  useEffect(() => {
+    const category = pathname === "/divorce-lawyer-noida" ? "divorce-lawyer-noida" :
+                      pathname === "/divorce-lawyer-delhi" ? "divorce-lawyer-delhi" :
+                      pathname === "/divorce-lawyer-gurgaon" ? "divorce-lawyer-gurgaon" :
+                      "divorce-lawyer-noida";
+    
+    fetchFaqsByCategory(category)
+      .then(setFaqs)
+      .catch(err => console.error("FAQs services page error:", err))
+      .finally(() => setLoading(false));
+  }, [pathname]);
 
   const services = [
     { label: "Restitution of Conjugal Rights", path: "/services/conjugal-Rights" },
@@ -40,58 +49,55 @@ const CityDivorcePage = () => {
     { label: "Mutual Divorce", path: "/services/mutual-Divorce" },
   ];
 
-  const [faqs, setFaqs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  
-  // ✅ FIXED: Pass boolean directly, not an array
-  const isDataReady = !loading && faqs !== null;
-  useReviReady(isDataReady);  // Removed the array brackets
-
-  useEffect(() => {
-    const category = pathname === "/divorce-lawyer-noida" ? "divorce-lawyer-noida" :
-                      pathname === "/divorce-lawyer-delhi" ? "divorce-lawyer-delhi" :
-                      pathname === "/divorce-lawyer-gurgaon" ? "divorce-lawyer-gurgaon" :
-                      "divorce-lawyer-noida";
-    
-    fetchFaqsByCategory(category)
-      .then(setFaqs)
-      .catch(err => console.error("FAQs services page error:", err))
-      .finally(() => setLoading(false));
-  }, [pathname]);
-
-  const page = cityPages[citySlug];
-
-  if (!page) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        City Not Found
-      </div>
-    );
-  }
-
   return (
-    <div className="bg-[#f5f1ed] text-[#232122]">
-      {/* HERO */}
-      <section className="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/assets/Noida.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-white">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
-            Divorce Lawyers in {cityName}
-          </h1>
-          <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-8">
-            Expert help for mutual divorce, custody, alimony, and legal documentation—handled with care and confidentiality.
-            Get guidance from experienced lawyers in {cityName}.
-          </p>
-          <button className="bg-[#b88b6c] hover:bg-[#a3775a] px-8 py-4 rounded-full font-semibold shadow-lg transition">
-            Talk to an Expert
-          </button>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Best Divorce Lawyer in {cityName} | Unsaathi</title>
+        <meta 
+          name="description" 
+          content={`Looking for the best divorce lawyer in ${cityName}? Unsaathi offers expert legal help for mutual & contested divorce, custody, alimony & more. Get consultation today.`} 
+        />
+        <link rel="canonical" href={`https://www.unsaathi.com${pathname}`} />
+        
+        {/* Organization Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify(organizationSchema)}
+        </script>
+        
+        {/* Local Business Schema for this city */}
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema(cityName, pathname))}
+        </script>
+        
+        {/* FAQ Schema from API data */}
+        {faqs.length > 0 && (
+          <script type="application/ld+json">
+            {JSON.stringify(faqSchemaFromData(faqs))}
+          </script>
+        )}
+      </Helmet>
 
-      {/* TRUSTED SECTION */}
+      <div className="bg-[#f5f1ed] text-[#232122]">
+        {/* Rest of your component JSX remains the same */}
+        <section className="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden">
+          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source src={`/assets/${cityName}.mp4`} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="relative z-10 max-w-5xl mx-auto px-6 text-white">
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+              Divorce Lawyers in {cityName}
+            </h1>
+            <p className="text-lg text-gray-200 max-w-3xl mx-auto mb-8">
+              Expert help for mutual divorce, custody, alimony, and legal documentation—handled with care and confidentiality.
+              Get guidance from experienced lawyers in {cityName}.
+            </p>
+            <Link to="/contact" className="bg-[#b88b6c] hover:bg-[#a3775a] px-8 py-4 rounded-full font-semibold shadow-lg transition">
+              Talk to an Expert
+            </Link>
+          </div>
+        </section>
+        {/* TRUSTED SECTION */}
       <section className="max-w-5xl mx-auto px-6 py-16 text-center">
         <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
           Trusted Divorce Services in {cityName}
@@ -129,7 +135,12 @@ const CityDivorcePage = () => {
         <FaqAccordion faqs={faqs} />
       </section>
     </div>
+    </>
   );
 };
 
 export default CityDivorcePage;
+
+
+
+ 
