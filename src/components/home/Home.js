@@ -20,13 +20,17 @@ function Home() {
   useReviReady(isDataReady);
   
   useEffect(() => {
-    fetchFaqsByCategory("home")
-      .then(setFaqs)
-      .catch(err => console.error("FAQs services page error:", err))
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+  console.log('Home component mounted');
+  
+  fetchFaqsByCategory("home")
+    .then(setFaqs)
+    .catch(err => console.error("FAQs services page error:", err))
+    .finally(() => {
+      setLoading(false);
+      console.log('Setting __REVI_READY__ = true');
+      window.__REVI_READY__ = true;
+    });
+}, []);
   
   return (
     <div className="min-h-screen bg-[#f5f1ed]">
