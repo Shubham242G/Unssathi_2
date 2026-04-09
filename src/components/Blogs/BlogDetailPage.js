@@ -88,9 +88,9 @@ const BlogDetailPage = () => {
     return (
       <div className="min-h-screen bg-gray-50 py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
-          <h1 className="font-serif text-5xl md:text-6xl font-bold text-neutral-900 mb-6">
+          <h2 className="font-serif text-5xl md:text-6xl font-bold text-neutral-900 mb-6">
             Blog Not Found
-          </h1>
+          </h2>
           <p className="text-lg text-neutral-600 mb-8">
             {error || "The blog post you're looking for doesn't exist."}
           </p>
