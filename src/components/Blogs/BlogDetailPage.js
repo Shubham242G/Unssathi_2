@@ -47,7 +47,7 @@ const BlogDetailPage = () => {
       });
   }, [slug, url]);
 
-  // FIXED: Extract images correctly from the nested structure
+  // Extract images correctly from the nested structure
   const extractImages = () => {
     if (!blog || !blog.images) {
       return { bannerImage: null, galleryImages: [] };
@@ -56,13 +56,11 @@ const BlogDetailPage = () => {
     let bannerImage = null;
     let galleryImages = [];
     
-    // Your data structure: { cover: "url", thumbnail: "url", gallery: [...] }
     if (blog.images.cover !== undefined) {
       bannerImage = blog.images.cover || blog.images.thumbnail || null;
       galleryImages = blog.images.gallery || [];
       console.log(`Extracted ${galleryImages.length} gallery images`);
     }
-    // Fallback for other formats
     else if (Array.isArray(blog.images)) {
       bannerImage = blog.images[0] || null;
       galleryImages = blog.images.slice(1);
@@ -148,13 +146,12 @@ const BlogDetailPage = () => {
     }))
   };
 
-  // FIXED: Render content with inline images
+  // Render content with inline images
   const renderContentWithImages = (content) => {
     if (!content) return null;
     
     console.log('Rendering content, gallery images available:', galleryImages.length);
     
-    // Check if there are any image placeholders
     const hasImagePlaceholders = /\[image:\d+\]/.test(content);
     
     if (!hasImagePlaceholders) {
@@ -168,7 +165,6 @@ const BlogDetailPage = () => {
       );
     }
     
-    // Split content by image placeholders
     const segments = [];
     let lastIndex = 0;
     const regex = /\[image:(\d+)\]/g;
@@ -204,7 +200,6 @@ const BlogDetailPage = () => {
       }
     }
     
-    // Render segments with images
     return (
       <div className="blog-content prose prose-neutral prose-lg lg:prose-xl max-w-none">
         {segments.map((segment, idx) => {
@@ -220,10 +215,8 @@ const BlogDetailPage = () => {
               />
             );
           } else {
-            // Get image from gallery array
             const imageUrl = galleryImages[segment.index];
             if (imageUrl) {
-              console.log(`Rendering image ${segment.index} from gallery`);
               return (
                 <figure key={`img-${idx}`} className="my-8">
                   <img
@@ -271,25 +264,27 @@ const BlogDetailPage = () => {
       </Helmet>
 
       <div className="min-h-screen bg-white">
-        {/* Banner Image Section */}
-        {bannerImage && (
-          <div className="w-full bg-gray-100">
-            <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-              <img
-                src={bannerImage}
-                alt={blog.title}
-                className="w-full h-full object-cover"
-                style={{
-                  objectPosition: 'center center',
-                }}
-                onError={(e) => {
-                  console.error('Banner image failed to load');
-                  e.target.style.display = 'none';
-                }}
-                loading="eager"
-              />
-            </div>
+        {/* Simple Banner Image Section - Fixed, no zooming */}
+        {bannerImage ? (
+          <div className="w-full">
+            <img
+              src={bannerImage}
+              alt={blog.title}
+              className="w-full"
+              style={{
+                maxHeight: '500px',
+                objectFit: 'contain',
+                backgroundColor: '#f5f5f5'
+              }}
+              onError={(e) => {
+                console.error('Banner image failed to load');
+                e.target.style.display = 'none';
+              }}
+              loading="eager"
+            />
           </div>
+        ) : (
+          <div className="w-full h-32 bg-gradient-to-r from-[#c48e53]/20 to-[#a07a3a]/20"></div>
         )}
 
         {/* Title Section */}
