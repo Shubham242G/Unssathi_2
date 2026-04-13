@@ -45,9 +45,9 @@ export default function UnsaathiSolutions() {
         <h5 className="text-[#b88b6c] text-lg font-semibold mb-2">
           The Unsaathi Solutions
         </h5>
-        <h1 className="font-serif font-bold text-3xl md:text-5xl text-[#45362e] leading-tight mb-4">
+        <h2 className="font-serif font-bold text-3xl md:text-5xl text-[#45362e] leading-tight mb-4">
           Guiding You Through Uncertainty
-        </h1>
+        </h2>
         <p className="text-[#7f756f] text-base md:text-lg mb-9">
           Get hassle-free solutions under one roof with our comprehensive
           divorce services. 

@@ -12,9 +12,9 @@ function AboutUs() {
           <div className="mb-2 text-lg text-[#ae9478] font-semibold">About Unsaathi</div>
 
           {/* Heading */}
-          <h1 className="text-5xl font-serif text-gray-900 leading-tight mb-8">
+          <h2 className="text-5xl font-serif text-gray-900 leading-tight mb-8">
             Find Top-Notch Divorce Services Here
-          </h1>
+          </h2>
 
           {/* Paragraphs */}
           <div className="space-y-6 text-lg text-gray-700">

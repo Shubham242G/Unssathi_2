@@ -66,9 +66,9 @@ export default function HassleFreeProcess() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-[#b88b6c] font-semibold text-lg mb-2">The Unsaathi Way</p>
-          <h1 className="font-serif font-bold text-3xl md:text-5xl text-[#232122] mb-4">
+          <h2 className="font-serif font-bold text-3xl md:text-5xl text-[#232122] mb-4">
             A Hassle-Free Process Towards A Better Life
-          </h1>
+          </h2>
           <p className="text-[#6d645e] text-base md:text-lg max-w-2xl mx-auto">
             Experience a personalised and streamlined approach with Unsaathi. We hold your
             hands through every step of the journey with care and understanding.

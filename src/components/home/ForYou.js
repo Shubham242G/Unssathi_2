@@ -66,9 +66,9 @@ export default function ForYou() {
         {/* Top subheading and heading */}
         <div className="text-center">
           <h4 className="text-[#b88b6c] font-semibold mb-2">Unsaathi For You</h4>
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#45362e] leading-tight mb-3">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#45362e] leading-tight mb-3">
             Clarity. Compassion. A Fresh Start.
-          </h1>
+          </h2>
           <div className="text-[#776e65] mb-10">
             For us, your peace of mind comes first. Our goal is to simplify the legal process while connecting you with the best lawyer for divorce near me and trusted legal guidance.
           </div>

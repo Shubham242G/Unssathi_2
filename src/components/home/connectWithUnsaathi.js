@@ -10,9 +10,9 @@ export default function ConnectWithUnsaathi() {
             <div className="text-[#b88b6c] font-semibold text-lg mb-2">
               Connect With Unsaathi
             </div>
-            <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#232122] leading-tight mb-4">
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#232122] leading-tight mb-4">
               Think Of A Peaceful Life.<br />Think Unsaathi
-            </h1>
+            </h2>
             <div className="text-[#726964] text-base md:text-lg mb-2">
               Ready to embrace a new chapter? Reach out for expert divorce services, personalized support, and a path forward with clarity.
             </div>

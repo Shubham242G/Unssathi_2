@@ -28,14 +28,15 @@ import FaqPage from './components/Faq/FaqPage';
 import { HelmetProvider } from 'react-helmet-async';
 import ServicesPage from './components/services/ServicesPage';
 import NotFoundPage from './components/notFound/NotFoundPage';
+import RedirectHandler from './components/RedirectHandler';
 
 function App() {
   return (
     <HelmetProvider>
-    <div className="min-h-screen bg-[#f5f1ed]">
-                         {/* Router wraps EVERYTHING */}
+      <div className="min-h-screen bg-[#f5f1ed]">
         <Navbar />
-        <ScrollToTop /> 
+        <ScrollToTop />
+        <RedirectHandler /> 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/divorce-lawyer-noida" element={<CityDivorcePage />} />

@@ -9,9 +9,9 @@ export default function NewBeginning() {
           <div className="text-[#b88b6c] text-lg font-semibold mb-3">
             Unsaathi For You
           </div>
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-[#232122] leading-tight mb-4">
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#232122] leading-tight mb-4">
             Turn Heartaches Into New Beginning
-          </h1>
+          </h2>
           <div className="text-[#726964] text-base md:text-lg mb-8">
             Unsaathi reimagines divorce support with compassionate guidance and practical legal solutions.
           </div>
