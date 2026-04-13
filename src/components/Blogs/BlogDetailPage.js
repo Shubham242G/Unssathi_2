@@ -47,7 +47,6 @@ const BlogDetailPage = () => {
       });
   }, [slug, url]);
 
-  // Extract images correctly from the nested structure
   const extractImages = () => {
     if (!blog || !blog.images) {
       return { bannerImage: null, galleryImages: [] };
@@ -146,11 +145,8 @@ const BlogDetailPage = () => {
     }))
   };
 
-  // Render content with inline images
   const renderContentWithImages = (content) => {
     if (!content) return null;
-    
-    console.log('Rendering content, gallery images available:', galleryImages.length);
     
     const hasImagePlaceholders = /\[image:\d+\]/.test(content);
     
@@ -236,7 +232,6 @@ const BlogDetailPage = () => {
                   <p className="text-yellow-700">⚠️ Image {segment.index + 1} not found</p>
                   <p className="text-sm text-yellow-600 mt-2">
                     You have {galleryImages.length} gallery image(s) available.
-                    Image indices start from 0.
                   </p>
                 </div>
               );
@@ -264,60 +259,90 @@ const BlogDetailPage = () => {
       </Helmet>
 
       <div className="min-h-screen bg-white">
-        {/* Simple Banner Image Section - Fixed, no zooming */}
-        {bannerImage ? (
-          <div className="w-full">
-            <img
-              src={bannerImage}
-              alt={blog.title}
-              className="w-full"
-              style={{
-                maxHeight: '500px',
-                objectFit: 'contain',
-                backgroundColor: '#f5f5f5'
-              }}
-              onError={(e) => {
-                console.error('Banner image failed to load');
-                e.target.style.display = 'none';
-              }}
-              loading="eager"
-            />
+        {/* Attractive Banner Container - 1200x600 proportion */}
+        <div className="relative w-full bg-gradient-to-r from-gray-900 to-gray-800">
+          <div className="relative w-full" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <div className="relative w-full" style={{ paddingBottom: '50%' /* 600/1200 = 0.5 */ }}>
+              {bannerImage ? (
+                <>
+                  <img
+                    src={bannerImage}
+                    alt={blog.title}
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    style={{
+                      objectPosition: 'center center',
+                    }}
+                    onError={(e) => {
+                      console.error('Banner image failed to load');
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#c48e53]/20 to-[#a07a3a]/20 flex items-center justify-center">
+                          <div class="text-center">
+                            <svg class="w-20 h-20 mx-auto text-[#c48e53]/40 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                            <p class="text-[#c48e53] font-medium">Featured Image</p>
+                          </div>
+                        </div>
+                      `;
+                    }}
+                    loading="eager"
+                  />
+                </>
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-[#c48e53]/20 to-[#a07a3a]/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <svg className="w-20 h-20 mx-auto text-[#c48e53]/40 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-[#c48e53] font-medium">Unsaathi Blog</p>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
-        ) : (
-          <div className="w-full h-32 bg-gradient-to-r from-[#c48e53]/20 to-[#a07a3a]/20"></div>
-        )}
+        </div>
 
         {/* Title Section */}
         <div className="bg-gradient-to-br from-[#f5e7db] via-[#e8d5c4] to-[#f5e7db] py-16 md:py-20">
           <div className="max-w-5xl mx-auto px-6 text-center">
-            <p className="text-lg md:text-xl text-neutral-600 mb-4 font-medium tracking-wide">
-              {new Date(blog.date).toLocaleDateString('en-US', {
-                weekday: 'long',
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </p>
+            <div className="inline-block px-4 py-1 bg-[#c48e53]/10 rounded-full mb-6">
+              <p className="text-sm md:text-base text-[#c48e53] font-medium tracking-wide">
+                {new Date(blog.date).toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </p>
+            </div>
             <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-black text-neutral-900 mb-8 leading-tight">
               {blog.title}
             </h1>
             {blog.seoMetaDescription && (
-              <p className="text-xl md:text-2xl text-neutral-700 max-w-3xl mx-auto font-light italic mb-12">
+              <p className="text-xl md:text-2xl text-neutral-700 max-w-3xl mx-auto font-light mb-12">
                 {blog.seoMetaDescription}
               </p>
             )}
-            <Link
-              to="/blogs"
-              className="group inline-flex items-center gap-3 bg-[#c48e53] hover:bg-[#a07a3a] text-white font-semibold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-            >
-              ← Back to Blogs
-            </Link>
+            <div className="flex items-center justify-center gap-4">
+              <Link
+                to="/blogs"
+                className="group inline-flex items-center gap-2 bg-[#c48e53] hover:bg-[#a07a3a] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:-translate-y-1 shadow-lg"
+              >
+                <svg className="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Back to Blogs
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Blog Content */}
         <article className="max-w-4xl mx-auto px-6 py-16 md:py-24">
-          {renderContentWithImages(blog.content || blog.summary || '')}
+          <div className="prose prose-lg prose-neutral max-w-none">
+            {renderContentWithImages(blog.content || blog.summary || '')}
+          </div>
         </article>
 
         {/* FAQs Section */}
