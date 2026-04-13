@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10"> {/* Changed to 5 cols */}
         {/* Offices - unchanged */}
         <div>
-          <h2 className="text-white mb-4">Our Offices</h2>
+          <h4 className="text-white mb-4">Our Offices</h4>
           <ul className="text-xs space-y-9">
             <li><span className="font-semibold text-white">Delhi:</span>Plot No. 25, Fourth Floor, Thana Road, Near Chhawla Stand, Najafgarh, New Delhi - 110043</li>
             <li><span className="font-semibold text-white">Noida:</span> 208-209, Tower-E, Alphathum, Noida-201305</li>
@@ -20,7 +20,7 @@ export default function Footer() {
 
         {/* NEW: Divorce by City Section */}
         <div>
-          <h2 className="font-semibold text-white mb-4">Divorce by City</h2>
+          <h4 className="font-semibold text-white mb-4">Divorce by City</h4>
           <ul className="space-y-2 text-[#cfd0d3]">
             <li>
               <Link to="/divorce-lawyer-noida" className="hover:text-[#b88b6c]">
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Navigation Links - unchanged */}
         <div>
-          <h2 className="font-semibold text-white mb-4">Navigate</h2>
+          <h4 className="font-semibold text-white mb-4">Navigate</h4>
           <ul className="space-y-2 text-[#cfd0d3]">
             <li><a href="/" className="hover:text-[#b88b6c]">Home</a></li>
             <li><a href="/About-Us" className="hover:text-[#b88b6c]">About Unsaathi</a></li>
@@ -58,7 +58,7 @@ export default function Footer() {
 
         {/* Contact & Policies - unchanged */}
         <div>
-          <h2 className="font-semibold text-white mb-4">Contact</h2>
+          <h4 className="font-semibold text-white mb-4">Contact</h4>
           <div className="flex flex-col gap-3 mt-4 md:mt-0">
             <div className="flex items-center gap-3 text-[#b88b6c] text-2xl w-full mt-4">
               <img src="/assets/Call.png" className="h-[18px] w-[20px]" alt='footer'/>
@@ -88,7 +88,7 @@ export default function Footer() {
 
         {/* Newsletter - unchanged */}
         <div className="flex flex-col gap-3 min-w-[220px] mt-6 md:mt-0">
-          <h2 className="font-semibold text-white mb-4">Newsletter</h2>
+          <h4 className="font-semibold text-white mb-4">Newsletter</h4>
           <input
             placeholder="Name"
             className="bg-[#28292c] text-[#cfd0d3] rounded px-3 py-2 focus:outline-none placeholder:text-[#7b7680]"
